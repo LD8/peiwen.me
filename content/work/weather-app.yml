@@ -1,0 +1,19 @@
+---
+title: React Weather App
+summary: Type in a city and check the weather there.
+badges:
+  - Front-end
+  - WebApp
+  - React
+  - Javascript
+  - CSS3
+imgSrcArr:
+  -
+content:
+  - The app makes API call from OpenWeatherMap.org. The data returned included the city name, date and the temperature range of the day, weather and humidity. More variety of data can also be incorporated. Simply type in a city at the top of the app and press enter. The background depends on the temperature of the searched city.
+techs:
+  - React
+  - CSS3
+links: { codeSandbox: https://cd4u1.csb.app/ }
+startedAt: 2019-12
+endedAt: 2019-12

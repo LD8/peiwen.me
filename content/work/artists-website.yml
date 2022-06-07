@@ -1,0 +1,20 @@
+---
+title: Artists Website
+summary: A website for the artist named Don Lee
+badges:
+  - HTML5
+  - Javascript
+  - CSS3
+imgSrcArr:
+  -
+content:
+  - A simple yet elegant website for displaying his experimental photography work. This a relatively early work of mine (around 2016) before I started to learn python.
+  - It is this particular project and the challenges I conquered that made me consider to become a full-stack engineer. I love coding and the serenity of the practice.
+techs:
+  - HTML5
+  - CSS3
+  - JavaScript
+links:
+  # online: http://donnelee.com/
+startedAt: 2015-12
+endedAt: 2016-01

@@ -1,0 +1,23 @@
+---
+title: DonLee.online
+summary: This is a presentation of Don Lee as a web developer.
+badges:
+  - Front-end
+  - React
+  - NextJS
+imgSrcArr:
+  -
+content:
+  - 'First release (2020) of the website combined Django Framework as the backend serving API calls, React handles the frontend and most of the routing. Because my study notes, blogs will be hosted and presented here as well, I implemented Postgres for ease of management, future expansion and stability. It is hosted on AWS Lightsail VPS, certainly a fun thing to fiddle around. The loading speed of the site yet needs to be optimised and I am aware that there is much more to learn but this, for me, is a great starting point.'
+  - 'Second release (2021) of this website employed NextJS so that the whole website is generated statically. Django RESTful API is great, however, I wanted to explore the full potential of frontend SPA as well as my newly learned skills.'
+techs:
+  - Django - Django REST Framework
+  - Postgres - data management
+  - React
+  - React Markdown
+  - React Spring
+  - Styled Components
+  - NextJS
+links: { online: HTTPS://DONLEE.ONLINE, github: HTTPS://GITHUB.COM/LD8/DONLEE }
+startedAt: 2021-01
+endedAt: 2021-02

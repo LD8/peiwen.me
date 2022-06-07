@@ -1,0 +1,37 @@
+.dot-green,
+.dot-red {
+  width: 8px;
+  height: 4px;
+  margin: 4px;
+  border-radius: 5px;
+  background-color: limegreen;
+}
+
+.dot-red {
+  background-color: orangered;
+}
+
+.hov-red:hover {
+  cursor: pointer;
+  color: rgb(217, 110, 71);
+}
+
+.hov-green:hover {
+  cursor: pointer;
+  color: rgb(122, 209, 30);
+}
+
+.hov-blue:hover {
+  cursor: pointer;
+  color: rgb(65, 154, 232);
+}
+
+.hov-pink:hover {
+  cursor: pointer;
+  color: rgb(213, 95, 152);
+}
+
+.liked {
+  cursor: default;
+  color: rgb(207, 69, 103);
+}
