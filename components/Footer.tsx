@@ -9,6 +9,39 @@ import styled from 'styled-components'
 import useMediaQuery from '../lib/hooks/useMediaQuery'
 import ExternalLink from './ExternalLink'
 
+const FOOTER_LINKS = [
+  {
+    name: 'Dev.to',
+    href: 'https://dev.to/ld8',
+    Icon: FaDev,
+    desc: 'Dev.to profile of Peiwen Li',
+  },
+  {
+    name: 'Github',
+    href: 'https://github.com/LD8',
+    Icon: VscGithub,
+    desc: 'Github of Peiwen Li',
+  },
+  {
+    name: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/peiwen-li-52005b87/',
+    Icon: FaLinkedin,
+    desc: 'LinkedIn profile of Peiwen Li',
+  },
+  {
+    name: 'CV',
+    href: '/cv',
+    Icon: BsPersonBoundingBox,
+    desc: 'CV/Resumé of Peiwen Li',
+  },
+  {
+    name: 'Email',
+    href: 'mailto: don_lee@me.com',
+    Icon: MdAlternateEmail,
+    desc: 'Email address: Mail to Peiwen Li at don_lee@me.com',
+  },
+] as const
+
 const Footer: React.FC = () => {
   const router = useRouter()
   const isSmallScreen = useMediaQuery('(max-width: 600px)')
@@ -21,7 +54,7 @@ const Footer: React.FC = () => {
   return (
     <StyledFooter isLanding={router.pathname === '/'}>
       <div className='icon-links'>
-        {FOOTER_ICONS.map(({ name, Icon, href }) => (
+        {FOOTER_LINKS.map(({ name, Icon, href }) => (
           <SAnchor
             key={name}
             href={href}
@@ -38,7 +71,7 @@ const Footer: React.FC = () => {
         {/* <ExternalLink href='#'>
           <span>Powered by Nextjs and Dev.to API</span>
         </ExternalLink> */}
-        <span>Gratitude to all of my friends and family</span>
+        <span>Gratitude to my family, flowers, the sun and the universe</span>
       </div>
       <div className='li'>
         <button onClick={() => router.push('/li')} />
@@ -112,36 +145,3 @@ const StyledFooter = styled.footer<{ isLanding: boolean }>`
     }
   }
 `
-
-const FOOTER_ICONS = [
-  {
-    name: 'Dev.to',
-    href: '#',
-    Icon: FaDev,
-    desc: 'Dev.to account of Peiwen Li',
-  },
-  {
-    name: 'Github',
-    href: 'https://github.com/LD8',
-    Icon: VscGithub,
-    desc: 'Github account of Peiwen Li',
-  },
-  {
-    name: 'LinkedIn',
-    href: '#',
-    Icon: FaLinkedin,
-    desc: 'LinkedIn account of Peiwen Li',
-  },
-  {
-    name: 'CV',
-    href: '/cv',
-    Icon: BsPersonBoundingBox,
-    desc: 'CV/Resumé of Peiwen Li, click to view',
-  },
-  {
-    name: 'Email',
-    href: 'mailto: don_lee@me.com',
-    Icon: MdAlternateEmail,
-    desc: 'Email address: Mail to Peiwen Li at don_lee@me.com',
-  },
-] as const
