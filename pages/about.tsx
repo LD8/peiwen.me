@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { NextPage } from 'next'
 import Image from 'next/image'
 import styled from 'styled-components'
+import HeadInfo from '../components/HeadInfo'
 
 const PROF = {
   HTML: 90,
@@ -18,6 +19,7 @@ const PROF = {
 const PeiwenMe: NextPage = () => {
   return (
     <SRow>
+      <HeadInfo title="About Peiwen Li" />
       {/* <LeafSwirl
         style={{ top: '0vh', left: '0', fontSize: '70vh' }}
         swing={50}

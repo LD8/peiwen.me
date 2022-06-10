@@ -7,7 +7,7 @@ import StyledDiv from './StyledDiv'
 const navMap = [
   // { name: 'Home', pathname: '/' },
   { name: 'Work', pathname: '/work-and-joy' },
-  { name: 'Peiwen', pathname: '/peiwen-me' },
+  { name: 'Peiwen', pathname: '/about' },
   { name: 'Journal', pathname: '/journals' },
 ] as const
 
