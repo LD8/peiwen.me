@@ -56,17 +56,21 @@ const CV: NextPage = () => {
             <div className='details'>
               <ul>
                 <li>
-                  Front-end: JavaScript, TypeScript, ReactJS, Redux, MobX,
-                  NextJS, VueJS, NuxtJS, UmiJS, Webpack, HTML5, CSS3, SASS,
-                  LESS, Bootstrap, Material UI, Chakra UI, Ant Desgin
+                  let <b>frontEnd</b> = <em>TypeScript + ReactJS</em>{' '}
+                  <i>// with other related JS libraries</i>
                 </li>
-                <li>Back-end: NodeJS, Python, Django, Flask, Postgres</li>
-                <li>Data Visualisation: Python, Plotly, Matplotlib</li>
                 <li>
-                  UI/UX: having a master degree in Art and Science, I am
-                  confident in designing, coding and executing
-                  multi-disciplinary projects with great scrutiny
+                  let <b>backEnd</b> = <em>NodeJS</em> as BFF{' '}
+                  <i>// with occasional Python frameworks</i>
                 </li>
+                <li>
+                  let <b>diff</b> = 'a master degree in Art and Science'{' '}
+                  <i>
+                    // with great confidence and scrutiny to design and build{' '}
+                    <u>multi-disciplinary</u> projects
+                  </i>
+                </li>
+                <li>let it grow naturally and be free like water</li>
               </ul>
             </div>
           </div>
@@ -79,34 +83,71 @@ const CV: NextPage = () => {
 
           <div className='sub-container'>
             <div className='aside'>
+              <p className='company-name'>eBay</p>
+              <p className='year'>Sept 2021 - Now</p>
+              <ExternalLink href='https://ebay.com/'>eBay.com</ExternalLink>
+            </div>
+            <div className='details'>
+              <h4>Front-end Engineer | UX Designer</h4>
+              <ul>
+                <li>
+                  <b>Responsible</b> for the front-end development of a root
+                  cause analysis system apart from developing other web apps for
+                  SRE team
+                </li>
+                <li>
+                  <b>Research</b> the habbit of the clients (TDOs);
+                  subsequently, propose new solutions to improve the usability
+                  of the apps
+                </li>
+                <li>
+                  <b>Challenges</b> are mainly derived from the question of how
+                  to finetune the ways in which relevant data is visualised
+                </li>
+              </ul>
+              <p>
+                Taking over a complicated pre-exisiting project is never easy.
+                However, after a couple of months, our clients claimed that the
+                appearance as well as the usability of the app had been
+                drastically improved. Taking users' needs into account, the
+                project is constently evolving.
+              </p>
+            </div>
+          </div>
+
+          <div className='sub-container'>
+            <div className='aside'>
               <p className='company-name'>Points</p>
-              <p className='year'>Apr 2021 - Now</p>
+              <p className='year'>Apr 2021 - Sept 2021</p>
               <ExternalLink href='https://points.org/'>points.org</ExternalLink>
             </div>
             <div className='details'>
-              <h4>Web Developer | UX Designer</h4>
+              <h4>Front-end Engineer | UX Designer</h4>
+              <p>
+                <em>A privacy computing platform</em> built with custimised
+                UmiJS framework (TypeScript) came to live during this fast-paced
+                yet fulfilling period.
+              </p>
               <ul>
                 <li>
-                  Web Dev: Responsible for the front-end development of the
-                  company's feature product (a privacy computing platform)
+                  <b>Responsible</b> for the front-end development of a brand
+                  new product
                 </li>
                 <li>
-                  User experience optimisation: Collaborating with UI team to
-                  optimise the overall user experience of the web app, whilst
-                  maintaining the original interface design language but
-                  realised in a more efficient manner
+                  <b>UX Design:</b> consolidate the requirements of the product
+                  by analysing the needs of the end-users; then, collaborate
+                  with UI team to optimise the overall UX of the app
                 </li>
                 <li>
-                  Communication: Consolidating the product requirements by
-                  analysing the needs of the end-user with the product team,
-                  then offer the front-end solutions to meet the requirement
+                  <b>Challenges:</b> figure out ways to build it efficiently
+                  while maintaining a predetermined design language
                 </li>
               </ul>
               <p>
                 This role emphasises the technical craftsmanship of the
                 front-end development, offering the chance to work with
                 different teams to finalise the requirements of the product for
-                user experience optimisation purposes
+                UX optimisation purposes.
               </p>
             </div>
           </div>
@@ -114,41 +155,44 @@ const CV: NextPage = () => {
           <div className='sub-container'>
             <div className='aside'>
               <p className='company-name'>MakeFurther IT</p>
-              <p className='year'>May 2020 - April 2021</p>
+              <p className='year'>May 2020 - Apr 2021</p>
               <ExternalLink href='http://www.makefurther.com/'>
                 makefurther.com
               </ExternalLink>
             </div>
             <div className='details'>
-              <h4>Web Developer | UI&UX Designer</h4>
+              <h4>Web Developer | UI & UX Designer</h4>
+              <p>
+                Not only did I get to design the interface of
+                <em> an innovative B2B quantitative trading system</em> but also
+                to code it.
+              </p>
               <ul>
                 <li>
-                  Web Dev: Efficiently develop web apps with React, TypeScript
-                  alongside libraries and frameworks such as antd and umi etc.
+                  <b>Web Dev:</b> build the system with TypeScript, React
+                  alongside ant-design lib, UmiJS framework
                 </li>
                 <li>
-                  UI&UX Design: Design easy-to-use web UI, unify design
-                  language, prototyping with Adobe XD, editing design documents
-                  including frontend execution regulations etc.
+                  <b>UI & UX Design:</b> design web UI based on the requirement
+                  doc, do compatitive research, prototype with Adobe XD,
+                  complete with design documents including frontend coding
+                  regulations and references
                 </li>
                 <li>
-                  Execution: Lead the frontend team to deliver the design in
-                  high quality, weekly UI inspection, providing chances to
-                  revise and deepen the design especially in the respect of UX
+                  <b>Execution:</b> lead weekly UI inspection meetings,
+                  providing chances to revise and to improve the UX
                 </li>
                 <li>
-                  Communication: Become the tunnels connecting project manager,
-                  demand sector, frontend leader and backend leader, so projects
-                  run more smoothly
+                  <b>Communication:</b> become the tunnels connecting project
+                  manager, demand sector, frontend leader and backend leader, so
+                  projects run smoothly
                 </li>
               </ul>
               <p>
-                Participating in high profile projects right after joining the
-                company was a challenge as well as a bless. An innovative B2B
-                web based quantitative trading system with relatively
-                complicated UI had reached its alpha phase after two months of
-                development. It has now become one of the feature products of
-                the company.
+                Diving in high profile projects immediately after joining the
+                company was a challenge. The platform had reached its alpha
+                phase after three months of development. Now it has become one
+                of the feature products of the company.
               </p>
             </div>
           </div>
@@ -156,30 +200,29 @@ const CV: NextPage = () => {
           <div className='sub-container'>
             <div className='aside'>
               <p className='company-name'>Freelance</p>
-              <p className='year'>June 2019 - May 2020</p>
-              <ExternalLink href='http://donlee.online'>
-                donlee.online
-              </ExternalLink>
+              <p className='year'>Jun 2019 - May 2020</p>
+              <ExternalLink href='http://peiwen.me'>peiwen.me</ExternalLink>
             </div>
             <div className='details'>
-              <h4>Web Developer | UI&UX Designer</h4>
+              <h4>Web Developer | UI & UX Designer</h4>
               <ul>
                 <li>
-                  Build interactive web apps for clients - Design the
-                  interactivity, user experience and data structure based on
-                  their business models and requirement
+                  Design interactive interfaces for clients based on their needs
                 </li>
                 <li>
-                  Develop web apps independently, mainly coding in JavaScript
-                  (React), Python (Django), PostgreSQL, HTML5, CSS3
+                  Develop web apps independently with React, Django, PostgreSQL
+                </li>
+                <li>
+                  Iteratively improve the UX of an app based on analysed
+                  feedbacks
                 </li>
                 <li>
                   Portfolio:
                   <ExternalLink
-                    href='https://donlee.online'
+                    href='https://peiwen.me/work-and-joy'
                     style={{ paddingLeft: '6px' }}
                   >
-                    donlee.online/portfolio
+                    peiwen.me/work
                   </ExternalLink>
                 </li>
               </ul>
@@ -189,7 +232,7 @@ const CV: NextPage = () => {
           <div className='sub-container'>
             <div className='aside'>
               <p className='company-name'>ACG International</p>
-              <p className='year'>June 2017 - June 2019</p>
+              <p className='year'>Jun 2017 - Jun 2019</p>
               <ExternalLink href='https://www.acgorg.com/'>
                 acgorg.com
               </ExternalLink>
@@ -199,8 +242,8 @@ const CV: NextPage = () => {
               <ul>
                 <li>
                   Teach applied arts, primarily interior design and analogue
-                  photography process to students for portfolio building and
-                  personal development in related subjects
+                  photography process, to students who seek academic development
+                  in related subjects
                 </li>
                 <li>Develop curriculum and prepare outlines for workshops</li>
                 <li>Provide individualised tutorial or remedial instruction</li>
@@ -216,8 +259,8 @@ const CV: NextPage = () => {
                 majored in Interior design, photography and landscape design
                 both on BA level (40%) and MA level (60%). While helping my
                 lovely students embarking on their great journey, for
-                consistently growing interests, I have been studying web design
-                languages since 2016
+                consistently growing interests, I had been studying programming
+                since 2015
               </p>
             </div>
           </div>
@@ -225,21 +268,17 @@ const CV: NextPage = () => {
           <div className='sub-container'>
             <div className='aside'>
               <p className='company-name'>British Library</p>
-              <p className='year'>May - November 2015</p>
+              <p className='year'>May - Nov 2015</p>
               <ExternalLink href='https://www.bl.uk/'>bl.uk</ExternalLink>
             </div>
             <div className='details'>
               <h4>Volunteer Interpreter</h4>
               <p>
-                Interpreting and translating Chinese minority manuscripts mainly
-                scores. Only after being interpreted in Pinyin can they be
-                further studied.
-              </p>
-              <p>
+                Interpreting Chinese minority manuscripts (mainly scores). Only
+                after being interpreted in Pinyin can they be further studied.
                 Nearly 100 scripts were translated in half year. I am thrilled
-                to have helped the study and have participated in the
-                dissemination of Chinese minority culture in an international
-                context
+                to have participated in the dissemination of Chinese minority
+                culture on an international stage
               </p>
             </div>
           </div>
@@ -256,24 +295,17 @@ const CV: NextPage = () => {
               <h4>Project Coordinator and Interior Designer</h4>
               <p>
                 From a project coordinator to a designer who leads a small team,
-                my duty had grown drastically, including:
+                my skills and duties had grown from drawing draft plans to:
               </p>
               <ul>
-                <li>
-                  drawing draft plans, construction plans and detail plans
-                </li>
                 <li>putting together project presentations</li>
-                <li>conveying design ideas to clients in presentations</li>
+                <li>presenting design ideas to clients in presentations</li>
                 <li>on site construction management</li>
               </ul>
               <p>
-                In these two years, I participated in one large project over
-                2000 sqm, two medium projects over 1000 sqm and four smaller
-                projects just under 500 sqm, all of which were successfully
-                delivered on schedule. During this time, I tasted the fruit of
-                seamless team work, gained understanding of project management,
-                realising that much knowledge to be learnt, followed by further
-                study in the UK
+                Delivered numerous projects (more than 5000 sqm in total), all
+                of which were on schedule. I could not do it without a team
+                effort
               </p>
             </div>
           </div>
@@ -298,7 +330,7 @@ const CV: NextPage = () => {
             <div className='details'>
               <h4>Frontend Programmer Certificate, UI Design Practice</h4>
               <p>FreeCodeCamp, Interaction Design Foundation</p>
-              <h6>Online and self-taught</h6>
+              <h6>Online / self-taught</h6>
             </div>
           </div>
 
@@ -350,7 +382,7 @@ const CV: NextPage = () => {
               </ExternalLink>
             </div>
             <div className='details'>
-              <h4>BSc. Intelligent building and Technology</h4>
+              <h4>Diploma - Intelligent building and Technology</h4>
               <p>Tongji University</p>
               <h6>Shanghai, China</h6>
             </div>
@@ -366,12 +398,9 @@ const CV: NextPage = () => {
             <div className='aside'></div>
             <div className='details'>
               <ul style={{ marginLeft: '15px' }}>
+                <li>Fluent in English (IELTS 8.0), native Mandarin speaker</li>
                 <li>
-                  Speaks fluent English (IELTS 8.0), native Mandarin and basic
-                  French
-                </li>
-                <li>
-                  In his free time, likes to read, blog, swim, photography and
+                  In my free time, I like to read, blog, swim, photography and
                   travel
                 </li>
               </ul>
@@ -388,6 +417,7 @@ export const SPaper = styled.main<{ chinese?: boolean }>`
   margin: 50px auto;
   display: flex;
   justify-content: center;
+
   @media only screen and (max-width: 800px) {
     margin: 0;
   }
@@ -464,22 +494,36 @@ export const SPaper = styled.main<{ chinese?: boolean }>`
       margin-left: 20px;
     }
 
+    b {
+      font-weight: 600;
+    }
+
+    i {
+      color: #979797;
+    }
+
     h4,
     .company-name {
-      font-weight: 600;
-      background-color: rgb(245, 245, 245);
+      background-color: rgb(242, 242, 242);
       margin-bottom: 5px;
+    }
+
+    h4 {
+      font-weight: 600;
       padding-left: 5px;
+      border-radius: 0 5px 5px 0;
     }
 
     .company-name {
-      font-weight: 400;
       padding-right: 5px;
+      border-radius: 5px 0 0 5px;
     }
 
     @media only screen and (max-width: 800px) {
+      h4 {
+        border-radius: 5px;
+      }
       .company-name {
-        font-weight: 300;
         padding: 0;
         background-color: transparent;
       }
@@ -649,8 +693,12 @@ export const SPaper = styled.main<{ chinese?: boolean }>`
           h6 {
             font-size: var(--fontS);
           }
+          > ul,
+          > p {
+            padding: 0 5px;
+          }
           > :first-child {
-            margin-left: -5px;
+            padding: 0 5px;
           }
         }
       }
@@ -698,8 +746,11 @@ export const SPaper = styled.main<{ chinese?: boolean }>`
         }
       }
     }
+  }
 
-    @media print {
+  @media print {
+    margin: 0;
+    .content {
       width: 842px;
       padding: 0;
       border: none;
