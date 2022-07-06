@@ -4,6 +4,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styled from 'styled-components'
 import ExternalLink from '../components/ExternalLink'
+import CV_EDU from '../content/CV_EDU'
+import CV_EXP from '../content/CV_EXP'
+import CV_SKILLS from '../content/CV_SKILLS'
 
 const CV: NextPage = () => {
   return (
@@ -52,27 +55,8 @@ const CV: NextPage = () => {
             <h3>Skills</h3>
           </div>
           <div className='sub-container'>
-            <div className='aside'></div>
-            <div className='details'>
-              <ul>
-                <li>
-                  let <b>frontEnd</b> = <em>TypeScript + ReactJS</em>{' '}
-                  <i>// with other related JS libraries</i>
-                </li>
-                <li>
-                  let <b>backEnd</b> = <em>NodeJS</em> as BFF{' '}
-                  <i>// with occasional Python frameworks</i>
-                </li>
-                <li>
-                  let <b>diff</b> = 'a master degree in Art and Science'{' '}
-                  <i>
-                    // with great confidence and scrutiny to design and build{' '}
-                    <u>multi-disciplinary</u> projects
-                  </i>
-                </li>
-                <li>let it grow naturally and be free like water</li>
-              </ul>
-            </div>
+            <div className='aside' />
+            <div className='details'>{CV_SKILLS.ul_EN}</div>
           </div>
         </section>
 
@@ -80,313 +64,31 @@ const CV: NextPage = () => {
           <div className='sub-title'>
             <h3>Experience</h3>
           </div>
-
-          <div className='sub-container'>
-            <div className='aside'>
-              <p className='company-name'>eBay</p>
-              <p className='year'>Sept 2021 - Now</p>
-              <ExternalLink href='https://ebay.com/'>eBay.com</ExternalLink>
+          {CV_EXP.map(({ EN: exp }) => (
+            <div className='sub-container' key={exp.company_name}>
+              <div className='aside'>
+                <p className='company-name'>{exp.company_name}</p>
+                <p className='time-period'>{exp.time_period}</p>
+                {exp.link}
+              </div>
+              <div className='details'>{exp.jsx_details}</div>
             </div>
-            <div className='details'>
-              <h4>Front-end Engineer | UX Designer</h4>
-              <ul>
-                <li>
-                  <b>Responsible</b> for the front-end development of a root
-                  cause analysis system apart from developing other web apps for
-                  SRE team
-                </li>
-                <li>
-                  <b>Research</b> the habbit of the clients (TDOs);
-                  subsequently, propose new solutions to improve the usability
-                  of the apps
-                </li>
-                <li>
-                  <b>Challenges</b> are mainly derived from the question of how
-                  to finetune the ways in which relevant data is visualised
-                </li>
-              </ul>
-              <p>
-                Taking over a complicated pre-exisiting project is never easy.
-                However, after a couple of months, our clients claimed that the
-                appearance as well as the usability of the app had been
-                drastically improved. Taking users' needs into account, the
-                project is constently evolving.
-              </p>
-            </div>
-          </div>
-
-          <div className='sub-container'>
-            <div className='aside'>
-              <p className='company-name'>Points</p>
-              <p className='year'>Apr 2021 - Sept 2021</p>
-              <ExternalLink href='https://points.org/'>points.org</ExternalLink>
-            </div>
-            <div className='details'>
-              <h4>Front-end Engineer | UX Designer</h4>
-              <p>
-                <em>A privacy computing platform</em> built with custimised
-                UmiJS framework (TypeScript) came to live during this fast-paced
-                yet fulfilling period.
-              </p>
-              <ul>
-                <li>
-                  <b>Responsible</b> for the front-end development of a brand
-                  new product
-                </li>
-                <li>
-                  <b>UX Design:</b> consolidate the requirements of the product
-                  by analysing the needs of the end-users; then, collaborate
-                  with UI team to optimise the overall UX of the app
-                </li>
-                <li>
-                  <b>Challenges:</b> figure out ways to build it efficiently
-                  while maintaining a predetermined design language
-                </li>
-              </ul>
-              <p>
-                This role emphasises the technical craftsmanship of the
-                front-end development, offering the chance to work with
-                different teams to finalise the requirements of the product for
-                UX optimisation purposes.
-              </p>
-            </div>
-          </div>
-
-          <div className='sub-container'>
-            <div className='aside'>
-              <p className='company-name'>MakeFurther IT</p>
-              <p className='year'>May 2020 - Apr 2021</p>
-              <ExternalLink href='http://www.makefurther.com/'>
-                makefurther.com
-              </ExternalLink>
-            </div>
-            <div className='details'>
-              <h4>Web Developer | UI & UX Designer</h4>
-              <p>
-                Not only did I get to design the interface of
-                <em> an innovative B2B quantitative trading system</em> but also
-                to code it.
-              </p>
-              <ul>
-                <li>
-                  <b>Web Dev:</b> build the system with TypeScript, React
-                  alongside ant-design lib, UmiJS framework
-                </li>
-                <li>
-                  <b>UI & UX Design:</b> design web UI based on the requirement
-                  doc, do compatitive research, prototype with Adobe XD,
-                  complete with design documents including frontend coding
-                  regulations and references
-                </li>
-                <li>
-                  <b>Execution:</b> lead weekly UI inspection meetings,
-                  providing chances to revise and to improve the UX
-                </li>
-                <li>
-                  <b>Communication:</b> become the tunnels connecting project
-                  manager, demand sector, frontend leader and backend leader, so
-                  projects run smoothly
-                </li>
-              </ul>
-              <p>
-                Diving in high profile projects immediately after joining the
-                company was a challenge. The platform had reached its alpha
-                phase after three months of development. Now it has become one
-                of the feature products of the company.
-              </p>
-            </div>
-          </div>
-
-          <div className='sub-container'>
-            <div className='aside'>
-              <p className='company-name'>Freelance</p>
-              <p className='year'>Jun 2019 - May 2020</p>
-              <ExternalLink href='http://peiwen.me'>peiwen.me</ExternalLink>
-            </div>
-            <div className='details'>
-              <h4>Web Developer | UI & UX Designer</h4>
-              <ul>
-                <li>
-                  Design interactive interfaces for clients based on their needs
-                </li>
-                <li>
-                  Develop web apps independently with React, Django, PostgreSQL
-                </li>
-                <li>
-                  Iteratively improve the UX of an app based on analysed
-                  feedbacks
-                </li>
-                <li>
-                  Portfolio:
-                  <ExternalLink
-                    href='https://peiwen.me/work-and-joy'
-                    style={{ paddingLeft: '6px' }}
-                  >
-                    peiwen.me/work
-                  </ExternalLink>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className='sub-container'>
-            <div className='aside'>
-              <p className='company-name'>ACG International</p>
-              <p className='year'>Jun 2017 - Jun 2019</p>
-              <ExternalLink href='https://www.acgorg.com/'>
-                acgorg.com
-              </ExternalLink>
-            </div>
-            <div className='details'>
-              <h4>Instructor — Art and Design</h4>
-              <ul>
-                <li>
-                  Teach applied arts, primarily interior design and analogue
-                  photography process, to students who seek academic development
-                  in related subjects
-                </li>
-                <li>Develop curriculum and prepare outlines for workshops</li>
-                <li>Provide individualised tutorial or remedial instruction</li>
-                <li>Supervise independent projects and hands-on training</li>
-                <li>
-                  Advise students on program curricula and career decisions
-                </li>
-              </ul>
-              <p>
-                In these two years as a teacher, 32 amongst 34 of my students
-                have successfully secured offers from prestigious art
-                institutions across UK, France, US, Canada, Australia, students
-                majored in Interior design, photography and landscape design
-                both on BA level (40%) and MA level (60%). While helping my
-                lovely students embarking on their great journey, for
-                consistently growing interests, I had been studying programming
-                since 2015
-              </p>
-            </div>
-          </div>
-
-          <div className='sub-container'>
-            <div className='aside'>
-              <p className='company-name'>British Library</p>
-              <p className='year'>May - Nov 2015</p>
-              <ExternalLink href='https://www.bl.uk/'>bl.uk</ExternalLink>
-            </div>
-            <div className='details'>
-              <h4>Volunteer Interpreter</h4>
-              <p>
-                Interpreting Chinese minority manuscripts (mainly scores). Only
-                after being interpreted in Pinyin can they be further studied.
-                Nearly 100 scripts were translated in half year. I am thrilled
-                to have participated in the dissemination of Chinese minority
-                culture on an international stage
-              </p>
-            </div>
-          </div>
-
-          <div className='sub-container'>
-            <div className='aside'>
-              <p className='company-name'>M Moser Associates</p>
-              <p className='year'>May 2011 - May 2013</p>
-              <ExternalLink href='https://www.mmoser.com'>
-                mmoser.com
-              </ExternalLink>
-            </div>
-            <div className='details'>
-              <h4>Project Coordinator and Interior Designer</h4>
-              <p>
-                From a project coordinator to a designer who leads a small team,
-                my skills and duties had grown from drawing draft plans to:
-              </p>
-              <ul>
-                <li>putting together project presentations</li>
-                <li>presenting design ideas to clients in presentations</li>
-                <li>on site construction management</li>
-              </ul>
-              <p>
-                Delivered numerous projects (more than 5000 sqm in total), all
-                of which were on schedule. I could not do it without a team
-                effort
-              </p>
-            </div>
-          </div>
+          ))}
         </section>
 
         <section className='education'>
           <div className='sub-title'>
             <h3>Education</h3>
           </div>
-
-          <div className='sub-container'>
-            <div className='aside'>
-              <p className='year'>2018 - 2020</p>
-              <ExternalLink href='http://www.interaction-design.org'>
-                interaction-design.org
-              </ExternalLink>
-              <br />
-              <ExternalLink href='http://www.freecodecamp.com'>
-                freecodecamp.com
-              </ExternalLink>
+          {CV_EDU.map(({ time_period, link, jsx_details_EN }) => (
+            <div className='sub-container' key={time_period}>
+              <div className='aside'>
+                <p className='time-period'>{time_period}</p>
+                {link}
+              </div>
+              <div className='details'>{jsx_details_EN}</div>
             </div>
-            <div className='details'>
-              <h4>Frontend Programmer Certificate, UI Design Practice</h4>
-              <p>FreeCodeCamp, Interaction Design Foundation</p>
-              <h6>Online / self-taught</h6>
-            </div>
-          </div>
-
-          <div className='sub-container'>
-            <div className='aside'>
-              <p className='year'>2014 - 2016</p>
-              <ExternalLink href='http://www.arts.ac.uk'>
-                arts.ac.uk
-              </ExternalLink>
-            </div>
-            <div className='details'>
-              <h4>MA. in Art and Science</h4>
-              <p>Central Saint Martins, University of Arts London</p>
-              <h6>London, UK</h6>
-            </div>
-          </div>
-
-          <div className='sub-container'>
-            <div className='aside'>
-              <p className='year'>2013 - 2014</p>
-              <ExternalLink href='http://www.csvpa.com'>csvpa.com</ExternalLink>
-            </div>
-            <div className='details'>
-              <h4>Pre MA.</h4>
-              <p>Cambridge School of Visual and Performing Arts</p>
-              <h6>Cambridge, UK</h6>
-            </div>
-          </div>
-
-          <div className='sub-container'>
-            <div className='aside'>
-              <p className='year'>2009 - 2011</p>
-              <ExternalLink href='http://www.shnu.edu.cn'>
-                shnu.edu.cn
-              </ExternalLink>
-            </div>
-            <div className='details'>
-              <h4>Certificate - Interior Design</h4>
-              <p>Shanghai Normal university</p>
-              <h6>Shanghai, China</h6>
-            </div>
-          </div>
-
-          <div className='sub-container'>
-            <div className='aside'>
-              <p className='year'>2006 - 2010</p>
-              <ExternalLink href='http://www.tongji.edu.cn'>
-                tongji.edu.cn
-              </ExternalLink>
-            </div>
-            <div className='details'>
-              <h4>Diploma - Intelligent building and Technology</h4>
-              <p>Tongji University</p>
-              <h6>Shanghai, China</h6>
-            </div>
-          </div>
+          ))}
         </section>
 
         <section className='other'>
@@ -395,7 +97,7 @@ const CV: NextPage = () => {
           </div>
 
           <div className='sub-container'>
-            <div className='aside'></div>
+            <div className='aside' />
             <div className='details'>
               <ul style={{ marginLeft: '15px' }}>
                 <li>Fluent in English (IELTS 8.0), native Mandarin speaker</li>
@@ -683,7 +385,7 @@ export const SPaper = styled.main<{ chinese?: boolean }>`
           text-align: right;
           padding-right: 20px;
 
-          .year {
+          .time-period {
             font-weight: 300;
           }
         }
@@ -692,6 +394,7 @@ export const SPaper = styled.main<{ chinese?: boolean }>`
           width: var(--main-width);
           h6 {
             font-size: var(--fontS);
+            padding-left: 5px;
           }
           > ul,
           > p {
