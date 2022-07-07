@@ -37,9 +37,7 @@ const CV: NextPage = () => {
               </p>
             </div>
             <div className='contact-info'>
-              <ExternalLink href='http://donlee.online'>
-                donlee.online
-              </ExternalLink>
+              <ExternalLink href='http://peiwen.me'>peiwen.me</ExternalLink>
               <ExternalLink href='mailto: don_lee@me.com'>
                 don_lee@me.com
               </ExternalLink>
@@ -102,8 +100,8 @@ const CV: NextPage = () => {
               <ul style={{ marginLeft: '15px' }}>
                 <li>Fluent in English (IELTS 8.0), native Mandarin speaker</li>
                 <li>
-                  In my free time, I like to read, blog, swim, photography and
-                  travel
+                  Read, blog, swim, music, photography and travel in my free
+                  time
                 </li>
               </ul>
             </div>

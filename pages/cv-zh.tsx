@@ -38,9 +38,7 @@ const CVZH: NextPage = () => {
               </p>
             </div>
             <div className='contact-info'>
-              <ExternalLink href='http://donlee.online'>
-                donlee.online
-              </ExternalLink>
+              <ExternalLink href='http://peiwen.me'>peiwen.me</ExternalLink>
               <ExternalLink href='mailto: don_lee@me.com'>
                 don_lee@me.com
               </ExternalLink>

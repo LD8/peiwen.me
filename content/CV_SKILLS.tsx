@@ -16,24 +16,22 @@ const CV_SKILLS = {
           <u>multi-disciplinary</u> projects
         </i>
       </li>
-      <li>let it grow naturally and be free like water</li>
+      <li>
+        <b>let</b> it grow naturally and be free like water
+      </li>
     </ul>
   ),
   ul_ZH: (
     <ul>
       <li>
-        前端: JavaScript, TypeScript, ReactJS, Redux, MobX, NextJS, VueJS,
-        NuxtJS, UmiJS, Webpack, HTML5, CSS3, SASS, LESS, Bootstrap, Material UI,
-        Chakra UI, Ant Desgin
+        前端：JavaScript, TypeScript, React, Redux, MobX, Next, Vue, Nuxt,
+        UmiJS, Webpack, HTML5, CSS3, SASS, LESS, Bootstrap, Ant Desgin
       </li>
-      <li>后端: NodeJS, Python, Django, Flask, Postgres</li>
+      <li>后端：NodeJS, Python, Django, Flask, Postgres</li>
+      <li>数据可视化：CytoscapeJS, Apache ECharts, Plotly, Matplotlib</li>
       <li>
-        数据可视化: CytoscapeJS, Apache ECharts, Python, Plotly, Matplotlib
-      </li>
-      <li>
-        UI/UX: 经过在英国的硕士学习,
-        对艺术与科学交叉项目有了清晰的认识和具有一定深度的理解,
-        对设计和编写高质量的、高交互性、跨学科的项目很有信心
+        UI/UX：经过在英国的硕士学习, 对艺术与科学交叉学科项目具有一定深度的理解,
+        对设计和编写高交互性、跨学科的项目很有信心
       </li>
     </ul>
   ),
