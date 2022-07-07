@@ -1,11 +1,11 @@
 ---
 title: Quantitative Trading System
-summary: A new interpretation of QTS where user is at the centre of design
+summary: A new interpretation of Quantitative Trading System where user is at the centre of design
 badges:
-  - dataVisual
   - B2B
+  - dataVisual
 content:
-  - This project set off to change the conventional perspective that "trading platforms in finance is impossible for everyone to use". After some competitive research, it is clear that the end-user is not at the centre of design.
+  - This project was set off to change the conventional perspective that "trading platforms are impossible for everyone to use". After some competitive research, it is clear that the end-user is not at the centre of design.
   - After a couple of months, the design team I led came up with a set of UI with greatly improved user experience. We achieved so by understanding the system in detail, dissecting the existing framework and then reconstructing it so the data would be more accessible to the user. More improvement will occur once we collect enough feedback from the users.
   - Not only did I get to design the platform, but also to code the front-end side of it. I am ever so grateful that the company has given me this opportunity. And I learnt so much from my dear colleagues.
 techs:

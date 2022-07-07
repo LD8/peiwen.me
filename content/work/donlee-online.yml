@@ -1,18 +1,18 @@
 ---
-title: DonLee.online / Peiwen.me
-summary: This is a presentation of Peiwen Li as a web developer.
+title: Peiwen.me / DonLee.online
+summary: This presents Peiwen Li as a software engineer as well as a UI UX designer
 badges:
   - fullStack
   - blog
 content:
-  - Now, the project should be called 'peiwen.me' for better identification since the direction in which I will go became clearer than ever. The aesthetic changes over the years. The tech evolves. This website (peiwen.me) employs MongoDB to store journals. I also built a hidden log in mechanism and a journal creater/editor just for my personal use.
-  - First release (2020) of the website combined Django Framework as the backend serving API calls, React handles the frontend and most of the routing. Because my study notes, blogs will be hosted and presented here as well, I implemented Postgres for ease of management, future expansion and stability. It is hosted on AWS Lightsail VPS, certainly a fun thing to fiddle around. The loading speed of the site yet needs to be optimised and I am aware that there is much more to learn but this, for me, is a great starting point.
-  - Second release (2021) of this website employed NextJS so that the whole website is generated statically. Django RESTful API is great, however, I wanted to explore the full potential of frontend SPA as well as my newly learned skills.
+  - The aesthetic changes over the years. The tech evolves. The project perhaps should be called 'Peiwen.me' for better identification since the domain name was changed, for the fact that I am now clearer than ever of who I am.
+  - This website (Peiwen.me) employs MongoDB instead of PostgreSQL to store my journals/blogs (just would like to try something new). And I choose Framer-motion over React-spring, for its minimalistic API and less resource consumption for the similar effects that React-spring offers. I also built a hidden log in mechanism and a journal creater/editor just for my personal use.
+  - Donlee.online was first released in 2020. The website powered by Django RESTful api serialised feed of data for the frontend handeld by Create-react-app. I implemented PostgreSQL for content management and it worked seamlessly with Django's default backend management system GUI. It was hosted on AWS Lightsail VPS. This was a great starting point.
+  - Second release was in 2021. It was rewritten with NextJS so that the whole website was generated statically. Django RESTful API was great, however, I wanted to explore the full potential of frontend SPA as well as my newly learned skills.
 techs:
-  - TypeScript, NextJS, React-markdown, React-spring, Styled-components
-  - Django RESTful
-  - PostgreSQL
-  - MongoDB
+  - TypeScript, JavaScript(no more), NextJS, React-markdown, Framer-motion, Styled-components, React-spring(no more)
+  - MongoDB, PostgreSQL(no more)
+  - Django_RESTful(no more)
 links: { online: HTTPS://DONLEE.ONLINE, github: HTTPS://GITHUB.COM/LD8/DONLEE }
 startedAt: 2021-01
 endedAt: 2022-07

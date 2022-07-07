@@ -42,17 +42,6 @@ const WorkDetail: NextPage<IWorkDetail> = ({
         <Carousel imgSrcArr={imgSrcArr} title={title} />
       </section>
 
-      <section className='about'>
-        <h2>About this project</h2>
-        {content?.map((paragraph, i) => (
-          <p key={i}>{paragraph}</p>
-        ))}
-        <p className='dates'>
-          Project duration: {'  '}
-          <span>{startedAt}</span> - <span>{endedAt}</span>
-        </p>
-      </section>
-
       <section className='technical-sheet'>
         <h2>Technical Sheet</h2>
         <ul>
@@ -60,6 +49,21 @@ const WorkDetail: NextPage<IWorkDetail> = ({
             <li key={i}>{tech}</li>
           ))}
         </ul>
+      </section>
+
+      <section className='about'>
+        <h2>About this project</h2>
+        {content?.map((paragraph, i) => (
+          <p key={i}>{paragraph}</p>
+        ))}
+        <p className='dates'>
+          Project duration: {'  '}
+          {startedAt === endedAt ? (
+            <span>{endedAt}</span>
+          ) : (
+            <span>{`${startedAt} - ${endedAt}`}</span>
+          )}
+        </p>
       </section>
 
       {links && Object.keys(links).length !== 0 && (

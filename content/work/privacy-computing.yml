@@ -1,14 +1,19 @@
 ---
 title: Privacy Computing Platform
-summary: A modularised extensible platform for 'sharing' privacy safely
+summary: A network through which businesses are able to share their data safely
 badges:
+  - B2B
   - analytics
   - dataVisual
-  - B2B
 content:
-  -
+  - Points.org was a startup I briefly worked with in 2021. The CEO strives to create a network through which businesses are able to share their data safely so that machine learning could result in higher accuracy amongst many other things this network might achieve.
+  - A data management platform was ready to come out. I was offered the opportunity to help with the UX design as well as to single-handedly scaffold the front-end system.
+  - The tech used in my previous project (Quantitative Trading System) was enough to meet the requirement. However, There were two main challenges.
+  - Firstly, to create a complex authentication system with many roles. It took me a couple of weeks to resolve.
+  - Secondly, to do competitive research. Because this was a new thing with few competitors on the market, I had to treat our project manager and CEO as the primary source of the research. I had to dig deeper, to fully understand the logic behind in order to create a user story, a relatively good user experience.
 techs:
   - TypeScript, UmiJS, React
+  - Apache Echarts, CytoscapeJS
   - LESS
   - Webpack
   - Gulp - dual theme

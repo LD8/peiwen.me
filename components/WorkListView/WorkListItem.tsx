@@ -99,7 +99,7 @@ const SWorkLi = styled(motion.li)`
       flex-flow: column;
       align-items: center;
       text-align: center;
-      padding: 10px;
+      padding: 20px;
 
       h2 {
         color: white;
