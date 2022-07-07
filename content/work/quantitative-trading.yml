@@ -1,24 +1,18 @@
 ---
-title: Quantitative Trading Platform
-summary: A new interpretation of the Quantitative Trading System where user is at the centre of the design!
+title: Quantitative Trading System
+summary: A new interpretation of QTS where user is at the centre of design
 badges:
-  - Front-end
-  - WebApp
-  - React
-  - Javascript
-  - LESS
-imgSrcArr:
-  -
+  - dataVisual
+  - B2B
 content:
-  - This on-going project started off with a mission to change the conventional perspective that "trading platforms in finance is impossible for everyone to use". After some research amongst the existing product on the market (China market), it is clear that the end-users are not the centre of the design. This is going to change.
-  - After a couple of months, the design team I led came up with a set of UI with greatly improved user experience. We achieved so by understanding the system in detail, dissecting the existing framework and then reconstructing it so the data would be more accessible to the user. More improvement will happen once we collect enough feedback from the users.
-  - Not only I participate in the design aspect of the project, but also I am part of the programming team. I am ever so grateful that the company has given me this opportunity. And I learnt so much from my dear colleagues.
+  - This project set off to change the conventional perspective that "trading platforms in finance is impossible for everyone to use". After some competitive research, it is clear that the end-user is not at the centre of design.
+  - After a couple of months, the design team I led came up with a set of UI with greatly improved user experience. We achieved so by understanding the system in detail, dissecting the existing framework and then reconstructing it so the data would be more accessible to the user. More improvement will occur once we collect enough feedback from the users.
+  - Not only did I get to design the platform, but also to code the front-end side of it. I am ever so grateful that the company has given me this opportunity. And I learnt so much from my dear colleagues.
 techs:
-  - JavaScript
+  - TypeScript, UmiJS, React
   - LESS
-  - React
-  - UmiJS
   - Webpack
+  - Apache Echarts
 links: {}
 startedAt: 2020-5
-endedAt: on-going
+endedAt: 2021-5

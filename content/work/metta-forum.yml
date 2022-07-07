@@ -1,20 +1,16 @@
 ---
 title: Metta Forum
-summary: Users can sign in, post related content, comment on others' posts, search for interesting subjects and so on.
+summary: A platform for users to share their meditation experiences
 badges:
-  - Full-stack
-  - Django
-  - Bootstrap
-  - SASS
-imgSrcArr:
-  -
+  - fullStack
+  - forum
 content:
   - Metta in Pali means mercy or loving-kindness, friendliness, goodwill.
   - The goal of any Meditation is for the practitioner to gain awareness and, like any other practices, it is crucial for them to communicate with one another in order to become a better practitioner. This forum will hopefully offer a cozy atmosphere in which people can share freely of their experiences and discuss their meditation techniques lovingly, friendly and in goodwill.
   - Users can sign in, post related content, comment on others' posts, search for interesting subjects and so on.
 techs:
   - Bootstrap
-  - CSS3 - SASS
+  - SASS, CSS3
   - Django
 links:
   {

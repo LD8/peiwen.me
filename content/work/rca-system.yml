@@ -1,0 +1,16 @@
+---
+title: Root Cause Analysis System
+summary: An event-driven AIOPs tool to fast track the cause of a problem amongst all dependent pools
+badges:
+  - dataVisual
+  - analytics
+content:
+  -
+techs:
+  - TypeScript, React
+  - LESS
+  - Webpack
+  - Apache Echarts, CytoscapeJS
+links: {}
+startedAt: 2019-9
+endedAt: on-going

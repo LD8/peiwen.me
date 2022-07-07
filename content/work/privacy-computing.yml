@@ -1,0 +1,17 @@
+---
+title: Privacy Computing Platform
+summary: A modularised extensible platform for 'sharing' privacy safely
+badges:
+  - analytics
+  - dataVisual
+  - B2B
+content:
+  -
+techs:
+  - TypeScript, UmiJS, React
+  - LESS
+  - Webpack
+  - Gulp - dual theme
+links: {}
+startedAt: 2021-5
+endedAt: 2021-9

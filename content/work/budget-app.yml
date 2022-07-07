@@ -1,19 +1,12 @@
 ---
 title: React Budget App
-summary: You simply need to write a short description and a number to track all your expenses.
+summary: You simply need to write a number and a short description to track each of your daily expense.
 badges:
-  - Front-end
-  - WebApp
-  - React
-  - Javascript
-  - CSS3
-imgSrcArr:
-  -
+  - mini
 content:
-  - The app runs smoothly because of the amazing React and react-spring library. It surely elevated the user experience of the app. Potentially, although it is a simple app, it could be easily implemented with mobile devices.
+  - This is one of the early mini projects when I just started using React. The ReactJS library 'react-spring' realises the responsiveness and the smooth reactivity of the app. In spite of its simplicity, it could be easily fitted to mobile devices.
 techs:
-  - React
-  - React Spring
+  - React, React-spring
   - CSS3
 links: { codeSandbox: https://x5tg3.csb.app/ }
 startedAt: 2019-11
