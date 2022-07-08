@@ -1,9 +1,5 @@
 import fs from 'fs'
-import { GetStaticPaths } from 'next'
 import path from 'path'
-
-const epPath = '/experimental-photography'
-const epDir = path.resolve(`public${epPath}`)
 
 export type IEPhoto = {
   imgSrc: string
@@ -13,7 +9,6 @@ export type IEPhoto = {
   location: string
   time: string
 }
-
 export type IEPSingle = {
   order: number
   seriesName: string
@@ -21,8 +16,10 @@ export type IEPSingle = {
   coverImgSrc: string
   photos: IEPhoto[]
 }
-
 export type TResGetEPSeries = { epSeries: IEPSingle[] }
+
+const epPath = '/experimental-photography'
+const epDir = path.resolve(`public${epPath}`)
 
 export const getEPSeries = (): TResGetEPSeries => {
   const epSeriesDirents = fs
