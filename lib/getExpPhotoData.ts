@@ -37,7 +37,7 @@ export const getEPSeries = (): TResGetEPSeries => {
           const [
             orderTemp = '',
             titleTemp = '',
-            medium = '',
+            mediumTemp = '',
             location = '',
             timeTemp = '',
           ] = photoFileName.split('--')
@@ -46,7 +46,7 @@ export const getEPSeries = (): TResGetEPSeries => {
             imgSrc,
             order: Number(orderTemp),
             title: titleTemp?.replaceAll('_', ' '),
-            medium,
+            medium: mediumTemp?.replaceAll('_', ' '),
             location,
             time: timeTemp?.replace(/(\.jpg)|(\.jpeg)|(\.png)$/, ''),
           }

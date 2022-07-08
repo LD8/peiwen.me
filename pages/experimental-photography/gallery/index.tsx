@@ -1,40 +1,26 @@
 import { GetStaticProps, NextPage } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import HeadInfo from '../../../components/HeadInfo'
-import { getEPSeries, TResGetEPSeries } from '../../../lib/getExpPhotoData'
+import {
+  getEPSeries,
+  IEPSingle,
+  TResGetEPSeries,
+} from '../../../lib/getExpPhotoData'
 import { FCwc } from '../../../types'
 
 export const getStaticProps: GetStaticProps<TResGetEPSeries> = () => ({
   props: getEPSeries(),
 })
 const EPGallery: NextPage<TResGetEPSeries> = ({ epSeries }) => {
-  const router = useRouter()
   return (
     <EPLayout>
       <HeadInfo title={`Gallery - Experimental Photography`} />
       <StyledMain>
-        {epSeries.map(({ order, seriesName, seriesSlug, coverImgSrc }) => {
-          const path = `/experimental-photography/gallery/${seriesSlug}`
-          return (
-            <div
-              className='div-series'
-              key={order}
-              onClick={() => router.push(path)}
-            >
-              <Image
-                className='cover'
-                src={coverImgSrc}
-                alt={`Cover image of ${seriesName}`}
-                width='100%'
-                height='100%'
-              />
-              <h2 className='series-title'>{seriesName}</h2>
-            </div>
-          )
-        })}
+        {epSeries.map((series) => (
+          <SingleSeries key={series.order} {...series} />
+        ))}
       </StyledMain>
     </EPLayout>
   )
@@ -44,19 +30,75 @@ export default EPGallery
 const StyledMain = styled.div`
   display: flex;
   flex-flow: row wrap;
+`
 
-  .div-series {
-    flex: 1 50%;
-    position: relative;
+const SingleSeries: React.FC<IEPSingle> = ({
+  seriesName,
+  seriesSlug,
+  coverImgSrc,
+}) => {
+  const router = useRouter()
+  const path = `/experimental-photography/gallery/${seriesSlug}`
+  return (
+    <StyledSingleSeries
+      onClick={() => router.push(path)}
+      coverImgSrc={coverImgSrc}
+    >
+      <div className='series-cover' />
+      {/* <Image
+    className='series-cover'
+    src={coverImgSrc}
+    alt={`Cover image of ${seriesName}`}
+    width='100%'
+    height='100%'
+  /> */}
+      <h2 className='series-title'>{seriesName}</h2>
+    </StyledSingleSeries>
+  )
+}
+const StyledSingleSeries = styled.div<{ coverImgSrc: string }>`
+  cursor: pointer;
+  flex: 1 50%;
+  height: 400px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    > .cover {
-      width: 100% !important;
-      z-index: 0;
+  .series-cover {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background-image: ${({ coverImgSrc }) => `url(${coverImgSrc})`};
+    background-size: 110%;
+    background-position: center;
+    transition: all 500ms ease-in-out;
+  }
+  .series-title {
+    position: absolute;
+    z-index: 3;
+    color: white;
+    font-size: 36px;
+    text-shadow: 0px 3px 8px black;
+    letter-spacing: 6px;
+    font-family: 'Poiret One', cursive;
+    transition: all 1200ms ease-in-out;
+  }
+
+  :hover {
+    .series-cover {
+      background-size: 150%;
     }
-    > .series-title {
-      position: absolute;
-      z-index: 3;
+    .series-title {
+      transform: scale(1.8);
+      opacity: 0.2;
+      letter-spacing: 8px;
     }
+  }
+  @media screen and (max-width: 600px) {
+    flex: 1 100%;
+    height: 300px;
   }
 `
 
@@ -72,6 +114,7 @@ export const EPLayout: FCwc = ({ children }) => {
 const StyledExpPhoLayout = styled.div`
   min-height: 100vh;
   background-color: #131313;
+  /* overflow: hidden; */
 `
 
 const epNavLinks = [
@@ -85,32 +128,39 @@ const Nav: React.FC = () => {
   return (
     <StyledNav>
       <div className='title'>
-        <Link href={'/experimental-photography'}>Experimental Photography</Link>
+        <Link href='/experimental-photography'>Experimental Photography</Link>
       </div>
       <div className='links'>
         {epNavLinks.map(({ name, pathname }) => (
-          <Link key={name} href={pathname}>
-            <span
-              style={{
-                color: pathname === curPath ? 'white' : undefined,
-                cursor: 'pointer',
-              }}
-            >
+          <span style={{ color: pathname === curPath ? 'white' : 'grey' }}>
+            <Link key={name} href={pathname}>
               {name}
-            </span>
-          </Link>
+            </Link>
+          </span>
         ))}
       </div>
     </StyledNav>
   )
 }
+const cssAnchor = css`
+  a {
+    :hover {
+      color: white;
+      text-decoration: none;
+    }
+  }
+`
 const StyledNav = styled.nav`
+  z-index: 5;
+  box-shadow: 0 0 20px 0px #131313;
+  position: sticky;
+  top: 0;
   height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  color: grey;
+  color: silver;
   background-color: #202020;
 
   .title {
@@ -119,18 +169,19 @@ const StyledNav = styled.nav`
     display: flex;
     gap: 20px;
   }
+
+  ${cssAnchor}
 `
 
 const Footer: React.FC = () => {
   return (
     <StyledFooter>
-      <div className='peiwen'>
-        <Link href='/'>Back to Peiwen.me</Link>
+      <div className='back-to-peiwen'>
+        <Link href='/'>« Back to Peiwen.me</Link>
       </div>
     </StyledFooter>
   )
 }
-
 const StyledFooter = styled.footer`
   position: sticky;
   top: 100%;
@@ -139,4 +190,13 @@ const StyledFooter = styled.footer`
   height: 40px;
   padding: 0 20px;
   background-color: #1b1b1b;
+
+  .back-to-peiwen {
+    font-size: 14px;
+    margin-left: 40px;
+  }
+  ${cssAnchor}
+  a {
+    color: silver;
+  }
 `
