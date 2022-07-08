@@ -125,7 +125,10 @@ const StyledDiv = styled.div<StyledTuDivProps>`
 `
 export default StyledDiv
 
-export const StyledFlatButton = styled.button<{ clickable?: boolean }>`
+export const StyledFlatButton = styled.button<{
+  clickable?: boolean
+  clicked?: boolean
+}>`
   margin: 0;
   padding: 2px 20px;
   min-width: 100%;
@@ -149,5 +152,10 @@ export const StyledFlatButton = styled.button<{ clickable?: boolean }>`
       :active {
         ${cssActive}
       }
+    `}
+  ${({ clicked = false }) =>
+    clicked &&
+    css`
+      ${cssHovered}
     `}
 `

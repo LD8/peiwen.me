@@ -5,8 +5,9 @@ import { StyledFlatButton } from './StyledDiv'
 const BadgeList: React.FC<{
   badgeList?: string[]
   style?: CSSProperties
+  name?: string
   setName?: (name: string) => void
-}> = ({ badgeList, style, setName }) => {
+}> = ({ badgeList, style, name: nameSelected, setName }) => {
   return (
     <SBadgeUl style={style}>
       {!badgeList?.length
@@ -15,6 +16,7 @@ const BadgeList: React.FC<{
             <li key={name} style={{ display: 'inline' }}>
               <StyledFlatButton
                 clickable={!!setName}
+                clicked={name === nameSelected}
                 onClick={() => setName?.(name)}
               >
                 {name}

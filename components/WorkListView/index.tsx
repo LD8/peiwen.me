@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from 'framer-motion'
 import React, { useCallback, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { TResGetWorks } from '../../lib/getWorkData'
@@ -7,6 +8,11 @@ import WorkList from './WorkList'
 const WorkListView: React.FC<TResGetWorks> = ({ workList, badgeList }) => {
   const [badge, setBadge] = useState('')
   const [filteredWorkList, setFilteredWorkList] = useState(workList)
+  const setName = useCallback(
+    (name: string) => setBadge((prevName) => (prevName === name ? '' : name)),
+    [],
+  )
+
   useEffect(() => {
     setFilteredWorkList(() =>
       badge
@@ -14,11 +20,6 @@ const WorkListView: React.FC<TResGetWorks> = ({ workList, badgeList }) => {
         : workList,
     )
   }, [badge])
-
-  const setName = useCallback(
-    (name: string) => setBadge((prevName) => (prevName === name ? '' : name)),
-    [],
-  )
   return (
     <>
       <StyledSectBrief>
@@ -26,12 +27,20 @@ const WorkListView: React.FC<TResGetWorks> = ({ workList, badgeList }) => {
           Projects built with <em>JavaScript</em> and <em>Python</em>{' '}
           frameworks, with UX optimization
         </h3>
-        <BadgeList badgeList={badgeList} setName={setName} />
+        <BadgeList badgeList={badgeList} setName={setName} name={badge} />
       </StyledSectBrief>
 
-      <StyledSectWork>
-        <WorkList workList={filteredWorkList} />
-      </StyledSectWork>
+      <AnimatePresence initial={false} exitBeforeEnter>
+        <StyledSectWork
+          key={badge}
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: 10 }}
+          transition={{ duration: 0.1 }}
+        >
+          <WorkList workList={filteredWorkList} />
+        </StyledSectWork>
+      </AnimatePresence>
     </>
   )
 }
@@ -52,7 +61,7 @@ const StyledSectBrief = styled.section`
     cursor: pointer;
   }
 `
-const StyledSectWork = styled.section`
+const StyledSectWork = styled(motion.section)`
   margin-top: 20px;
   flex: 1;
 `

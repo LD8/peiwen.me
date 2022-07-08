@@ -7,11 +7,6 @@ import { useHoverRef } from '../../lib/hooks'
 import { IWork } from '../../lib/getWorkData'
 import BadgeList from '../BadgeList'
 
-const varItem = {
-  hidden: { opacity: 0, y: 100 },
-  show: { opacity: 1, y: 0, transition: { mass: 0.8, type: 'spring' } },
-}
-
 const WorkListItem: React.FC<IWork> = ({
   slug,
   title,
@@ -25,7 +20,6 @@ const WorkListItem: React.FC<IWork> = ({
 
   return (
     <SWorkLi
-      variants={varItem}
       key={slug}
       onClick={() => router.push(`/work-and-joy/${slug}`)}
       ref={refLi}
