@@ -139,20 +139,6 @@ ol {
   padding-inline-start: unset;
 }
 
-/* the whole bar */
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--color-secondary);
-  border-radius: 5px;
-}
-
-/* ::-webkit-scrollbar-corner {
-  background-color: blue;
-} */
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
