@@ -1,10 +1,24 @@
-import React from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { TResGetWorks } from '../../lib/getWorkData'
 import BadgeList from '../BadgeList'
 import WorkList from './WorkList'
 
 const WorkListView: React.FC<TResGetWorks> = ({ workList, badgeList }) => {
+  const [badge, setBadge] = useState('')
+  const [filteredWorkList, setFilteredWorkList] = useState(workList)
+  useEffect(() => {
+    setFilteredWorkList(() =>
+      badge
+        ? workList.filter((workItem) => workItem.badges.includes(badge))
+        : workList,
+    )
+  }, [badge])
+
+  const setName = useCallback(
+    (name: string) => setBadge((prevName) => (prevName === name ? '' : name)),
+    [],
+  )
   return (
     <>
       <StyledSectBrief>
@@ -12,11 +26,11 @@ const WorkListView: React.FC<TResGetWorks> = ({ workList, badgeList }) => {
           Projects built with <em>JavaScript</em> and <em>Python</em>{' '}
           frameworks, with UX optimization
         </h3>
-        <BadgeList badgeList={badgeList} />
+        <BadgeList badgeList={badgeList} setName={setName} />
       </StyledSectBrief>
 
       <StyledSectWork>
-        <WorkList workList={workList} />
+        <WorkList workList={filteredWorkList} />
       </StyledSectWork>
     </>
   )

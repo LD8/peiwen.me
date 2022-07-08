@@ -236,7 +236,7 @@ const CardJournal: React.FC<
 }) => {
   const router = useRouter()
   return (
-    <StyledCard as='li' onClick={() => router.push(`/journals/${slug}`)}>
+    <StyledCard clickable as='li' onClick={() => router.push(`/journals/${slug}`)}>
       <div className='title-block'>
         <JournalDisplay.Status published={published} typeOf={type_of} />
         <h3>{title}</h3>

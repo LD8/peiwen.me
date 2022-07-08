@@ -1,8 +1,10 @@
 import styled, { css, CSSProperties } from 'styled-components'
 
 export const genRGB = (base: number) => `rgb(${base}, ${base}, ${base})`
-export const lighten = (base: number, float: number) => genRGB(base * (1 + float))
-export const darken = (base: number, float: number) => genRGB(base * (1 - float))
+export const lighten = (base: number, float: number) =>
+  genRGB(base * (1 + float))
+export const darken = (base: number, float: number) =>
+  genRGB(base * (1 - float))
 
 export const base = 200
 
@@ -123,8 +125,7 @@ const StyledDiv = styled.div<StyledTuDivProps>`
 `
 export default StyledDiv
 
-export const StyledFlatButton = styled.button`
-  cursor: pointer;
+export const StyledFlatButton = styled.button<{ clickable?: boolean }>`
   margin: 0;
   padding: 2px 20px;
   min-width: 100%;
@@ -137,11 +138,16 @@ export const StyledFlatButton = styled.button`
   background-color: ${fLight};
   color: var(--color-dark);
 
-  :hover {
-    ${cssHovered}
-    border: 0.5px solid transparent;
-  }
-  :active {
-    ${cssActive}
-  }
+  ${({ clickable = false }) =>
+    clickable &&
+    css`
+      cursor: pointer;
+      :hover {
+        ${cssHovered}
+        border: 0.5px solid transparent;
+      }
+      :active {
+        ${cssActive}
+      }
+    `}
 `
