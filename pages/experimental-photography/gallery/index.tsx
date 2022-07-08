@@ -16,7 +16,7 @@ export const getStaticProps: GetStaticProps<TResGetEPSeries> = () => ({
 const EPGallery: NextPage<TResGetEPSeries> = ({ epSeries }) => {
   return (
     <EPLayout>
-      <HeadInfo title={`Gallery - Experimental Photography`} />
+      <HeadInfo title='Gallery - Experimental Photography' />
       <StyledMain>
         {epSeries.map((series) => (
           <SingleSeries key={series.order} {...series} />
