@@ -1,11 +1,12 @@
 ---
 title: VA-boutique.com
-summary: An e-commerce website for VA-boutique, built solely with Django Framework.
+summary: An e-commerce website built with Django
 badges:
   - fullStack
   - eCommerce
 content:
-  - VA-boutique.com was built within a month. The client was hoping to launch the website within 3 weeks. It was certainly a challenge. The tight schedule pushed me to develop a methodology to solve the problems efficiently along the way. I acquired a great deal of knowledge on the back-end side for building this e-commerce website.
+  - VA-boutique.com was built within a month. The client was hoping to launch the website within 3 weeks. It was certainly a challenge. The tight schedule pushed me to develop a methodology to solve the problems efficiently along the way.
+  - Although the website is no longer maintained by me, I acquired a great deal of knowledge on the back-end side for building this e-commerce website.
 techs:
   - Django
   - PostgreSQL
@@ -13,8 +14,8 @@ techs:
   - SASS, CSS3
   - Animate.js, wow.js
 links: {
-    online: HTTPS://VA-BOUTIQUE.COM,
-    # github: HTTPS://GITHUB.COM/LD8/VA-BOUTIQUE,
+    # online: HTTPS://VA-BOUTIQUE.COM,
+    github: HTTPS://GITHUB.COM/LD8/VA-BOUTIQUE,
   }
 startedAt: 2020-02
 endedAt: 2020-03

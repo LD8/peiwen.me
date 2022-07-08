@@ -10,7 +10,6 @@ techs:
   - HTML5
   - JavaScript
   - CSS3
-links:
-  # online: http://donnelee.com/
+# links: { online: http://donnelee.com/ }
 startedAt: 2015-12
 endedAt: 2016-01
