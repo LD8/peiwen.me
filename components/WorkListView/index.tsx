@@ -24,9 +24,9 @@ const WorkListView: React.FC<TResGetWorks> = ({ workList, badgeList }) => {
     <>
       <StyledSectBrief>
         <h3>
-          Projects built with <em>JavaScript</em> and <em>Python</em>{' '}
-          frameworks, with UX optimization
+          Projects built with <em>JavaScript</em> and <em>Python</em> libraries and frameworks from 2015 to date
         </h3>
+        {/* <h4>↓ click to filter through categories ↓</h4> */}
         <BadgeList badgeList={badgeList} setName={setName} name={badge} />
       </StyledSectBrief>
 
@@ -49,16 +49,15 @@ export default WorkListView
 
 const StyledSectBrief = styled.section`
   max-width: 1070px;
-  margin-bottom: 3vh;
+  margin-bottom: 2vh;
+  text-align: center;
   > h3 {
-    text-align: center;
-    margin-bottom: 15px;
     font-weight: 500;
+    margin-bottom: 15px;
   }
-  > p {
-    margin: 0;
+  > h4 {
+    font-weight: 400;
     font-size: var(--fontS);
-    cursor: pointer;
   }
 `
 const StyledSectWork = styled(motion.section)`

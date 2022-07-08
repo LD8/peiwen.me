@@ -77,7 +77,7 @@ const StyledContainer = styled.div`
 const SwitchButton = styled(StyledDiv)`
   display: block;
   margin: -3vh auto 3vh auto;
-  height: 20px;
+  height: 22px;
   border-radius: 20px;
   width: 220px;
   font-size: var(--fontS);

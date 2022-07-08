@@ -130,11 +130,11 @@ export const StyledFlatButton = styled.button<{
   clicked?: boolean
 }>`
   margin: 0;
-  padding: 2px 20px;
+  padding: 4px 20px;
   min-width: 100%;
   font-size: 12px;
   font-family: var(--font-fancy);
-  border-radius: 10px;
+  border-radius: 20px;
   transition: all 0.2s ease-in-out;
   border: 0.5px solid ${cBase};
   /* border: 1px solid transparent; */
