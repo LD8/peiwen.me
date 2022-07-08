@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import Image from 'next/image'
+import { EPLayout } from '.'
 import HeadInfo from '../../../components/HeadInfo'
 import { getEPSeries, IEPSingle } from '../../../lib/getExpPhotoData'
 
@@ -18,7 +19,7 @@ export const getStaticProps: GetStaticProps<IEPSingle> = (context) => ({
 
 const SingleSeries: NextPage<IEPSingle> = ({ seriesName, photos }) => {
   return (
-    <div>
+    <EPLayout>
       <HeadInfo title={`${seriesName} - Experimental Photography`} />
       <h1>{seriesName}</h1>
       <section>
@@ -31,7 +32,7 @@ const SingleSeries: NextPage<IEPSingle> = ({ seriesName, photos }) => {
           </div>
         ))}
       </section>
-    </div>
+    </EPLayout>
   )
 }
 
