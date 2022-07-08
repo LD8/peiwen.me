@@ -7,12 +7,13 @@ import Nav from '../components/Nav'
 import useScrollingDown from '../lib/hooks/useScrollingDown'
 import '../styles/globals.css'
 
-const noLayoutPagePaths = ['/cv', '/cv-zh', '/something-else']
+const noLayoutPagePaths = ['/cv', '/cv-zh', '/experimental-photography']
 
 function MyApp({ Component, pageProps, router: { pathname } }: AppProps) {
   const scrollingDown = useScrollingDown()
 
-  if (noLayoutPagePaths.includes(pathname)) return <Component {...pageProps} />
+  if (noLayoutPagePaths.filter((path) => pathname.includes(path)).length)
+    return <Component {...pageProps} />
 
   const isLanding = pathname === '/'
   const showFixedNav = !isLanding && !scrollingDown
