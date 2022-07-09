@@ -15,7 +15,7 @@ const EPAbout: NextPage = () => {
         <div className='content'>
           <div className='image'>
             <Image
-              src='/experimental-photography/pinhole_24h.jpg'
+              src='/experimental-photography/9--Pinhole/3--24_Hours_in_Atina,_Italy--Pinhole_Image--Atina,_Italy--2015.jpg'
               width='2000'
               height='4259'
               alt='Pinhole 24h'
