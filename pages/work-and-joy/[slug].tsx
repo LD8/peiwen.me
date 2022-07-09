@@ -6,17 +6,17 @@ import styled from 'styled-components'
 import BadgeList from '../../components/BadgeList'
 import ExternalLink from '../../components/ExternalLink'
 import HeadInfo from '../../components/HeadInfo'
-import { getAllWorkSlugs, getWork, IWorkDetail } from '../../lib/getWorkData'
+import { getAllWorkSlugs, getWork, IWork } from '../../lib/getWorkData'
 
 export const getStaticPaths: GetStaticPaths = () => {
   return { paths: getAllWorkSlugs(), fallback: false }
 }
 
-export const getStaticProps: GetStaticProps<IWorkDetail> = (context) => {
+export const getStaticProps: GetStaticProps<IWork> = (context) => {
   return { props: getWork(context.params?.slug as string) }
 }
 
-const WorkDetail: NextPage<IWorkDetail> = ({
+const WorkDetail: NextPage<IWork> = ({
   slug,
   title,
   summary,
@@ -33,7 +33,13 @@ const WorkDetail: NextPage<IWorkDetail> = ({
       <HeadInfo title={`Project - ${title}`} />
 
       <section className='intro'>
-        <h1>{title}</h1>
+        <h1>
+          {links?.online ? (
+            <ExternalLink href={links.online}>{title}</ExternalLink>
+          ) : (
+            title
+          )}
+        </h1>
         <p>{summary}</p>
         <BadgeList
           badgeList={badges}
@@ -98,14 +104,14 @@ const StyledContainer = styled.div`
       list-style: circle;
     }
     a {
-      color: orangered;
+      color: var(--theme-vivid);
       :hover {
-        color: greenyellow;
+        color: var(--avocado);
       }
       :visited {
         color: green;
         :hover {
-          color: greenyellow;
+          color: var(--avocado);
         }
       }
     }
@@ -118,26 +124,24 @@ const StyledContainer = styled.div`
   }
 `
 
-const SectionResources: React.FC<{ links: IWorkDetail['links'] }> = ({
-  links,
-}) => {
+const SectionResources: React.FC<{ links: IWork['links'] }> = ({ links }) => {
   return (
     <section>
       <h2>Resources</h2>
       <ul>
-        {links.online && (
+        {links?.online && (
           <li>
             <SSpan>Visit the website:</SSpan>
             <SAnchor href={links.online}>{links.online}</SAnchor>
           </li>
         )}
-        {links.github && (
+        {links?.github && (
           <li>
             <SSpan>GitHub source files:</SSpan>
             <SAnchor href={links.github}>{links.github}</SAnchor>
           </li>
         )}
-        {links.codeSandbox && (
+        {links?.codeSandbox && (
           <li>
             <SSpan>Code-Sandbox:</SSpan>
             <SAnchor href={links.codeSandbox}>Portal Here</SAnchor>
@@ -158,7 +162,7 @@ const SAnchor = styled(ExternalLink)`
 `
 
 const Carousel: React.FC<{
-  imgSrcArr: IWorkDetail['imgSrcArr']
+  imgSrcArr: IWork['imgSrcArr']
   title: string
 }> = ({ imgSrcArr, title }) => {
   const [index, setIndex] = useState(0)

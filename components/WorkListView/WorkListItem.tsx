@@ -6,10 +6,12 @@ import styled, { css } from 'styled-components'
 import { useHoverRef } from '../../lib/hooks'
 import { IWork } from '../../lib/getWorkData'
 import BadgeList from '../BadgeList'
+import ExternalLink from '../ExternalLink'
 
 const WorkListItem: React.FC<IWork> = ({
   slug,
   title,
+  links,
   imgSrcArr,
   badges,
   summary,
@@ -37,7 +39,13 @@ const WorkListItem: React.FC<IWork> = ({
               animate={{ opacity: 1, y: 0, transition: { delay: 0.1 } }}
               exit={{ opacity: 0, y: 50, transition: { duration: 0.2 } }}
             >
-              <h2>{title}</h2>
+              <h2>
+                {links?.online ? (
+                  <ExternalLink href={links.online}>{title}</ExternalLink>
+                ) : (
+                  title
+                )}
+              </h2>
               <BadgeList badgeList={badges} />
               <p>{summary}</p>
               <p>{endedAt}</p>
@@ -101,9 +109,9 @@ const SWorkLi = styled(motion.li)`
         text-underline-offset: 3px;
         margin-bottom: 30px;
         transition: color 200ms ease-in-out;
-        :hover {
+        /* :hover {
           color: var(--theme);
-        }
+        } */
       }
       > p {
         margin: unset;

@@ -13,6 +13,6 @@ techs:
   - JavaScript
   - CSS3
 # links: { online: http://donnelee.com/ }
-links: { online: http://localhost:3000/experimental-photography }
+links: { online: /experimental-photography }
 startedAt: 2015-12
 endedAt: 2016-01

@@ -124,7 +124,7 @@ a {
   transition: all 100ms ease-in-out;
 }
 a:hover {
-  color: var(--theme-dark);
+  color: var(--theme-vivid);
   text-decoration: underline;
   text-underline-offset: 2px;
 }

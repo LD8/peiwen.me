@@ -16,29 +16,33 @@ export type IWork = {
   title: string
   imgSrcArr: IImageSource[]
   badges: IBadgeName[]
+  techs: string[]
   summary: string
+  content: string[]
+  startedAt: string // dayjs().format()
   endedAt: string // dayjs().format()
+  links?: Record<'online' | 'github' | 'codeSandbox', IHref>
 }
+type IWorkYaml = Omit<IWork, 'imgSrcArr' | 'slug'>
 export type TResGetWorks = { workList: IWork[]; badgeList: IBadgeName[] }
 
 const FORMAT_WORK = 'YYYY-MM'
 const regulate = (s: string) => dayjs(s, FORMAT_WORK)
 export const getAllWorks = (): TResGetWorks => {
-  const badgeList: IBadgeName[] = []
+  const badgeSet = new Set<IBadgeName>()
   const workList: IWork[] = getAllFileNames()
     .map((fileName) => {
       const slug = fileName.replace(/\.yml$/, '')
-      const { data } = parseYmlFrontMatter<IWorkDetail>(contentDir, fileName)
-      const { title, badges, summary, endedAt } = data
-      if (badges) badgeList.push(...badges)
+      const { data } = parseYmlFrontMatter<IWorkYaml>(contentDir, fileName)
+      if (data.badges?.length) data.badges.forEach((b) => badgeSet.add(b))
       const imgSrcArr = getImgSrcArr(assetsDir, slug)
-      return { slug, imgSrcArr, title, badges, summary, endedAt }
+      return { ...data, slug, imgSrcArr }
     })
     .sort(({ endedAt: aEnd }, { endedAt: bEnd }) => {
       if (!regulate(aEnd).isValid()) return -1
       return regulate(bEnd).valueOf() - regulate(aEnd).valueOf()
     })
-  const data = { workList, badgeList: [...new Set(badgeList)] }
+  const data = { workList, badgeList: [...badgeSet] }
   return data
 }
 
@@ -51,17 +55,11 @@ export const getAllWorkSlugs = () => {
   }))
 }
 
-export type IWorkDetail = IWork & {
-  content: string[]
-  techs: string[]
-  links: Record<'online' | 'github' | 'codeSandbox', IHref>
-  startedAt: string // dayjs().format()
-}
 /**
  * slug is file name without extension
  */
-export const getWork = (slug: string): IWorkDetail => {
-  const { data } = parseYmlFrontMatter<IWorkDetail>(contentDir, `${slug}.yml`)
+export const getWork = (slug: string): IWork => {
+  const { data } = parseYmlFrontMatter<IWorkYaml>(contentDir, `${slug}.yml`)
   const imgSrcArr = getImgSrcArr(assetsDir, slug)
   return { ...data, slug, imgSrcArr }
 }
