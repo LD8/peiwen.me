@@ -2,6 +2,7 @@ import { GetStaticProps, NextPage } from 'next'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styled, { css } from 'styled-components'
+import ExternalLink from '../../../components/ExternalLink'
 import HeadInfo from '../../../components/HeadInfo'
 import {
   getEPSeries,
@@ -9,6 +10,9 @@ import {
   TResGetEPSeries,
 } from '../../../lib/getExpPhotoData'
 import { FCwc } from '../../../types'
+import { MdAlternateEmail } from 'react-icons/md'
+import { RiWechat2Line } from 'react-icons/ri'
+import ICONS from '../../../lib/icons'
 
 export const getStaticProps: GetStaticProps<TResGetEPSeries> = () => ({
   props: getEPSeries(),
@@ -118,9 +122,9 @@ const StyledExpPhoLayout = styled.div`
 `
 
 const epNavLinks = [
+  { name: 'Home', pathname: '/experimental-photography' },
   { name: 'Gallery', pathname: '/experimental-photography/gallery' },
   { name: 'About', pathname: '/experimental-photography/about' },
-  { name: 'Contact', pathname: '/experimental-photography/contact' },
 ] as const
 
 const Nav: React.FC = () => {
@@ -132,10 +136,13 @@ const Nav: React.FC = () => {
       </div>
       <div className='links'>
         {epNavLinks.map(({ name, pathname }) => (
-          <span style={{ color: pathname === curPath ? 'white' : 'grey' }}>
-            <Link key={name} href={pathname}>
-              {name}
-            </Link>
+          <span
+            key={name}
+            style={{
+              color: curPath.includes(name.toLowerCase()) ? 'white' : 'grey',
+            }}
+          >
+            <Link href={pathname}>{name}</Link>
           </span>
         ))}
       </div>
@@ -177,7 +184,20 @@ const Footer: React.FC = () => {
   return (
     <StyledFooter>
       <div className='back-to-peiwen'>
-        <Link href='/'>« Back to Peiwen.me</Link>
+        <ExternalLink href='/'>
+          <ICONS.back />
+          &nbsp;&nbsp;&nbsp;Back to Peiwen.me
+        </ExternalLink>
+      </div>
+      <div className='contact'>
+        <div className='email'>
+          <MdAlternateEmail />
+          <ExternalLink href='mailto:don_lee@me.com'>e-mail</ExternalLink>
+        </div>
+        <div className='wechat'>
+          <RiWechat2Line />
+          <span>don_ald</span>
+        </div>
       </div>
     </StyledFooter>
   )
@@ -187,14 +207,31 @@ const StyledFooter = styled.footer`
   top: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 40px;
   padding: 0 20px;
   background-color: #1b1b1b;
 
   .back-to-peiwen {
     font-size: 14px;
-    margin-left: 40px;
+    a {
+      display: flex;
+      align-items: center;
+    }
   }
+
+  .contact {
+    margin-left: 40px;
+    color: silver;
+    display: flex;
+    gap: 40px;
+    > div {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+  }
+
   ${cssAnchor}
   a {
     color: silver;

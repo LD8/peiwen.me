@@ -1,5 +1,5 @@
 import { AiOutlineDelete, AiOutlineLike, AiFillLike } from 'react-icons/ai'
-import { BsCalendarEvent, BsChat, BsEye } from 'react-icons/bs'
+import { BsCalendarEvent, BsChat, BsEye, BsBackspace } from 'react-icons/bs'
 import { FiEdit3 } from 'react-icons/fi'
 import { HiOutlineUpload } from 'react-icons/hi'
 
@@ -12,6 +12,7 @@ const ICONS = {
   date: BsCalendarEvent,
   del: AiOutlineDelete,
   edit: FiEdit3,
+  back: BsBackspace,
 }
 
 export default ICONS
