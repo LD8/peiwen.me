@@ -20,6 +20,7 @@ export type TResGetEPSeries = { epSeries: IEPSingle[] }
 
 const epPath = '/experimental-photography'
 const epDir = path.resolve(`public${epPath}`)
+const deUnderscore = (str: string) => str?.replaceAll('_', ' ')
 
 export const getEPSeries = (): TResGetEPSeries => {
   const epSeriesDirents = fs
@@ -38,23 +39,23 @@ export const getEPSeries = (): TResGetEPSeries => {
             orderTemp = '',
             titleTemp = '',
             mediumTemp = '',
-            location = '',
+            locationTemp = '',
             timeTemp = '',
           ] = photoFileName.split('--')
           const imgSrc = `${epPath}/${seriesDirName}/${photoFileName}`
           return {
             imgSrc,
             order: Number(orderTemp),
-            title: titleTemp?.replaceAll('_', ' '),
-            medium: mediumTemp?.replaceAll('_', ' '),
-            location,
+            title: deUnderscore(titleTemp),
+            medium: deUnderscore(mediumTemp),
+            location: deUnderscore(locationTemp),
             time: timeTemp?.replace(/(\.jpg)|(\.jpeg)|(\.png)$/, ''),
           }
         })
         .sort((a, b) => a.order - b.order)
       return {
         order: Number(seriesOrder),
-        seriesName: seriesNameTemp?.replaceAll('_', ' '),
+        seriesName: deUnderscore(seriesNameTemp),
         seriesSlug: seriesNameTemp?.replaceAll('_', '-').toLowerCase(),
         coverImgSrc: photos[0].imgSrc,
         photos,
