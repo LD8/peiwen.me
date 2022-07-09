@@ -118,7 +118,6 @@ export const EPLayout: FCwc = ({ children }) => {
 const StyledExpPhoLayout = styled.div`
   min-height: 100vh;
   background-color: #131313;
-  /* overflow: hidden; */
 `
 
 const epNavLinks = [

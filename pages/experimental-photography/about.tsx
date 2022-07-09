@@ -66,7 +66,7 @@ const StyledMain = styled.div`
   .content {
     display: flex;
     flex-wrap: wrap;
-    max-width: 900px;
+    max-width: 1000px;
 
     .image {
       flex: 1 300px;
