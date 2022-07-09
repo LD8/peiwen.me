@@ -13,6 +13,8 @@ import { FCwc } from '../../../types'
 import { MdAlternateEmail } from 'react-icons/md'
 import { RiWechat2Line } from 'react-icons/ri'
 import ICONS from '../../../lib/icons'
+import { AnimatePresence, motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
 
 export const getStaticProps: GetStaticProps<TResGetEPSeries> = () => ({
   props: getEPSeries(),
@@ -107,10 +109,23 @@ const StyledSingleSeries = styled.div<{ coverImgSrc: string }>`
 `
 
 export const EPLayout: FCwc = ({ children }) => {
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => setMounted(true), [])
   return (
     <StyledExpPhoLayout>
       <Nav />
-      {children}
+      <AnimatePresence exitBeforeEnter>
+        {mounted && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            {children}
+          </motion.div>
+        )}
+      </AnimatePresence>
       <Footer />
     </StyledExpPhoLayout>
   )
