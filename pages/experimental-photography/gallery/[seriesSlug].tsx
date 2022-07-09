@@ -29,7 +29,6 @@ const SingleSeries: NextPage<IEPSingle> = ({ seriesName, photos }) => {
         <section className='section-photos'>
           {photos.map(({ imgSrc, order, title, medium, location, time }) => (
             <div key={order} className='photo-display'>
-              {/* <Image src={imgSrc} alt={title} width='1000' height='1000' /> */}
               <div className='image'>
                 <img src={imgSrc} alt={title} />
               </div>

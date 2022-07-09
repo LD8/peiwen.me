@@ -51,13 +51,6 @@ const SingleSeries: React.FC<IEPSingle> = ({
       coverImgSrc={coverImgSrc}
     >
       <div className='series-cover' />
-      {/* <Image
-    className='series-cover'
-    src={coverImgSrc}
-    alt={`Cover image of ${seriesName}`}
-    width='100%'
-    height='100%'
-  /> */}
       <h2 className='series-title'>{seriesName}</h2>
     </StyledSingleSeries>
   )
