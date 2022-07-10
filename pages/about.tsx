@@ -19,7 +19,7 @@ const PROF = {
 const PeiwenMe: NextPage = () => {
   return (
     <SRow>
-      <HeadInfo title="About Peiwen Li" />
+      <HeadInfo title='About Peiwen Li' />
       {/* <LeafSwirl
         style={{ top: '0vh', left: '0', fontSize: '70vh' }}
         swing={50}
@@ -30,7 +30,7 @@ const PeiwenMe: NextPage = () => {
         swing={20}
       /> */}
       <aside className='portrait'>
-        <Image src='/me.png' alt='me' width='128' height='128' />
+        <Image src='/portrait-300.png' alt='me' width='150' height='150' />
       </aside>
       <section className='info'>
         <div className='intro'>
@@ -52,10 +52,10 @@ const PeiwenMe: NextPage = () => {
           </p>
           <p>
             Having a master degree in Art and Science, Peiwen is confident in
-            designing and building{' '}
+            designing and building
             <em>
-              <b>multi-disciplinary</b>
-            </em>{' '}
+              <b> multi-disciplinary </b>
+            </em>
             projects. Now he works as a front-end engineer at eBay Shanghai.
           </p>
           <p>
@@ -89,7 +89,8 @@ const SRow = styled.div`
     padding-left: 40px;
     img {
       /* portrait me */
-      filter: hue-rotate(105deg);
+      /* filter: hue-rotate(10deg); */
+      filter: brightness(0.75);
     }
   }
   > section.info {
@@ -190,11 +191,7 @@ const SLiSkill = styled(motion.li)<{ width?: number }>`
     /* width: ${({ width }) =>
       `calc(${width}% - ${namewidth} - ${descwidth})`}; */
     background: #cecbc1;
-    background: linear-gradient(
-      90deg,
-      var(--color-light) 0%,
-      var(--airy) 100%
-    );
+    background: linear-gradient(90deg, var(--color-light) 0%, var(--airy) 100%);
   }
   > span.prof-desc {
     display: inline-block;
