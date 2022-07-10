@@ -4,7 +4,9 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { IWork } from '../../lib/getWorkData'
 import BadgeList from '../BadgeList'
+import ExternalLink from '../ExternalLink'
 import { base, cBase, cssActive, darken } from '../StyledDiv'
+import { cssWorkCardContent } from '../WorkListView/WorkListItem'
 
 const boxShadowFrame = css`
   box-shadow:
@@ -30,6 +32,7 @@ const WorkDisplay: React.FC<
   badges,
   summary,
   endedAt,
+  links,
   hovering,
   index,
   right,
@@ -68,7 +71,13 @@ const WorkDisplay: React.FC<
                 }}
                 exit={{ opacity: 0, y: 100 }}
               >
-                <h2>{title}</h2>
+                <h2>
+                  {links?.online ? (
+                    <ExternalLink href={links.online}>{title}</ExternalLink>
+                  ) : (
+                    title
+                  )}
+                </h2>
                 <BadgeList badgeList={badges} />
                 <p>{summary}</p>
                 <p>{endedAt}</p>
@@ -126,23 +135,8 @@ const StyledWorkDisplay = styled.div`
     @media screen and (max-width: 1000px) {
       padding: 5vh;
     }
-    > h2 {
-      cursor: pointer;
-      color: white;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      margin-bottom: 30px;
-      transition: color 200ms ease-in-out;
-      :hover {
-        color: var(--airy);
-      }
-    }
-    > p {
-      margin: unset;
-      margin-top: 20px;
-      font-weight: 600;
-      color: var(--color-lighter);
-    }
+
+    ${cssWorkCardContent}
   }
 
   :active {

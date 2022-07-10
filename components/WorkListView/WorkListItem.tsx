@@ -59,6 +59,29 @@ const WorkListItem: React.FC<IWork> = ({
 
 export default WorkListItem
 
+export const cssWorkCardContent = css`
+  > h2 {
+    color: var(--color-light);
+    margin-bottom: 15px;
+    transition: color 200ms ease-in-out;
+    a {
+      color: var(--color-light);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      :hover {
+        color: orangered;
+      }
+    }
+  }
+  > p {
+    color: var(--color-lighter);
+    margin: unset;
+    margin-top: 15px;
+    font-weight: 500;
+    font-size: var(--fontM);
+  }
+`
+
 const radius = 20
 const SWorkLi = styled(motion.li)`
   /* NOTE: can NOT scale ↑ motion elements */
@@ -103,26 +126,7 @@ const SWorkLi = styled(motion.li)`
       text-align: center;
       padding: 20px;
 
-      h2 {
-        color: var(--color-light);
-        margin-bottom: 15px;
-        transition: color 200ms ease-in-out;
-        a {
-          color: var(--color-light);
-          text-decoration: underline;
-          text-underline-offset: 3px;
-          :hover {
-            color: orangered;
-          }
-        }
-      }
-      > p {
-        color: var(--color-lighter);
-        margin: unset;
-        margin-top: 15px;
-        font-weight: 500;
-        font-size: var(--fontM);
-      }
+      ${cssWorkCardContent}
     }
   }
 `
