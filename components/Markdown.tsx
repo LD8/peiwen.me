@@ -2,6 +2,7 @@ import ReactMarkdown from 'react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { prism } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import styled from 'styled-components'
+import ExternalLink from './ExternalLink'
 import StyledDiv from './StyledDiv'
 
 const lineNumberStyle: React.CSSProperties = {
@@ -47,6 +48,10 @@ const Markdown: React.FC<{ data: string }> = ({ data }) => {
             </code>
           )
         },
+        a({ children, href, node }) {
+          // console.log({ node })
+          return <ExternalLink href={href}>{children}</ExternalLink>
+        },
       }}
     />
   )
@@ -73,7 +78,7 @@ const StyledMarkdown = styled(ReactMarkdown)`
   blockquote {
     padding: 1rem 2rem;
     margin: 2rem 1rem;
-    border-left: 5px solid var(--theme);
+    border-left: 5px solid var(--airy);
     border-radius: 10px;
     position: relative;
   }
@@ -86,7 +91,7 @@ const StyledMarkdown = styled(ReactMarkdown)`
     padding: 2px 6px;
     border-radius: 6px;
     font-family: Courier, monospace;
-    color: var(--theme-dark);
+    color: var(--airy-dark);
     background-color: var(--bgc-code-alt);
   }
   pre {
@@ -101,13 +106,9 @@ const StyledMarkdown = styled(ReactMarkdown)`
     }
   }
   a {
-    color: var(--theme-vivid);
-    :hover {
-      color: var(--anti-theme);
-    }
-    :visited {
-      color: var(--mid-theme);
-    }
+    /* color: var(--airy-vivid); */
+    text-decoration: underline;
+    text-underline-offset: 1px;
   }
   ul,
   ol {

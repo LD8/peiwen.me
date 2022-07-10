@@ -163,15 +163,15 @@ export const SPaper = styled.main<{ chinese?: boolean }>`
         padding: 5px;
         text-decoration: none;
         font-size: var(--fontS);
-        color: var(--theme-vivid);
+        color: var(--airy-vivid);
         border-radius: 5px 0 0 5px;
-        border: 1px solid var(--theme-vivid);
+        border: 1px solid var(--airy-vivid);
         background-color: transparent;
 
         &:hover {
           color: white;
           text-decoration: none;
-          background-color: var(--theme-vivid);
+          background-color: var(--airy-vivid);
         }
       }
 
@@ -257,7 +257,7 @@ export const SPaper = styled.main<{ chinese?: boolean }>`
             font-size: var(--fontXL);
             font-weight: 600;
             letter-spacing: 0.05em;
-            color: var(--theme-vivid);
+            color: var(--airy-vivid);
           }
 
           h2 {
@@ -279,7 +279,7 @@ export const SPaper = styled.main<{ chinese?: boolean }>`
           border-left: 2px solid rgb(240, 240, 240);
 
           a {
-            color: var(--theme-vivid);
+            color: var(--airy-vivid);
             text-decoration: none;
             display: block;
             font-size: var(--fontS);
@@ -350,7 +350,7 @@ export const SPaper = styled.main<{ chinese?: boolean }>`
       a {
         text-decoration: none;
         font-weight: 300;
-        color: var(--theme-vivid);
+        color: var(--airy-vivid);
 
         &:hover {
           text-decoration: underline;
@@ -366,7 +366,7 @@ export const SPaper = styled.main<{ chinese?: boolean }>`
           margin-bottom: var(--fontS);
           padding-bottom: 5px;
 
-          color: var(--theme-vivid);
+          color: var(--airy-vivid);
           font-size: var(--fontL);
           font-weight: 100;
           letter-spacing: 0.05em;

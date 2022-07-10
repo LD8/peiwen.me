@@ -95,6 +95,7 @@ const SAnchor = styled.a`
   padding: 6px;
   :hover {
     transform: scale(1.1);
+    color: green;
   }
 
   display: flex;
@@ -117,6 +118,11 @@ const StyledFooter = styled.footer<{ isLanding: boolean }>`
   font-size: 1.3rem;
   color: ${({ isLanding }) =>
     isLanding ? 'var(--color-secondary)' : 'var(--color-dark)'};
+
+  a {
+    color: ${({ isLanding }) =>
+      isLanding ? 'var(--color-secondary)' : 'var(--color-dark)'};
+  }
 
   > div {
     z-index: 1;

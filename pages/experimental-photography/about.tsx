@@ -1,8 +1,8 @@
 import { NextPage } from 'next'
 import Image from 'next/image'
 import styled from 'styled-components'
+import EPLayout from '../../components/EPLayout'
 import HeadInfo from '../../components/HeadInfo'
-import { EPLayout } from './gallery'
 
 const EPAbout: NextPage = () => {
   return (

@@ -97,11 +97,11 @@ const SRow = styled.div`
     > div.intro {
       padding: 10px 0 20px 0;
       > h1 {
-        color: var(--theme-dark);
+        color: var(--airy-dark);
         /* background: linear-gradient(
           45deg,
-          var(--theme-dark) 8%,
-          var(--theme) 100%
+          var(--airy-dark) 8%,
+          var(--airy) 100%
         );
         background-clip: text;
         -webkit-background-clip: text;
@@ -193,7 +193,7 @@ const SLiSkill = styled(motion.li)<{ width?: number }>`
     background: linear-gradient(
       90deg,
       var(--color-light) 0%,
-      var(--theme) 100%
+      var(--airy) 100%
     );
   }
   > span.prof-desc {

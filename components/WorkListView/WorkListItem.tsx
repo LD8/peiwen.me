@@ -104,21 +104,24 @@ const SWorkLi = styled(motion.li)`
       padding: 20px;
 
       h2 {
-        color: white;
-        text-decoration: underline;
-        text-underline-offset: 3px;
-        margin-bottom: 30px;
+        color: var(--color-light);
+        margin-bottom: 15px;
         transition: color 200ms ease-in-out;
-        /* :hover {
-          color: var(--theme);
-        } */
+        a {
+          color: var(--color-light);
+          text-decoration: underline;
+          text-underline-offset: 3px;
+          :hover {
+            color: orangered;
+          }
+        }
       }
       > p {
+        color: var(--color-lighter);
         margin: unset;
-        margin-top: 20px;
+        margin-top: 15px;
         font-weight: 500;
         font-size: var(--fontM);
-        color: var(--color-light);
       }
     }
   }

@@ -103,18 +103,6 @@ const StyledContainer = styled.div`
       margin-left: 20px;
       list-style: circle;
     }
-    a {
-      color: var(--theme-vivid);
-      :hover {
-        color: var(--avocado);
-      }
-      :visited {
-        color: green;
-        :hover {
-          color: var(--avocado);
-        }
-      }
-    }
   }
 
   > section.about {

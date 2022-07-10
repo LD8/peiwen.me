@@ -134,7 +134,7 @@ const StyledWorkDisplay = styled.div`
       margin-bottom: 30px;
       transition: color 200ms ease-in-out;
       :hover {
-        color: var(--theme);
+        color: var(--airy);
       }
     }
     > p {

@@ -10,13 +10,15 @@
   --color-light: rgb(200, 200, 200);
   --color-lighter: rgb(220, 220, 220);
   --color-white: rgb(250, 250, 250);
-  --theme-light: #aee3ff;
-  --theme: #699db9;
-  --theme-vivid: #2c7ca7;
-  --theme-dark: #225875;
-  --anti-theme: orangered;
-  --mid-theme: #5e7e2f;
-  --avocado: #58952c;
+
+  --airy-light: #aee3ff;
+  --airy: #699db9;
+  --airy-vivid: #2c7ca7;
+  --airy-dark: #225875;
+
+  --avocado-dark: #384c00;
+  --avocado: #49720c;
+  --avocado-light: #7abc4d;
 
   /* bg colors/images */
   --bgc-general: rgb(200, 200, 200);
@@ -119,15 +121,21 @@ p {
 }
 
 a {
-  color: inherit;
+  color: var(--avocado);
   text-decoration: none;
   transition: all 100ms ease-in-out;
 }
 a:hover {
-  color: var(--theme-vivid);
+  color: orangered;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
+/* a:visited {
+  color: var(--airy-vivid);
+}
+a:visited:hover {
+  color: orangered;
+} */
 
 ul,
 ol {
