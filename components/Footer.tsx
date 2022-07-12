@@ -71,7 +71,7 @@ const Footer: React.FC = () => {
         {/* <ExternalLink href='#'>
           <span>Powered by Nextjs and Dev.to API</span>
         </ExternalLink> */}
-        <span>Gratitude to my family, flowers, the sun and the universe</span>
+        <span>Gratitude to my family, the earth, the sun, the universe</span>
       </div>
       <div className='li'>
         <button onClick={() => router.push('/li')} />
