@@ -1,8 +1,12 @@
 import type { NextPage } from 'next'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 import styled from 'styled-components'
 import LeafSwirl from '../components/LeafSwirl'
 
 const Home: NextPage = () => {
+  const router = useRouter()
+  useEffect(() => void router.prefetch('/work-and-joy'), [])
   return (
     <StyledContainer>
       <LeafSwirl />
