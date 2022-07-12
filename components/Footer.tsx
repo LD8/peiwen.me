@@ -61,7 +61,6 @@ const Footer: React.FC = () => {
             target='_blank'
             rel='noopener noreferrer'
           >
-            {/* <Image src={imgSrc} alt={imgAlt} width={20} height={20} /> */}
             <Icon />
             {!isSmallScreen && <span className='name'>{name}</span>}
           </SAnchor>
