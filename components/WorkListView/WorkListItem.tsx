@@ -28,7 +28,13 @@ const WorkListItem: React.FC<IWork> = ({
     >
       <div className='liContainer'>
         <SBG hovering={hovering} className='background'>
-          <Image src={imgSrcArr[0]} width='840' height='560' alt={title} />
+          <Image
+            src={imgSrcArr[0]}
+            width='840'
+            height='560'
+            alt={title}
+            placeholder='blur'
+          />
         </SBG>
         <div className='mask' />
         <AnimatePresence>

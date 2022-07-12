@@ -173,6 +173,7 @@ const Carousel: React.FC<{
             alt={`Peiwen's project - ${title} - image sample ${index + 1}`}
             width={800}
             height={533.33}
+            placeholder='blur'
           />
         </motion.div>
       </AnimatePresence>
