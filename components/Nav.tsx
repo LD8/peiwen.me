@@ -134,7 +134,7 @@ const SNavLink = styled.a<{ isLanding: boolean; isActive: boolean }>`
   :active {
     ${cssActive}
   }
-  ${({ isActive }) => isActive && cssHovered};
+
   ${({ isLanding }) =>
     isLanding
       ? css`
@@ -157,4 +157,7 @@ const SNavLink = styled.a<{ isLanding: boolean; isActive: boolean }>`
           margin: 20px;
           ${cssBSSmall}
         `};
+
+  /* NOTE: ↓ this has to be after this ↑ */
+  ${({ isActive }) => isActive && cssHovered}
 `
