@@ -178,6 +178,7 @@ const Carousel: React.FC<{ slug: string; title: string }> = ({
             blurDataURL={genShimmerDataUrl(840, 560)}
             width={840}
             height={560}
+            priority={index === 0}
           />
         </motion.div>
       </AnimatePresence>

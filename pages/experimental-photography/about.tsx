@@ -23,6 +23,7 @@ const EPAbout: NextPage = () => {
               // blurDataURL={genShimmerDataUrl(800, 1704)}
               // width={800}
               // height={1704}
+              priority
             />
           </div>
           <div className='desc'>
