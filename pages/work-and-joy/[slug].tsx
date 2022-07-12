@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import BadgeList from '../../components/BadgeList'
 import ExternalLink from '../../components/ExternalLink'
 import HeadInfo from '../../components/HeadInfo'
+import { IMG_WORK } from '../../content/IMAGES'
 import genShimmerDataUrl from '../../lib/genShimmerDataUrl'
 import { getAllWorkSlugs, getWork, IWork } from '../../lib/getWorkData'
 
@@ -46,7 +47,7 @@ const WorkDetail: NextPage<IWork> = ({
           badgeList={badges}
           style={{ justifyContent: 'flex-start', margin: 0 }}
         />
-        <Carousel imgSrcArr={imgSrcArr} title={title} />
+        <Carousel slug={slug} title={title} />
       </section>
 
       <section className='technical-sheet'>
@@ -150,14 +151,14 @@ const SAnchor = styled(ExternalLink)`
   font-size: smaller;
 `
 
-const Carousel: React.FC<{
-  imgSrcArr: IWork['imgSrcArr']
-  title: string
-}> = ({ imgSrcArr, title }) => {
+const Carousel: React.FC<{ slug: string; title: string }> = ({
+  slug,
+  title,
+}) => {
   const [index, setIndex] = useState(0)
   return (
     <SCarousel
-      onClick={() => setIndex((prev) => (prev + 1) % imgSrcArr.length)}
+      onClick={() => setIndex((prev) => (prev + 1) % IMG_WORK[slug].length)}
     >
       <AnimatePresence initial={false} exitBeforeEnter>
         <motion.div
@@ -170,13 +171,13 @@ const Carousel: React.FC<{
         >
           {/* DO_NEXT: fixbug cornered on click */}
           <Image
-            src={imgSrcArr[index]}
+            src={IMG_WORK[slug][index]}
             alt={`Peiwen's project - ${title} - image sample ${index + 1}`}
             className='display'
             placeholder='blur'
-            blurDataURL={genShimmerDataUrl(800, 533.33)}
-            width={800}
-            height={533.33}
+            blurDataURL={genShimmerDataUrl(840, 560)}
+            width={840}
+            height={560}
           />
         </motion.div>
       </AnimatePresence>

@@ -3,11 +3,11 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { useHoverRef } from '../../lib/hooks'
+import { IMG_WORK } from '../../content/IMAGES'
 import { IWork } from '../../lib/getWorkData'
+import { useHoverRef } from '../../lib/hooks'
 import BadgeList from '../BadgeList'
 import ExternalLink from '../ExternalLink'
-import genShimmerDataUrl from '../../lib/genShimmerDataUrl'
 
 const workImgW = 840
 const workImgH = 560
@@ -31,14 +31,16 @@ const WorkListItem: React.FC<IWork> = ({
     >
       <div className='liContainer'>
         <SBG hovering={hovering} className='background'>
-          <Image
-            src={imgSrcArr[0]}
-            alt={title}
-            placeholder='blur'
-            blurDataURL={genShimmerDataUrl(workImgW, workImgH)}
-            width={workImgW}
-            height={workImgH}
-          />
+          {IMG_WORK[slug]?.[0] && (
+            <Image
+              src={IMG_WORK[slug][0]}
+              alt={title}
+              // placeholder='blur'
+              // blurDataURL={genShimmerDataUrl(workImgW, workImgH)}
+              // width={workImgW}
+              // height={workImgH}
+            />
+          )}
         </SBG>
         <div className='mask' />
         <AnimatePresence>
