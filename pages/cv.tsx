@@ -7,6 +7,7 @@ import ExternalLink from '../components/ExternalLink'
 import CV_EDU from '../content/CV_EDU'
 import CV_EXP from '../content/CV_EXP'
 import CV_SKILLS from '../content/CV_SKILLS'
+import cvPortrait from '../public/cv-portrait-sm.jpg'
 
 const CV: NextPage = () => {
   return (
@@ -20,12 +21,7 @@ const CV: NextPage = () => {
         </div>
         <section className='title'>
           <div className='portrait-container'>
-            <Image
-              src='/cv-portrait-sm.jpg'
-              alt="Peiwen Li's portrait"
-              width='150'
-              height='150'
-            />
+            <Image src={cvPortrait} alt="Peiwen Li's portrait" />
           </div>
           <div className='info'>
             <div className='general-info'>

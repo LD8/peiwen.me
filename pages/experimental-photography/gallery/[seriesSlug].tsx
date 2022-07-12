@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import EPLayout from '../../../components/EPLayout'
 import HeadInfo from '../../../components/HeadInfo'
 import { getEPSeries, IEPSingle } from '../../../lib/getExpPhotoData'
+import Image from 'next/image'
 
 export const getStaticPaths: GetStaticPaths = () => ({
   paths: getEPSeries().epSeries.map(({ seriesSlug }) => ({
@@ -29,7 +30,14 @@ const SingleSeries: NextPage<IEPSingle> = ({ seriesName, photos }) => {
           {photos.map(({ imgSrc, order, title, medium, location, time }) => (
             <div key={order} className='photo-display'>
               <div className='image'>
-                <img src={imgSrc} alt={title} />
+                <Image
+                  src={imgSrc}
+                  alt={title}
+                  layout='fill'
+                  className='display'
+                  // placeholder='blur'
+                  // blurDataURL={genShimmerDataUrl(workImgW, workImgH)}
+                />
               </div>
               <div className='caption'>
                 <span className='title'>
@@ -88,7 +96,7 @@ const StyledMain = styled.div`
       div.image {
         display: flex;
         justify-content: center;
-        img {
+        .display {
           width: 80%;
           max-width: 600px;
         }

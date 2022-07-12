@@ -3,6 +3,7 @@ import { NextPage } from 'next'
 import Image from 'next/image'
 import styled from 'styled-components'
 import HeadInfo from '../components/HeadInfo'
+import portrait300 from '../public/portrait-300.png'
 
 const PROF = {
   HTML: 90,
@@ -30,7 +31,7 @@ const PeiwenMe: NextPage = () => {
         swing={20}
       /> */}
       <aside className='portrait'>
-        <Image src='/portrait-300.png' alt='me' width='150' height='150' />
+        <Image src={portrait300} alt='me' />
       </aside>
       <section className='info'>
         <div className='intro'>

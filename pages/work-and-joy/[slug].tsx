@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import BadgeList from '../../components/BadgeList'
 import ExternalLink from '../../components/ExternalLink'
 import HeadInfo from '../../components/HeadInfo'
+import genShimmerDataUrl from '../../lib/genShimmerDataUrl'
 import { getAllWorkSlugs, getWork, IWork } from '../../lib/getWorkData'
 
 export const getStaticPaths: GetStaticPaths = () => {
@@ -171,9 +172,11 @@ const Carousel: React.FC<{
           <Image
             src={imgSrcArr[index]}
             alt={`Peiwen's project - ${title} - image sample ${index + 1}`}
+            className='display'
+            placeholder='blur'
+            blurDataURL={genShimmerDataUrl(800, 533.33)}
             width={800}
             height={533.33}
-            placeholder='blur'
           />
         </motion.div>
       </AnimatePresence>
@@ -193,7 +196,8 @@ const SCarousel = styled.div`
     box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
     display: flex;
     transition: all 200ms ease-in-out;
-    img {
+    .display {
+      border-radius: 15px;
       transition: all 300ms ease-in-out;
     }
     :hover {

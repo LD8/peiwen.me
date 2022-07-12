@@ -7,7 +7,10 @@ import { useHoverRef } from '../../lib/hooks'
 import { IWork } from '../../lib/getWorkData'
 import BadgeList from '../BadgeList'
 import ExternalLink from '../ExternalLink'
+import genShimmerDataUrl from '../../lib/genShimmerDataUrl'
 
+const workImgW = 840
+const workImgH = 560
 const WorkListItem: React.FC<IWork> = ({
   slug,
   title,
@@ -30,10 +33,11 @@ const WorkListItem: React.FC<IWork> = ({
         <SBG hovering={hovering} className='background'>
           <Image
             src={imgSrcArr[0]}
-            width='840'
-            height='560'
             alt={title}
             placeholder='blur'
+            blurDataURL={genShimmerDataUrl(workImgW, workImgH)}
+            width={workImgW}
+            height={workImgH}
           />
         </SBG>
         <div className='mask' />

@@ -11,7 +11,10 @@ const ExperimentalPhotography: NextPage = () => {
   const [hovering, setHov] = useState(false)
   const [mounted, setMounted] = useState(false)
 
-  useEffect(() => setMounted(true), [])
+  useEffect(() => {
+    setMounted(true)
+    router.prefetch(galleryPath)
+  }, [])
   useEffect(() => {
     if (hovering) {
       const id = setTimeout(() => setMounted(false), 5100)
