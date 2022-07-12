@@ -4,6 +4,7 @@ import EPLayout from '../../../components/EPLayout'
 import HeadInfo from '../../../components/HeadInfo'
 import { getEPSeries, IEPSingle } from '../../../lib/getExpPhotoData'
 import Image from 'next/image'
+import genShimmerDataUrl from '../../../lib/genShimmerDataUrl'
 
 export const getStaticPaths: GetStaticPaths = () => ({
   paths: getEPSeries().epSeries.map(({ seriesSlug }) => ({
@@ -30,13 +31,14 @@ const SingleSeries: NextPage<IEPSingle> = ({ seriesName, photos }) => {
           {photos.map(({ imgSrc, order, title, medium, location, time }) => (
             <div key={order} className='photo-display'>
               <div className='image'>
-                <Image
+                <img
                   src={imgSrc}
                   alt={title}
-                  layout='fill'
                   className='display'
                   // placeholder='blur'
-                  // blurDataURL={genShimmerDataUrl(workImgW, workImgH)}
+                  // blurDataURL={genShimmerDataUrl(400, 800)}
+                  // width={400}
+                  // height={800}
                 />
               </div>
               <div className='caption'>

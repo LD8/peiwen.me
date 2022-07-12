@@ -3,6 +3,8 @@ import Image from 'next/image'
 import styled from 'styled-components'
 import EPLayout from '../../components/EPLayout'
 import HeadInfo from '../../components/HeadInfo'
+import genShimmerDataUrl from '../../lib/genShimmerDataUrl'
+import atina24 from '../../public/experimental-photography/9--Pinhole/3--24_Hours_in_Atina,_Italy--Pinhole_Image--Atina,_Italy--2015.jpg'
 
 const EPAbout: NextPage = () => {
   return (
@@ -15,10 +17,12 @@ const EPAbout: NextPage = () => {
         <div className='content'>
           <div className='image'>
             <Image
-              src='/experimental-photography/9--Pinhole/3--24_Hours_in_Atina,_Italy--Pinhole_Image--Atina,_Italy--2015.jpg'
-              width='800'
-              height='1704'
+              src={atina24}
               alt='Pinhole 24h'
+              // placeholder='blur'
+              // blurDataURL={genShimmerDataUrl(800, 1704)}
+              // width={800}
+              // height={1704}
             />
           </div>
           <div className='desc'>
