@@ -31,7 +31,7 @@ const PeiwenMe: NextPage = () => {
         swing={20}
       /> */}
       <aside className='portrait'>
-        <Image src={portrait300} alt='me' />
+        <Image src={portrait300} alt='me' className='image' />
       </aside>
       <section className='info'>
         <div className='intro'>
@@ -88,10 +88,9 @@ const SRow = styled.div`
     min-height: 128px;
     min-width: 168px;
     padding-left: 40px;
-    img {
+    .image {
       /* portrait me */
       /* filter: hue-rotate(10deg); */
-      filter: brightness(0.75);
     }
   }
   > section.info {
@@ -122,6 +121,7 @@ const SRow = styled.div`
       align-self: center;
       flex: auto;
       min-width: 128px;
+      max-width: 128px;
       padding-left: 0px;
     }
     > section.info {
