@@ -1,13 +1,13 @@
-import { AnimatePresence, motion } from "framer-motion"
-import Link from "next/link"
-import { useRouter } from "next/router"
-import { useState, useEffect } from "react"
-import { MdAlternateEmail } from "react-icons/md"
-import { RiWechat2Line } from "react-icons/ri"
-import styled, { css } from "styled-components"
-import ICONS from "../lib/icons"
-import { FCwc } from "../types"
-import ExternalLink from "./ExternalLink"
+import { AnimatePresence, motion } from 'framer-motion'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { useState, useEffect } from 'react'
+import { MdAlternateEmail } from 'react-icons/md'
+import { RiWechat2Line } from 'react-icons/ri'
+import styled, { css } from 'styled-components'
+import ICONS from '../lib/icons'
+import { FCwc } from '../types'
+import ExternalLink from './ExternalLink'
 
 const EPLayout: FCwc = ({ children }) => {
   const [mounted, setMounted] = useState(false)
@@ -49,7 +49,9 @@ const Nav: React.FC = () => {
   return (
     <StyledNav>
       <div className='title'>
-        <Link href='/experimental-photography'>Experimental Photography</Link>
+        <Link href='/experimental-photography'>
+          <a>Experimental Photography</a>
+        </Link>
       </div>
       <div className='links'>
         {epNavLinks.map(({ name, pathname }) => (
@@ -59,7 +61,9 @@ const Nav: React.FC = () => {
               color: curPath.includes(name.toLowerCase()) ? 'white' : 'grey',
             }}
           >
-            <Link href={pathname}>{name}</Link>
+            <Link href={pathname}>
+              <a>{name}</a>
+            </Link>
           </span>
         ))}
       </div>
