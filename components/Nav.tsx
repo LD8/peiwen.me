@@ -50,6 +50,7 @@ const Nav: React.FC<{ fixed?: boolean }> = ({ fixed = false }) => {
         <AnimatePresence initial={false}>
           {!isLanding && (
             <motion.li
+              className='link-home'
               initial={{ opacity: 0, x: -300, width: 0 }}
               animate={{
                 opacity: 1,
@@ -65,7 +66,7 @@ const Nav: React.FC<{ fixed?: boolean }> = ({ fixed = false }) => {
               }}
             >
               <Link href='/' passHref>
-                <SNavLink isLanding={false} isActive={false}>
+                <SNavLink isLanding={isLanding} isActive={false}>
                   Home
                 </SNavLink>
               </Link>
@@ -98,15 +99,19 @@ const SNavOl = styled.ol<{ isLanding: boolean }>`
   flex-direction: row;
   justify-content: center;
   text-align: center;
-
-  @media screen and (max-width: 767px) and (orientation: portrait) {
-    flex-direction: ${({ isLanding }) => (isLanding ? 'column' : undefined)};
-  }
-
   li {
     display: grid;
     justify-content: center;
     align-items: center;
+  }
+
+  @media screen and (max-width: 767px) and (orientation: portrait) {
+    flex-direction: ${({ isLanding }) => (isLanding ? 'column' : undefined)};
+  }
+  @media screen and (max-width: 767px) {
+    .link-home {
+      display: none;
+    }
   }
 `
 
