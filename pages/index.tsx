@@ -10,7 +10,7 @@ const Home: NextPage = () => {
   return (
     <StyledContainer>
       <LeafSwirl />
-      <div>
+      <div className='quote'>
         <p>
           "As one looked at that dead leaf with all its beauty and color, maybe
           one would very deeply comprehend, be aware of, what one's own death
@@ -39,14 +39,16 @@ const StyledContainer = styled.div`
   // DO NOT DELETE THIS LINE ↓, for some reason it keeps footer sticky
   line-height: 1rem;
 
-  p {
-    line-height: 1.2rem;
-    margin-bottom: 10px;
-  }
-  @media screen and (max-width: 600px) and (max-height: 800px) {
-    display: none;
-  }
-  @media screen and (orientation: landscape) and (max-width: 800px) {
-    display: none;
+  .quote {
+    p {
+      line-height: 1.2rem;
+      margin-bottom: 10px;
+    }
+    @media screen and (max-width: 600px) and (max-height: 800px) {
+      display: none;
+    }
+    @media screen and (max-width: 914px) and (max-height: 450px) and (orientation: landscape) {
+      display: none;
+    }
   }
 `

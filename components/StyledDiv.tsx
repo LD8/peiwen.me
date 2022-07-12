@@ -91,10 +91,11 @@ type StyledTuDivProps = {
   height?: CSSProperties['height']
   margin?: CSSProperties['margin']
   isActive?: boolean
-  as?: 'button'
+  as?: 'button' | 'a'
   size?: 'L' | 'S'
 }
 const StyledDiv = styled.div<StyledTuDivProps>`
+  display: block;
   width: ${({ width = '230px' }) => width};
   height: ${({ height = '80px' }) => height};
   font-family: Montserrat;
@@ -112,7 +113,8 @@ const StyledDiv = styled.div<StyledTuDivProps>`
   ${({ isActive = false }) => isActive && cssHovered}
 
   ${({ as }) =>
-    as === 'button' &&
+    as &&
+    ['button', 'as'].includes(as) &&
     css`
       cursor: pointer;
       &:hover {

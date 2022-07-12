@@ -1,8 +1,15 @@
 import { AnimatePresence, motion } from 'framer-motion'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-import styled from 'styled-components'
-import StyledDiv from './StyledDiv'
+import styled, { css } from 'styled-components'
+import StyledDiv, {
+  cBg,
+  cssActive,
+  cssBSLarge,
+  cssBSSmall,
+  cssHovered,
+} from './StyledDiv'
 
 const navMap = [
   // { name: 'Home', pathname: '/' },
@@ -39,7 +46,7 @@ const Nav: React.FC<{ fixed?: boolean }> = ({ fixed = false }) => {
       animate={{ y }}
       transition={{ duration: 1, delay: isLanding ? 0.03 : 0, type: 'spring' }}
     >
-      <SNavUl isLanding={isLanding}>
+      <SNavOl isLanding={isLanding}>
         <AnimatePresence initial={false}>
           {!isLanding && (
             <motion.li
@@ -57,16 +64,11 @@ const Nav: React.FC<{ fixed?: boolean }> = ({ fixed = false }) => {
                 transition: { duration: 0.1 },
               }}
             >
-              <SNavBtn
-                as='button'
-                width='90px'
-                height='35px'
-                margin='20px 20px'
-                size='S'
-                onClick={() => router.push('/')}
-              >
-                <span>Home</span>
-              </SNavBtn>
+              <Link href='/' passHref>
+                <SNavLink isLanding={false} isActive={false}>
+                  Home
+                </SNavLink>
+              </Link>
             </motion.li>
           )}
         </AnimatePresence>
@@ -76,47 +78,78 @@ const Nav: React.FC<{ fixed?: boolean }> = ({ fixed = false }) => {
           const isDetailPage = isActive && !isNavPage
           return (
             <li key={name}>
-              <SNavBtn
-                as='button'
-                width={isLanding ? undefined : '90px'}
-                height={isLanding ? undefined : '35px'}
-                margin={isLanding ? undefined : '20px 20px'}
-                size={isLanding ? undefined : 'S'}
-                isLanding={isLanding}
-                isActive={isActive}
-                onClick={() => router.push(isNavPage ? '/' : pathname)}
-              >
-                <span>{isDetailPage ? 'back' : name}</span>
-              </SNavBtn>
+              <Link href={isNavPage ? '/' : pathname} passHref>
+                <SNavLink isLanding={isLanding} isActive={isActive}>
+                  {isDetailPage ? 'back' : name}
+                </SNavLink>
+              </Link>
             </li>
           )
         })}
-      </SNavUl>
+      </SNavOl>
     </motion.nav>
   )
 }
 
 export default Nav
 
-const SNavUl = styled.ul<{ isLanding: boolean }>`
+const SNavOl = styled.ol<{ isLanding: boolean }>`
   display: flex;
-  justify-content: center;
   flex-direction: row;
+  justify-content: center;
   text-align: center;
 
   @media screen and (max-width: 767px) and (orientation: portrait) {
     flex-direction: ${({ isLanding }) => (isLanding ? 'column' : undefined)};
-    > :first-child {
-      display: ${({ isLanding }) => (isLanding ? undefined : 'none')};
-    }
+  }
+
+  li {
+    display: grid;
+    justify-content: center;
+    align-items: center;
   }
 `
 
-const SNavBtn = styled(StyledDiv)<{ isLanding?: boolean }>`
-  @media screen and (max-width: 1200px) {
-    width: ${({ width = '300px', isLanding = false }) =>
-      isLanding && `calc(${width} * 0.6)`};
-    height: ${({ height = '120px', isLanding = false }) =>
-      isLanding && `calc(${height} * 0.6)`};
+const SNavLink = styled.a<{ isLanding: boolean; isActive: boolean }>`
+  cursor: pointer;
+  display: block;
+  border-radius: 60px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-secondary);
+  background-color: ${cBg};
+  transition: all 0.2s ease-in-out;
+  font-family: Montserrat;
+
+  :hover {
+    text-decoration: none;
+    ${cssHovered}
   }
+  :active {
+    ${cssActive}
+  }
+  ${({ isActive }) => isActive && cssHovered};
+  ${({ isLanding }) =>
+    isLanding
+      ? css`
+          width: 230px;
+          height: 80px;
+          margin: calc(1.5vmin + 20px);
+          ${cssBSLarge}
+          @media screen and (max-width: 820px) {
+            width: 180px;
+            height: 60px;
+          }
+          @media screen and (orientation: landscape) and (max-width: 896px) {
+            width: 150px;
+            height: 60px;
+          }
+        `
+      : css`
+          width: 90px;
+          height: 35px;
+          margin: 20px;
+          ${cssBSSmall}
+        `};
 `

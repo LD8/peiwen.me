@@ -107,7 +107,6 @@ const SAnchor = styled.a`
 `
 const StyledFooter = styled.footer<{ isLanding: boolean }>`
   position: sticky;
-  top: 100%;
   min-height: 10vh;
   width: 100%;
   display: flex;
