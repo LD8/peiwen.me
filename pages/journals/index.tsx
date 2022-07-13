@@ -1,7 +1,8 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { GetStaticProps, NextPage } from 'next'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { memo, useCallback, useEffect, useRef, useState } from 'react'
+import { memo, useCallback, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import BadgeList from '../../components/BadgeList'
 import HeadInfo from '../../components/HeadInfo'
@@ -9,7 +10,14 @@ import Input from '../../components/Input'
 import JournalDisplay from '../../components/JournalDisplay'
 import JournalOps from '../../components/JournalOps'
 import Pagination from '../../components/Pagination'
-import { StyledFlatButton } from '../../components/StyledDiv'
+import {
+  cBase,
+  cssActive,
+  cssHovered,
+  fLight,
+  StyledFlatButton,
+} from '../../components/StyledDiv'
+import TagList from '../../components/TagList'
 import QUOTES from '../../content/quotes'
 import ga from '../../lib/ga'
 import { useAnyInArray } from '../../lib/hooks'
@@ -86,7 +94,11 @@ const Journals: NextPage<TSGetJournals> = ({ journals: initJournals }) => {
         <JournalOps.Create />
       </StyledHeader>
 
-      <MemoJournalSection journals={filteredJournals} afterDel={afterDel} />
+      <MemoJournalSection
+        journals={filteredJournals}
+        // journals={Array(12).fill(initJournals?.[0])}
+        afterDel={afterDel}
+      />
     </div>
   )
 }
@@ -171,7 +183,7 @@ const JournalSection: React.FC<IPJournalSection> = ({
               {filteredJournals.length &&
                 paginatedArray &&
                 paginatedArray[curPage - 1]?.map((journal) => (
-                  <MemoCardJournal
+                  <CardJournal
                     key={journal.slug}
                     {...journal}
                     afterDel={afterDel}
@@ -241,62 +253,58 @@ const CardJournal: React.FC<
 }) => {
   const router = useRouter()
   return (
-    <StyledCard
-      clickable
-      as='li'
-      onClick={() => router.push(`/journals/${slug}`)}
-    >
+    <StyledJournalLi onClick={() => router.push(`/journals/${slug}`)}>
       <div className='title-block'>
-        <JournalDisplay.Status published={published} typeOf={type_of} />
-        <h3>{title}</h3>
+        <h3>
+          <Link href={`/journals/${slug}`}>{title}</Link>
+        </h3>
         <p>{summary}</p>
+        <TagList tagList={tag_list} />
       </div>
-      <BadgeList badgeList={tag_list} />
       <div className='extra-info'>
         <JournalDisplay.Date date={convDate(created_at)} />
         <JournalOps.Edit slug={slug} />
         <JournalOps.Delete slug={slug} afterDel={afterDel} />
       </div>
-    </StyledCard>
+      <JournalDisplay.Status published={published} typeOf={type_of} />
+    </StyledJournalLi>
   )
 }
-const MemoCardJournal = memo(CardJournal)
-const StyledCard = styled(StyledFlatButton)`
+const StyledJournalLi = styled.li`
   position: relative;
-  padding: 10px;
-  margin: 0;
-  border-radius: 10px;
-  min-width: unset;
-  min-width: 40%;
-  background-color: transparent;
-  border: 0.5px solid transparent;
+  cursor: pointer;
   flex: 1 0 350px;
-  height: unset;
-  letter-spacing: unset;
+  min-width: 40%;
   @media screen and (max-width: 800px) {
     width: 100%;
   }
-
   display: flex;
-  flex-direction: column;
+  flex-flow: column;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+  :hover {
+    ${cssHovered}
+  }
+  :active {
+    ${cssActive}
+  }
 
-  > .title-block {
+  .title-block {
+    flex: 1;
     h3 {
       width: 95%;
-      margin-bottom: 10px;
+      /* margin-bottom: 10px; */
     }
     p {
       text-align: justify;
       font-size: var(--fontS);
       line-height: unset;
-      margin-bottom: 10px;
+      /* margin-bottom: 10px; */
     }
   }
-  > ul {
-    flex: 1;
-    justify-content: flex-start;
-  }
-  > .extra-info {
+
+  .extra-info {
     font-size: var(--fontS);
     display: flex;
     justify-content: flex-end;

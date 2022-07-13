@@ -3,13 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import styled, { css } from 'styled-components'
-import StyledDiv, {
-  cBg,
-  cssActive,
-  cssBSLarge,
-  cssBSSmall,
-  cssHovered,
-} from './StyledDiv'
+import { cBg, cssActive, cssBSLarge, cssBSSmall, cssHovered } from './StyledDiv'
 
 const navMap = [
   // { name: 'Home', pathname: '/' },
@@ -116,12 +110,11 @@ const SNavOl = styled.ol<{ isLanding: boolean }>`
 `
 
 const SNavLink = styled.a<{ isLanding: boolean; isActive: boolean }>`
-  cursor: pointer;
   display: block;
-  border-radius: 60px;
   display: grid;
   justify-content: center;
   align-items: center;
+  border-radius: 60px;
   color: var(--color-secondary);
   background-color: ${cBg};
   transition: all 0.2s ease-in-out;

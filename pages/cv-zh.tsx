@@ -1,14 +1,13 @@
 import { NextPage } from 'next'
-import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import ExternalLink from '../components/ExternalLink'
+import HeadInfo from '../components/HeadInfo'
 import CV_EDU from '../content/CV_EDU'
 import CV_EXP from '../content/CV_EXP'
 import CV_SKILLS from '../content/CV_SKILLS'
-import { SPaper } from './cv'
 import cvPortrait from '../public/cv-portrait-sm.jpg'
-import HeadInfo from '../components/HeadInfo'
+import { SPaper } from './cv'
 
 const CVZH: NextPage = () => {
   return (
@@ -19,9 +18,7 @@ const CVZH: NextPage = () => {
       />
       <div className='content'>
         <div className='lang-switch-btn'>
-          <Link href='/cv'>
-            <a>English</a>
-          </Link>
+          <Link href='/cv'>English</Link>
         </div>
         <section className='title'>
           <div className='portrait-container'>

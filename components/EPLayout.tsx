@@ -49,9 +49,7 @@ const Nav: React.FC = () => {
   return (
     <StyledNav>
       <div className='title'>
-        <Link href='/experimental-photography'>
-          <a>Experimental Photography</a>
-        </Link>
+        <Link href='/experimental-photography'>Experimental Photography</Link>
       </div>
       <div className='links'>
         {epNavLinks.map(({ name, pathname }) => (
@@ -61,9 +59,7 @@ const Nav: React.FC = () => {
               color: curPath.includes(name.toLowerCase()) ? 'white' : 'grey',
             }}
           >
-            <Link href={pathname}>
-              <a>{name}</a>
-            </Link>
+            <Link href={pathname}>{name}</Link>
           </span>
         ))}
       </div>

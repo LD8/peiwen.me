@@ -131,16 +131,19 @@ export const StyledFlatButton = styled.button<{
   clickable?: boolean
   clicked?: boolean
 }>`
-  margin: 0;
+  display: block;
+  display: grid;
+  justify-content: center;
+  align-items: center;
   padding: 4px 20px;
   min-width: 100%;
   font-size: 12px;
-  font-family: var(--font-fancy);
   border-radius: 20px;
   transition: all 0.2s ease-in-out;
   border: 0.5px solid ${cBase};
   /* border: 1px solid transparent; */
   background-color: ${fLight};
+  font-family: var(--font-fancy);
   color: var(--color-dark);
 
   ${({ clickable = false }) =>
