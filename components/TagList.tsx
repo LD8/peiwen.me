@@ -19,6 +19,7 @@ const StyledTagList = styled.ul`
   display: flex;
   flex-flow: row wrap;
   gap: 5px;
+  color: var(--color-dark);
 
   li {
     display: grid;

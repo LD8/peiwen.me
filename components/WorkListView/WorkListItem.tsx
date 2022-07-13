@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React from 'react'
 import styled, { css } from 'styled-components'
@@ -8,9 +9,10 @@ import { IWork } from '../../lib/getWorkData'
 import { useHoverRef } from '../../lib/hooks'
 import BadgeList from '../BadgeList'
 import ExternalLink from '../ExternalLink'
+import TagList from '../TagList'
 
-const workImgW = 840
-const workImgH = 560
+// const workImgW = 840
+// const workImgH = 560
 const WorkListItem: React.FC<IWork> = ({
   slug,
   title,
@@ -20,51 +22,55 @@ const WorkListItem: React.FC<IWork> = ({
   summary,
   endedAt,
 }) => {
-  const router = useRouter()
   const [hovering, refLi] = useHoverRef()
 
   return (
-    <SWorkLi
-      key={slug}
-      onClick={() => router.push(`/work-and-joy/${slug}`)}
-      ref={refLi}
-    >
-      <div className='liContainer'>
-        <SBG hovering={hovering} className='background'>
-          {IMG_WORK[slug]?.[0] && (
-            <Image
-              src={IMG_WORK[slug][0]}
-              alt={title}
-              // placeholder='blur'
-              // blurDataURL={genShimmerDataUrl(workImgW, workImgH)}
-              // width={workImgW}
-              // height={workImgH}
-            />
-          )}
-        </SBG>
-        <div className='mask' />
-        <AnimatePresence>
-          {hovering && (
-            <motion.div
-              className='content'
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0, transition: { delay: 0.1 } }}
-              exit={{ opacity: 0, y: 50, transition: { duration: 0.2 } }}
-            >
-              <h2>
-                {links?.online ? (
-                  <ExternalLink href={links.online}>{title}</ExternalLink>
-                ) : (
-                  title
-                )}
-              </h2>
-              <BadgeList badgeList={badges} />
-              <p>{summary}</p>
-              <p>{endedAt}</p>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+    <SWorkLi key={slug} ref={refLi}>
+      <Link href={`/work-and-joy/${slug}`}>
+        <a className='linkContainer'>
+          <SBG hovering={hovering} className='background'>
+            {IMG_WORK[slug]?.[0] && (
+              <Image
+                src={IMG_WORK[slug][0]}
+                alt={title}
+                // placeholder='blur'
+                // blurDataURL={genShimmerDataUrl(workImgW, workImgH)}
+                // width={workImgW}
+                // height={workImgH}
+              />
+            )}
+          </SBG>
+          <div className='mask' />
+          <AnimatePresence>
+            {hovering && (
+              <motion.div
+                className='content'
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0, transition: { delay: 0.1 } }}
+                exit={{ opacity: 0, y: 50, transition: { duration: 0.2 } }}
+              >
+                <h2>{title}</h2>
+                <TagList tagList={badges} />
+                <p>{summary}</p>
+                <p>{endedAt}</p>
+                <p className='instruction'>
+                  Click anywhere to see details
+                  {links?.online ? (
+                    <>
+                      <span> plus </span>
+                      <button onClick={() => window.open(links.online)}>
+                        visit site
+                      </button>
+                    </>
+                  ) : (
+                    ''
+                  )}
+                </p>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </a>
+      </Link>
     </SWorkLi>
   )
 }
@@ -112,7 +118,7 @@ const SWorkLi = styled(motion.li)`
   }
 
   /* NOTE: essential container to achieve scaling effect */
-  .liContainer {
+  .linkContainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -138,7 +144,23 @@ const SWorkLi = styled(motion.li)`
       text-align: center;
       padding: 20px;
 
-      ${cssWorkCardContent}
+      ${cssWorkCardContent};
+
+      .instruction {
+        font-size: var(--fontS);
+        color: var(--color-tertiary);
+        button {
+          transition: all 200ms ease-in-out;
+          cursor: pointer;
+          background-color: transparent;
+          border-radius: 20px;
+          color: var(--color-lighter);
+          :hover {
+            color: var(--color-dark);
+            background-color: #c0c0c0;
+          }
+        }
+      }
     }
   }
 `
