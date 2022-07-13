@@ -11,6 +11,7 @@ import JournalOps from '../../components/JournalOps'
 import Pagination from '../../components/Pagination'
 import { StyledFlatButton } from '../../components/StyledDiv'
 import QUOTES from '../../content/quotes'
+import ga from '../../lib/ga'
 import { useAnyInArray } from '../../lib/hooks'
 import { isLi } from '../../lib/hooks/useGuard'
 import useResizeObserver from '../../lib/hooks/useResizeObserver'
@@ -46,6 +47,7 @@ const Journals: NextPage<TSGetJournals> = ({ journals: initJournals }) => {
             .toLowerCase()
             .includes(searchValue.toLowerCase()),
         )
+        ga.event('search', { search_term: searchValue })
         logger.dev({ filtered, searchValue })
         return filtered
       })

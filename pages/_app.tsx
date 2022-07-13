@@ -1,8 +1,12 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import type { AppProps } from 'next/app'
+import { useRouter } from 'next/router'
+import Script from 'next/script'
+import { useEffect } from 'react'
 import styled from 'styled-components'
 import Footer from '../components/Footer'
 import Nav from '../components/Nav'
+import ga from '../lib/ga'
 import useScrollingDown from '../lib/hooks/useScrollingDown'
 import '../styles/globals.css'
 
@@ -10,6 +14,17 @@ const noLayoutPagePaths = ['/cv', '/cv-zh', '/experimental-photography']
 
 function MyApp({ Component, pageProps, router: { pathname } }: AppProps) {
   const scrollingDown = useScrollingDown()
+  const router = useRouter()
+
+  useEffect(() => {
+    /**
+     * Log pageviews onMount in production
+     * @see ref: [router events](https://nextjs.org/docs/api-reference/next/router#routerevents)
+     */
+    const handleRouteChange = (url: string) => ga.pageview(url)
+    router.events.on('routeChangeComplete', handleRouteChange)
+    return () => router.events.off('routeChangeComplete', handleRouteChange)
+  }, [router.events])
 
   if (noLayoutPagePaths.filter((path) => pathname.includes(path)).length)
     return <Component {...pageProps} />
@@ -53,6 +68,24 @@ function MyApp({ Component, pageProps, router: { pathname } }: AppProps) {
       </AnimatePresence>
 
       <Footer />
+
+      {/* when in production */}
+      {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS && (
+        <>
+          <Script
+            strategy='lazyOnload'
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+          />
+          <Script strategy='lazyOnload'>
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');
+          `}
+          </Script>
+        </>
+      )}
     </BodyContent>
   )
 }

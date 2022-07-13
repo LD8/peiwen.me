@@ -7,6 +7,7 @@ import HeadInfo from '../../components/HeadInfo'
 import JournalDisplay from '../../components/JournalDisplay'
 import Markdown from '../../components/Markdown'
 import PageNotFound from '../../components/PageNotFound'
+import ga from '../../lib/ga'
 import logger from '../../lib/logger'
 import snatch from '../../lib/snatch'
 import { convDate } from '../../lib/utils'
@@ -40,13 +41,18 @@ const JournalDetails: NextPage<TSGetJournal> = ({ journal }) => {
     [journal],
   )
   useEffect(() => void getExtra(), [getExtra])
+
   const counts = useMemo(() => {
     if (!extra) return undefined
     const { comment_count, view_count, like_count } = extra
     return { comments: comment_count, views: view_count, likes: like_count }
   }, [extra])
 
+  // Log specific journal view
+  useEffect(() => ga.event('view_item', { journal_title: journal?.title }), [])
+
   if (!journal) return <PageNotFound />
+
   const {
     type_of,
     title,
@@ -58,7 +64,6 @@ const JournalDetails: NextPage<TSGetJournal> = ({ journal }) => {
     tag_list,
     body_markdown,
   } = journal
-
   return (
     <div style={{ maxWidth: '800px' }} className='full-flex'>
       <HeadInfo

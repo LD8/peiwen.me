@@ -1,12 +1,13 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import BadgeList from '../../components/BadgeList'
 import ExternalLink from '../../components/ExternalLink'
 import HeadInfo from '../../components/HeadInfo'
 import { IMG_WORK } from '../../content/IMAGES'
+import ga from '../../lib/ga'
 import genShimmerDataUrl from '../../lib/genShimmerDataUrl'
 import { getAllWorkSlugs, getWork, IWork } from '../../lib/getWorkData'
 
@@ -30,6 +31,8 @@ const WorkDetail: NextPage<IWork> = ({
   endedAt,
   badges,
 }) => {
+  // Log specific work detail view
+  useEffect(() => ga.event('view_item', { work_title: title }), [])
   return (
     <StyledContainer>
       <HeadInfo
