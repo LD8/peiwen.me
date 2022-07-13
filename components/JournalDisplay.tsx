@@ -8,7 +8,7 @@ import Fieldset from './Fieldset'
 import Input from './Input'
 import JournalOps from './JournalOps'
 import Loaders from './Loaders'
-import StyledDiv from './StyledDiv'
+import StyledButton from './StyledButton'
 import Textarea from './Textarea'
 
 type IPCounts = Required<IPCountsFloat> & IPDate
@@ -225,10 +225,8 @@ const CommentForm: React.FC<{
           rows={5}
           onChange={(e) => setMD(e.target.value)}
         />
-        <StyledSubmit
+        <StyledSubmitComment
           isActive={commenting}
-          size='S'
-          as='button'
           onClick={async () => {
             const data = { commenter: person, body_markdown: md }
             if (person && md) {
@@ -250,15 +248,13 @@ const CommentForm: React.FC<{
           }}
         >
           {commenting ? <Loaders.Swinger /> : 'Comment'}
-        </StyledSubmit>
+        </StyledSubmitComment>
       </Fieldset>
     </StyledCommentDiv>
   )
 }
-const StyledSubmit = styled(StyledDiv)`
+const StyledSubmitComment = styled(StyledButton)`
   margin: 10px 0 0 0;
-  height: 30px;
-  font-size: var(--fontS);
   align-self: flex-end;
   @media screen and (max-width: 700px) {
     align-self: center;

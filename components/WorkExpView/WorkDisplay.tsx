@@ -4,7 +4,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { IWork } from '../../lib/getWorkData'
 import ExternalLink from '../ExternalLink'
-import { base, cBase, cssActive, darken } from '../StyledDiv'
+import { base, cBase, cssActive, darken } from '../StyledButton'
 import TagList from '../TagList'
 import {
   cssWorkCardContent,

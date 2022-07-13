@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { cBase, fLight } from './StyledDiv'
+import { cBase, fLight } from './StyledButton'
 
 const TagList: React.FC<{ tagList: string[]; center?: boolean } & IStyle> = ({
   tagList,

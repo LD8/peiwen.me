@@ -9,7 +9,7 @@ import Input from '../../components/Input'
 import JournalDisplay from '../../components/JournalDisplay'
 import JournalOps from '../../components/JournalOps'
 import Pagination from '../../components/Pagination'
-import { cssActive, cssHovered } from '../../components/StyledDiv'
+import { cssActive, cssHovered } from '../../components/StyledButton'
 import TagList from '../../components/TagList'
 import QUOTES from '../../content/quotes'
 import ga from '../../lib/ga'
@@ -17,7 +17,6 @@ import { useAnyInArray } from '../../lib/hooks'
 import { isLi } from '../../lib/hooks/useGuard'
 import useResizeObserver from '../../lib/hooks/useResizeObserver'
 import logger from '../../lib/logger'
-import useJournalContextModel from '../../lib/models/useJournalContext'
 import { chunkArray, convDate } from '../../lib/utils'
 import { getJournals } from '../api/journals'
 
@@ -79,17 +78,18 @@ const Journals: NextPage<TSGetJournals> = ({ journals: initJournals }) => {
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
         />
-        <p>
+        <p style={{ fontSize: 'var(--fontS)' }}>
           {/* To record my thoughts on how to improve my work Sharing epiphanies of
-        life and work */}
+          life and work */}
           {quote}
         </p>
         <JournalOps.Create />
       </StyledHeader>
 
       <MemoJournalSection
-        journals={filteredJournals}
-        // journals={Array(12).fill(initJournals?.[0])}
+        // journals={filteredJournals}
+        // FIXME
+        journals={Array(102).fill(initJournals?.[0])}
         afterDel={afterDel}
       />
     </div>
@@ -135,7 +135,22 @@ const JournalSection: React.FC<IPJournalSection> = ({
 }) => {
   const [journalPerPage, setJournalPerPage] = useState(6)
   const [paginatedArray, setPaginatedArray] = useState<IJournal[][]>()
-  const { curPage, setCurPage } = useJournalContextModel((m) => [m.curPage])
+  // const { curPage, setCurPage } = useJournalContextModel((m) => [m.curPage])
+  // const [urlState, setUrlState] = useUrlState(
+  //   { page: 1 },
+  //   { parseOptions: { parseNumbers: true } },
+  // )
+
+  const router = useRouter()
+  const [curPage, setCurPage] = useState(1)
+  useEffect(() => {
+    setCurPage(() =>
+      !!Number(router.query.page)
+        ? (router.query.page as unknown as number)
+        : 1,
+    )
+  }, [router.query.page])
+
   const refSec = useResizeObserver(({ contentRect: { width, height } }) => {
     // NOTE: recalc journal per page on section resize
     if (width > 900 && height > 600) {

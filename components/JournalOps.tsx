@@ -4,25 +4,18 @@ import ICONS from '../lib/icons'
 import snatch from '../lib/snatch'
 import hocIsLi from './hocIsLi'
 import { StyledSpan } from './JournalDisplay'
-import StyledDiv from './StyledDiv'
+import StyledButton from './StyledButton'
 
 const Create: React.FC = () => {
   const router = useRouter()
   return (
     <div>
-      <StyledDiv
-        as='button'
-        size='S'
-        style={{
-          display: 'block',
-          margin: '0 auto',
-          height: '30px',
-          fontSize: 'var(--fontS)',
-        }}
+      <StyledButton
+        style={{ margin: '0 auto' }}
         onClick={() => router.push('/journals/create')}
       >
         create
-      </StyledDiv>
+      </StyledButton>
     </div>
   )
 }

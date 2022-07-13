@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import styled, { css } from 'styled-components'
-import { cBg, cssActive, cssBSLarge, cssBSSmall, cssHovered } from './StyledDiv'
+import { cBg, cssActive, cssBSLarge, cssBSSmall, cssHovered } from './StyledButton'
 
 const navMap = [
   // { name: 'Home', pathname: '/' },

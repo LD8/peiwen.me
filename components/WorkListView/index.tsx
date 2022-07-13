@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import React, { useCallback, useEffect, useState } from 'react'
 import styled, { css } from 'styled-components'
 import { TResGetWorks } from '../../lib/getWorkData'
-import { cssActive, cssHovered } from '../StyledDiv'
+import { cssActive, cssHovered } from '../StyledButton'
 import { cssTagItem } from '../TagList'
 import WorkList from './WorkList'
 

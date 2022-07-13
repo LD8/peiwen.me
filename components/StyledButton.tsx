@@ -1,4 +1,4 @@
-import styled, { css, CSSProperties } from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const genRGB = (base: number) => `rgb(${base}, ${base}, ${base})`
 export const lighten = (base: number, float: number) =>
@@ -86,43 +86,29 @@ export const cssActive = css`
     /* void br shadow */ 0 0 0 0 ${cBase};
 `
 
-type StyledTuDivProps = {
-  width?: CSSProperties['width']
-  height?: CSSProperties['height']
-  margin?: CSSProperties['margin']
-  isActive?: boolean
-  as?: 'button' | 'a'
-  size?: 'L' | 'S'
-}
-const StyledDiv = styled.div<StyledTuDivProps>`
+const StyledButton = styled.button<{ isActive?: boolean; large?: boolean }>`
+  cursor: pointer;
   display: block;
-  width: ${({ width = '230px' }) => width};
-  height: ${({ height = '80px' }) => height};
+  width: 220px;
+  height: 30px;
   font-family: Montserrat;
   border: none;
   border-radius: 60px;
-  margin: ${({ margin = 'calc(1.5vmin + 20px)' }) => margin};
   transition: all 0.2s ease-in-out;
-
   color: var(--color-secondary);
   background-color: ${cBg};
+  font-size: var(--fontS);
 
   /* box-shadow */
-  ${({ size = 'L' }) => (size === 'L' ? cssBSLarge : cssBSSmall)}
+  ${({ large = false }) => (large ? cssBSLarge : cssBSSmall)}
 
   ${({ isActive = false }) => isActive && cssHovered}
 
-  ${({ as }) =>
-    as &&
-    ['button', 'as'].includes(as) &&
-    css`
-      cursor: pointer;
-      &:hover {
-        ${cssHovered}
-      }
-      &:active {
-        ${cssActive}
-      }
-    `}
+  &:hover {
+    ${cssHovered}
+  }
+  &:active {
+    ${cssActive}
+  }
 `
-export default StyledDiv
+export default StyledButton

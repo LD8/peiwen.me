@@ -6,7 +6,7 @@ import { AiOutlineExperiment } from 'react-icons/ai'
 import { BiCategory } from 'react-icons/bi'
 import styled, { css } from 'styled-components'
 import HeadInfo from '../../components/HeadInfo'
-import StyledDiv from '../../components/StyledDiv'
+import StyledButton from '../../components/StyledButton'
 import WorkExpView from '../../components/WorkExpView'
 import WorkListView from '../../components/WorkListView'
 import useResizeObserver from '../../lib/hooks/useResizeObserver'
@@ -32,8 +32,6 @@ const WorkAndJoy: NextPage<TResGetWorks> = (props) => {
       />
       {!tooNarrow && (
         <SwitchButton
-          as='button'
-          size='S'
           onClick={() => queueMicrotask(() => setIsExpView((prev) => !prev))}
         >
           {isExpView ? <BiCategory /> : <AiOutlineExperiment />}
@@ -77,13 +75,9 @@ const StyledContainer = styled.div`
   }
 `
 
-const SwitchButton = styled(StyledDiv)`
-  display: block;
+const SwitchButton = styled(StyledButton)`
   margin: -3vh auto 3vh auto;
   height: 22px;
-  border-radius: 20px;
-  width: 220px;
-  font-size: var(--fontS);
   display: flex;
   justify-content: center;
   align-items: center;

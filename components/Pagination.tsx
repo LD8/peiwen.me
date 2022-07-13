@@ -1,7 +1,8 @@
+import Link from 'next/link'
 import React from 'react'
 import styled from 'styled-components'
 import Input from './Input'
-import StyledDiv from './StyledDiv'
+import StyledButton, { cBg, cssActive, cssBSSmall, cssHovered } from './StyledButton'
 
 type IPPagination = {
   pageCount: number
@@ -27,15 +28,18 @@ const Pagination: React.FC<IPPagination> = ({
   if (hideRange[1] > hideRange[0] + 2) {
     pagination = pagination.map((_, i) =>
       i < hideRange[0] - 1 || i > hideRange[1] - 1 ? (
-        <StyledPageJumper
-          as='button'
+        <Link
           key={i}
-          isActive={curPage === i + 1}
-          className='page-jumper'
-          onClick={() => setCurPage(i + 1)}
+          href={{ pathname: '/journals', query: { page: i + 1 } }}
+          passHref
         >
-          {i + 1}
-        </StyledPageJumper>
+          <StyledPageLink
+            isActive={curPage === i + 1}
+            onClick={() => setCurPage(i + 1)}
+          >
+            {i + 1}
+          </StyledPageLink>
+        </Link>
       ) : null,
     )
     const curInHideRange = curPage >= hideRange[0] && curPage <= hideRange[1]
@@ -62,22 +66,50 @@ const Pagination: React.FC<IPPagination> = ({
   }
 
   pagination = pagination.map((_, i) => (
-    <StyledPageJumper
-      as='button'
+    <Link
       key={i}
-      isActive={curPage === i + 1}
-      className='page-jumper'
-      onClick={() => setCurPage(i + 1)}
+      href={{ pathname: '/journals', query: { page: i + 1 } }}
+      passHref
     >
-      {i + 1}
-    </StyledPageJumper>
+      <StyledPageLink
+        isActive={curPage === i + 1}
+        onClick={() => setCurPage(i + 1)}
+      >
+        {i + 1}
+      </StyledPageLink>
+    </Link>
   ))
   return <>{pagination}</>
 }
 
 export default Pagination
 
-const StyledPageJumper = styled(StyledDiv)`
+const StyledPageLink = styled.a<{ isActive: boolean }>`
+  display: block;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border-radius: 60px;
+  color: var(--color-secondary);
+  background-color: ${cBg};
+  transition: all 0.2s ease-in-out;
+  font-family: Montserrat;
+
+  ${cssBSSmall};
+  :hover {
+    text-decoration: none;
+    ${cssHovered}
+  }
+  :active {
+    ${cssActive}
+  }
+  ${({ isActive }) => isActive && cssHovered};
+
+  width: 35px;
+  height: 35px;
+`
+
+const StyledPageJumper = styled(StyledButton)`
   width: 35px;
   height: 35px;
   font-size: var(--fontS);
@@ -88,7 +120,7 @@ const StyledPageJumper = styled(StyledDiv)`
   /* border: 1px solid var(--color-white); */
 `
 
-const StyledInputDiv = styled(StyledDiv)`
+const StyledInputDiv = styled(StyledButton)`
   width: 80px;
   height: 35px;
   margin: 0;

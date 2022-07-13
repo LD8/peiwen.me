@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 import { useHoverRef } from '../../lib/hooks'
 import { TResGetWorks } from '../../lib/getWorkData'
 import useWorkContextModel from '../../lib/models/useWorkContextModel'
-import StyledDiv from '../StyledDiv'
+import StyledButton from '../StyledButton'
 import WorkDisplay from './WorkDisplay'
 
 const WorkExpView: React.FC<TResGetWorks> = ({ workList, badgeList }) => {
@@ -50,9 +50,9 @@ const WorkCarrousel: React.FC<Partial<TResGetWorks>> = ({ workList }) => {
   return (
     <StyledWorkSection ref={ref}>
       <StyledDirDiv className='left' hovering={hovering}>
-        <StyledDiv as='button' size='S' onClick={() => goL(workList.length)}>
+        <StyledButton onClick={() => goL(workList.length)}>
           <span>«</span>
-        </StyledDiv>
+        </StyledButton>
       </StyledDirDiv>
 
       <WorkDisplay
@@ -63,9 +63,9 @@ const WorkCarrousel: React.FC<Partial<TResGetWorks>> = ({ workList }) => {
       />
 
       <StyledDirDiv className='right' hovering={hovering}>
-        <StyledDiv as='button' size='S' onClick={() => goR(workList.length)}>
+        <StyledButton onClick={() => goR(workList.length)}>
           <span>»</span>
-        </StyledDiv>
+        </StyledButton>
       </StyledDirDiv>
     </StyledWorkSection>
   )

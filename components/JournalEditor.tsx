@@ -10,7 +10,7 @@ import { StyledHeader } from '../pages/journals'
 import Fieldset from './Fieldset'
 import Input from './Input'
 import Loaders from './Loaders'
-import StyledDiv from './StyledDiv'
+import StyledButton from './StyledButton'
 import Textarea from './Textarea'
 
 const JOURNAL_TYPES: IJournal['type_of'][] = ['article', 'note', 'diary']
@@ -186,15 +186,9 @@ const JournalEditor: React.FC<Partial<TSGetJournal>> = ({ journal }) => {
       </StyledInfoDiv>
 
       <div style={{ paddingTop: '20px', width: '100%', textAlign: 'center' }}>
-        <StyledDiv
-          as='button'
-          size='S'
+        <StyledButton
           isActive={posting}
-          style={{
-            margin: '0',
-            height: '40px',
-            fontSize: 'var(--fontS)',
-          }}
+          style={{ margin: '0 auto' }}
           onClick={async () => {
             const { title, summary } = info
             if (!title || !summary || !markdown)
@@ -242,7 +236,7 @@ const JournalEditor: React.FC<Partial<TSGetJournal>> = ({ journal }) => {
           }}
         >
           {posting ? <Loaders.Swinger /> : 'POST'}
-        </StyledDiv>
+        </StyledButton>
       </div>
     </div>
   )

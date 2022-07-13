@@ -3,7 +3,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { prism } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import styled from 'styled-components'
 import ExternalLink from './ExternalLink'
-import StyledDiv from './StyledDiv'
+import { cssHovered } from './StyledButton'
 
 const lineNumberStyle: React.CSSProperties = {
   borderRight: '1px solid silver',
@@ -26,7 +26,7 @@ const Markdown: React.FC<{ data: string }> = ({ data }) => {
         code({ node, inline, className, children, ...props }) {
           const match = /language-(\w+)/.exec(className || '')
           return !inline && match ? (
-            <SDivPreCode isActive>
+            <SDivPreCode>
               <SyntaxHighlighter
                 style={prism as any}
                 language={match[1]}
@@ -120,7 +120,8 @@ const StyledMarkdown = styled(ReactMarkdown)`
     }
   }
 `
-const SDivPreCode = styled(StyledDiv)`
+const SDivPreCode = styled.div`
+  ${cssHovered}; // NOTE: this should be above all
   width: 100%;
   height: unset;
   margin: 0;
