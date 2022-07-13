@@ -256,7 +256,9 @@ const CardJournal: React.FC<
     <StyledJournalLi onClick={() => router.push(`/journals/${slug}`)}>
       <div className='title-block'>
         <h3>
-          <Link href={`/journals/${slug}`}>{title}</Link>
+          <Link href={`/journals/${slug}`}>
+            <a onClick={(e) => e.stopPropagation()}>{title}</a>
+          </Link>
         </h3>
         <p>{summary}</p>
         <TagList tagList={tag_list} />
