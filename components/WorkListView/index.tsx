@@ -1,8 +1,9 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import React, { useCallback, useEffect, useState } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { TResGetWorks } from '../../lib/getWorkData'
-import BadgeList from '../BadgeList'
+import { cssActive, cssHovered } from '../StyledDiv'
+import { cssTagItem } from '../TagList'
 import WorkList from './WorkList'
 
 const WorkListView: React.FC<TResGetWorks> = ({ workList, badgeList }) => {
@@ -28,7 +29,19 @@ const WorkListView: React.FC<TResGetWorks> = ({ workList, badgeList }) => {
           frameworks from 2015 to date
         </h3>
         <h4>↓ select / deselect to filter through categories ↓</h4>
-        <BadgeList badgeList={badgeList} setName={setName} name={badge} />
+        <ul className='badge-list'>
+          {!badgeList?.length
+            ? null
+            : badgeList.map((name) => (
+                <StyledBadgeLi
+                  key={name}
+                  clicked={name === badge}
+                  onClick={() => setName?.(name)}
+                >
+                  {name}
+                </StyledBadgeLi>
+              ))}
+        </ul>
       </StyledSectBrief>
 
       <AnimatePresence initial={false} exitBeforeEnter>
@@ -48,6 +61,24 @@ const WorkListView: React.FC<TResGetWorks> = ({ workList, badgeList }) => {
 
 export default WorkListView
 
+const StyledBadgeLi = styled.li<{ clicked: boolean }>`
+  cursor: pointer;
+  ${cssTagItem}
+
+  :hover {
+    ${cssHovered}
+  }
+  :active {
+    ${cssActive}
+  }
+
+  ${({ clicked }) =>
+    clicked &&
+    css`
+      ${cssHovered}
+    `}
+`
+
 const StyledSectBrief = styled.section`
   max-width: 1070px;
   margin-bottom: 2vh;
@@ -60,6 +91,15 @@ const StyledSectBrief = styled.section`
     font-weight: 400;
     color: var(--color-secondary);
     font-size: var(--fontS);
+  }
+  > .badge-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 5px;
+    > li {
+      min-width: 100px;
+    }
   }
 `
 const StyledSectWork = styled(motion.section)`

@@ -3,9 +3,9 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import BadgeList from '../../components/BadgeList'
 import ExternalLink from '../../components/ExternalLink'
 import HeadInfo from '../../components/HeadInfo'
+import TagList from '../../components/TagList'
 import { IMG_WORK } from '../../content/IMAGES'
 import ga from '../../lib/ga'
 import genShimmerDataUrl from '../../lib/genShimmerDataUrl'
@@ -50,10 +50,7 @@ const WorkDetail: NextPage<IWork> = ({
           )}
         </h1>
         <p>{summary}</p>
-        <BadgeList
-          badgeList={badges}
-          style={{ justifyContent: 'flex-start', margin: 0 }}
-        />
+        <TagList tagList={badges} style={{ margin: 0 }} />
         <Carousel slug={slug} title={title} />
       </section>
 

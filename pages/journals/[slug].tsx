@@ -2,11 +2,11 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { StyledHeader } from '.'
-import BadgeList from '../../components/BadgeList'
 import HeadInfo from '../../components/HeadInfo'
 import JournalDisplay from '../../components/JournalDisplay'
 import Markdown from '../../components/Markdown'
 import PageNotFound from '../../components/PageNotFound'
+import TagList from '../../components/TagList'
 import ga from '../../lib/ga'
 import logger from '../../lib/logger'
 import snatch from '../../lib/snatch'
@@ -75,7 +75,7 @@ const JournalDetails: NextPage<TSGetJournal> = ({ journal }) => {
       <StyledArticle>
         <StyledHeader style={{ marginBottom: '20px' }}>
           <h1>{title}</h1>
-          <BadgeList badgeList={tag_list} />
+          <TagList tagList={tag_list} center />
           <p style={{ textAlign: 'justify' }}>
             <em>Summary -</em> {summary}
           </p>

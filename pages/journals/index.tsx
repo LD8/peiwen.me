@@ -4,19 +4,12 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { memo, useCallback, useEffect, useState } from 'react'
 import styled from 'styled-components'
-import BadgeList from '../../components/BadgeList'
 import HeadInfo from '../../components/HeadInfo'
 import Input from '../../components/Input'
 import JournalDisplay from '../../components/JournalDisplay'
 import JournalOps from '../../components/JournalOps'
 import Pagination from '../../components/Pagination'
-import {
-  cBase,
-  cssActive,
-  cssHovered,
-  fLight,
-  StyledFlatButton,
-} from '../../components/StyledDiv'
+import { cssActive, cssHovered } from '../../components/StyledDiv'
 import TagList from '../../components/TagList'
 import QUOTES from '../../content/quotes'
 import ga from '../../lib/ga'

@@ -3,10 +3,13 @@ import { useRouter } from 'next/router'
 import React from 'react'
 import styled, { css } from 'styled-components'
 import { IWork } from '../../lib/getWorkData'
-import BadgeList from '../BadgeList'
 import ExternalLink from '../ExternalLink'
 import { base, cBase, cssActive, darken } from '../StyledDiv'
-import { cssWorkCardContent } from '../WorkListView/WorkListItem'
+import TagList from '../TagList'
+import {
+  cssWorkCardContent,
+  WorkVisitInstruction,
+} from '../WorkListView/WorkListItem'
 
 const boxShadowFrame = css`
   box-shadow:
@@ -78,9 +81,10 @@ const WorkDisplay: React.FC<
                     title
                   )}
                 </h2>
-                <BadgeList badgeList={badges} />
+                <TagList tagList={badges} />
                 <p>{summary}</p>
                 <p>{endedAt}</p>
+                <WorkVisitInstruction href={links?.online} />
               </motion.div>
             )}
           </AnimatePresence>

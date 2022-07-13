@@ -1,14 +1,12 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import React from 'react'
 import styled, { css } from 'styled-components'
 import { IMG_WORK } from '../../content/IMAGES'
 import { IWork } from '../../lib/getWorkData'
 import { useHoverRef } from '../../lib/hooks'
-import BadgeList from '../BadgeList'
-import ExternalLink from '../ExternalLink'
+import { IHref } from '../../types'
 import TagList from '../TagList'
 
 // const workImgW = 840
@@ -53,19 +51,7 @@ const WorkListItem: React.FC<IWork> = ({
                 <TagList tagList={badges} />
                 <p>{summary}</p>
                 <p>{endedAt}</p>
-                <p className='instruction'>
-                  Click anywhere to see details
-                  {links?.online ? (
-                    <>
-                      <span> plus </span>
-                      <button onClick={() => window.open(links.online)}>
-                        visit site
-                      </button>
-                    </>
-                  ) : (
-                    ''
-                  )}
-                </p>
+                <WorkVisitInstruction href={links?.online} />
               </motion.div>
             )}
           </AnimatePresence>
@@ -145,22 +131,34 @@ const SWorkLi = styled(motion.li)`
       padding: 20px;
 
       ${cssWorkCardContent};
-
-      .instruction {
-        font-size: var(--fontS);
-        color: var(--color-tertiary);
-        button {
-          transition: all 200ms ease-in-out;
-          cursor: pointer;
-          background-color: transparent;
-          border-radius: 20px;
-          color: var(--color-lighter);
-          :hover {
-            color: var(--color-dark);
-            background-color: #c0c0c0;
-          }
-        }
-      }
+    }
+  }
+`
+export const WorkVisitInstruction: React.FC<{ href?: IHref }> = ({ href }) => {
+  return (
+    <StyledInstruction>
+      Click anywhere to see details
+      {href && (
+        <>
+          <span> plus </span>
+          <button onClick={() => window.open(href)}>visit site</button>
+        </>
+      )}
+    </StyledInstruction>
+  )
+}
+const StyledInstruction = styled.p`
+  font-size: var(--fontS) !important;
+  color: var(--color-tertiary) !important;
+  button {
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 20px;
+    color: var(--color-lighter);
+    :hover {
+      color: var(--color-dark);
+      background-color: #c0c0c0;
     }
   }
 `
