@@ -62,7 +62,10 @@ const Journals: NextPage<TSGetJournals> = ({ journals: initJournals }) => {
   )
   return (
     <div style={{ maxWidth: '1200px' }} className='full-flex'>
-      <HeadInfo title="Peiwen's journal" />
+      <HeadInfo
+        title="Peiwen's journal"
+        description='Peiwen records his ideas and study results here'
+      />
 
       <StyledHeader>
         <StyledHeaderInput
@@ -236,7 +239,11 @@ const CardJournal: React.FC<
 }) => {
   const router = useRouter()
   return (
-    <StyledCard clickable as='li' onClick={() => router.push(`/journals/${slug}`)}>
+    <StyledCard
+      clickable
+      as='li'
+      onClick={() => router.push(`/journals/${slug}`)}
+    >
       <div className='title-block'>
         <JournalDisplay.Status published={published} typeOf={type_of} />
         <h3>{title}</h3>

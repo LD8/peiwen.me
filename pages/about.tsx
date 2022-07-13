@@ -20,7 +20,10 @@ const PROF = {
 const PeiwenMe: NextPage = () => {
   return (
     <SRow>
-      <HeadInfo title='About Peiwen Li' />
+      <HeadInfo
+        title='About Peiwen Li'
+        description='A full-stack software developer who is passionate in developing software that brings joy and peace to the world'
+      />
       {/* <LeafSwirl
         style={{ top: '0vh', left: '0', fontSize: '70vh' }}
         swing={50}
@@ -38,8 +41,8 @@ const PeiwenMe: NextPage = () => {
           <h1>Li · Peiwen</h1>
           <h3>Full-stack Software Engineer</h3>
           <p>
-            Passionate in developing software that brings happiness and light
-            into our lives
+            Passionate in developing software that brings joy and peace to the
+            world
           </p>
         </div>
 

@@ -6,17 +6,27 @@ import { FCwc } from '../types'
 type IHeadInfoProps = {
   title?: string
   description?: string
+  noRoboIndex?: boolean
+  // with dynamic pages, router.pathname is /pathname/[slug], so path need to be specified
+  path?: string
 }
 
+/**
+ * The central control module of header information
+ */
 const HeadInfo: FCwc<IHeadInfoProps> = ({
-  title = 'Peiwen.Me',
-  description = "Peiwen Li's website page, featuring his work and journals. Let there be more software that brings joy and peace to life",
+  title = 'Li · Peiwen',
+  description = "Peiwen Li's website, featuring his work and journals. Let there be more software that brings joy and peace to the world",
+  noRoboIndex = false,
+  // only needed in dynamic routes
+  path,
   children,
 }) => {
-  const { pathname } = useRouter()
+  const router = useRouter()
+  console.log(`https://peiwen.me${path || router.pathname}`)
   return (
     <Head>
-      <meta name='robots' content='index' />
+      {noRoboIndex && <meta name='robots' content='noindex' />}
       <meta name='description' content={description} />
       <link rel='icon' href='/favicon.ico' />
       <link
@@ -35,7 +45,10 @@ const HeadInfo: FCwc<IHeadInfoProps> = ({
       <meta property='og:image:height' content='256' />
       <meta property='og:type' content='website' />
       <meta property='og:updated_time' content={String(Date.now())} />
-      <meta property='og:url' content={`https://peiwen.me${pathname}`} />
+      <meta
+        property='og:url'
+        content={`https://peiwen.me${path || router.pathname}`}
+      />
 
       <title>{title}</title>
       {children}

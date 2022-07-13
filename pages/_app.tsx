@@ -2,7 +2,6 @@ import { AnimatePresence, motion } from 'framer-motion'
 import type { AppProps } from 'next/app'
 import styled from 'styled-components'
 import Footer from '../components/Footer'
-import HeadInfo from '../components/HeadInfo'
 import Nav from '../components/Nav'
 import useScrollingDown from '../lib/hooks/useScrollingDown'
 import '../styles/globals.css'
@@ -20,7 +19,6 @@ function MyApp({ Component, pageProps, router: { pathname } }: AppProps) {
 
   return (
     <BodyContent>
-      <HeadInfo />
       <Nav />
       <AnimatePresence>
         {showFixedNav && (

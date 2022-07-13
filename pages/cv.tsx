@@ -1,9 +1,9 @@
 import { NextPage } from 'next'
-import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import styled from 'styled-components'
 import ExternalLink from '../components/ExternalLink'
+import HeadInfo from '../components/HeadInfo'
 import CV_EDU from '../content/CV_EDU'
 import CV_EXP from '../content/CV_EXP'
 import CV_SKILLS from '../content/CV_SKILLS'
@@ -12,10 +12,11 @@ import cvPortrait from '../public/cv-portrait-sm.jpg'
 const CV: NextPage = () => {
   return (
     <SPaper id='SPaper'>
+      <HeadInfo
+        title="Peiwen Li's CV"
+        description='User-centered, scrupulous; develop software that brings joy and peace to the world'
+      />
       <div className='content'>
-        <Head>
-          <title>Peiwen Li's CV</title>
-        </Head>
         <div className='lang-switch-btn'>
           <Link href='/cv-zh'>中文</Link>
         </div>

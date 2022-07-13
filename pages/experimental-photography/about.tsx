@@ -3,13 +3,15 @@ import Image from 'next/image'
 import styled from 'styled-components'
 import EPLayout from '../../components/EPLayout'
 import HeadInfo from '../../components/HeadInfo'
-import genShimmerDataUrl from '../../lib/genShimmerDataUrl'
 import atina24 from '../../public/experimental-photography/9--Pinhole/3--24_Hours_in_Atina,_Italy--Pinhole_Image--Atina,_Italy--2015.jpg'
 
 const EPAbout: NextPage = () => {
   return (
     <EPLayout>
-      <HeadInfo title='About Don Lee - Experimental Photography' />
+      <HeadInfo
+        title='About Don Lee - An Experimental Photographer'
+        description='Don Lee/Peiwen considers himself an experimental photographer whose practice is strongly related to light and forms, the emotions expressed through abstraction'
+      />
       <StyledMain>
         <div className='title'>
           <h1>About Don Lee / Peiwen Li</h1>

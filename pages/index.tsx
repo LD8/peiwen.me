@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import styled from 'styled-components'
+import HeadInfo from '../components/HeadInfo'
 import LeafSwirl from '../components/LeafSwirl'
 
 const Home: NextPage = () => {
@@ -9,6 +10,7 @@ const Home: NextPage = () => {
   useEffect(() => void router.prefetch('/work-and-joy'), [])
   return (
     <StyledContainer>
+      <HeadInfo />
       <LeafSwirl />
       <div className='quote'>
         <p>

@@ -61,7 +61,11 @@ const JournalDetails: NextPage<TSGetJournal> = ({ journal }) => {
 
   return (
     <div style={{ maxWidth: '800px' }} className='full-flex'>
-      <HeadInfo title={`${title} - Peiwen's journal`} />
+      <HeadInfo
+        title={`Journal - ${title}`}
+        description={summary}
+        path={`/journals/${slug}`}
+      />
 
       <StyledArticle>
         <StyledHeader style={{ marginBottom: '20px' }}>

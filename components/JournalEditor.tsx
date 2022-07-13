@@ -1,6 +1,6 @@
 import dayjs from 'dayjs'
 import { useRouter } from 'next/router'
-import { useState, useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import toast from 'react-hot-toast'
 import styled from 'styled-components'
 import empowerSetState from '../lib/empowerSetState'
@@ -8,7 +8,6 @@ import snatch from '../lib/snatch'
 import { capitalize } from '../lib/utils'
 import { StyledHeader } from '../pages/journals'
 import Fieldset from './Fieldset'
-import HeadInfo from './HeadInfo'
 import Input from './Input'
 import Loaders from './Loaders'
 import StyledDiv from './StyledDiv'
@@ -44,8 +43,6 @@ const JournalEditor: React.FC<Partial<TSGetJournal>> = ({ journal }) => {
 
   return (
     <div style={{ width: '100%' }}>
-      <HeadInfo title="Peiwen's writing a journal" />
-
       <StyledHeader>
         <h3 style={{ margin: 0 }}>
           Journal ✍🏻 anything you'd like to share / Note anything you'd rather

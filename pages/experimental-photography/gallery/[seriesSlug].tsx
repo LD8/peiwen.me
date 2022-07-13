@@ -22,7 +22,10 @@ export const getStaticProps: GetStaticProps<IEPSingle> = (context) => ({
 const SingleSeries: NextPage<IEPSingle> = ({ seriesName, photos }) => {
   return (
     <EPLayout>
-      <HeadInfo title={`${seriesName} - Experimental Photography`} />
+      <HeadInfo
+        title={`${seriesName} - Experimental Photography`}
+        description="Don Lee/Peiwen's work aspire to provoke intellectual thinking and bring out a more personal, psychological and spiritual consciousness in response to the contingent nature of the present"
+      />
       <StyledMain>
         <section className='series-title'>
           <h1>{seriesName}</h1>

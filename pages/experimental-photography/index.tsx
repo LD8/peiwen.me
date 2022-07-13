@@ -31,7 +31,10 @@ const ExperimentalPhotography: NextPage = () => {
 
   return (
     <>
-      <HeadInfo title='Don Lee - Experimental Photography' />
+      <HeadInfo
+        title='Experimental Photography - Don Lee'
+        description='Don Lee/Peiwen considers himself an experimental photographer whose practice is strongly related to light and forms, the emotions expressed through abstraction'
+      />
       <StyledHome
         hovering={hovering}
         onMouseOver={() => setHov(true)}

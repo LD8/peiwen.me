@@ -7,7 +7,7 @@ const JournalCreate: NextPage = () => {
   useGuard()
   return (
     <>
-      <HeadInfo title='Peiwen is composing a journal' />
+      <HeadInfo title='Peiwen is composing a journal' noRoboIndex />
       <JournalEditor />
     </>
   )

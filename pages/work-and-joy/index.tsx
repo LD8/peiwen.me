@@ -26,7 +26,10 @@ const WorkAndJoy: NextPage<TResGetWorks> = (props) => {
   )
   return (
     <StyledContainer ref={refContainer}>
-      <HeadInfo title="Peiwen's work and joy" />
+      <HeadInfo
+        title="Peiwen's work and joy"
+        description="Peiwen Li's Project list, Projects built with JavaScript libraries and Python frameworks from 2015 to date"
+      />
       {!tooNarrow && (
         <SwitchButton
           as='button'

@@ -32,7 +32,11 @@ const WorkDetail: NextPage<IWork> = ({
 }) => {
   return (
     <StyledContainer>
-      <HeadInfo title={`Project - ${title}`} />
+      <HeadInfo
+        title={`Project - ${title}`}
+        description={summary}
+        path={`/work-and-joy/${slug}`}
+      />
 
       <section className='intro'>
         <h1>

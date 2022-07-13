@@ -6,7 +6,7 @@ import HeadInfo from '../../../components/HeadInfo'
 import {
   getEPSeries,
   IEPSingle,
-  TResGetEPSeries
+  TResGetEPSeries,
 } from '../../../lib/getExpPhotoData'
 
 export const getStaticProps: GetStaticProps<TResGetEPSeries> = () => ({
@@ -15,7 +15,10 @@ export const getStaticProps: GetStaticProps<TResGetEPSeries> = () => ({
 const EPGallery: NextPage<TResGetEPSeries> = ({ epSeries }) => {
   return (
     <EPLayout>
-      <HeadInfo title='Gallery - Experimental Photography' />
+      <HeadInfo
+        title='Gallery - Experimental Photography by Don Lee'
+        description="Don Lee/Peiwen's work aspire to provoke intellectual thinking and bring out a more personal, psychological and spiritual consciousness in response to the contingent nature of the present"
+      />
       <StyledMain>
         {epSeries.map((series) => (
           <SingleSeries key={series.order} {...series} />

@@ -8,14 +8,16 @@ import CV_EXP from '../content/CV_EXP'
 import CV_SKILLS from '../content/CV_SKILLS'
 import { SPaper } from './cv'
 import cvPortrait from '../public/cv-portrait-sm.jpg'
+import HeadInfo from '../components/HeadInfo'
 
 const CVZH: NextPage = () => {
   return (
     <SPaper id='SPaper' chinese>
+      <HeadInfo
+        title='李沛文的简历'
+        description='将用户体验作为核心，对细节一丝不苟，开发为世界带来喜悦与平和的软件'
+      />
       <div className='content'>
-        <Head>
-          <title>李沛文的简历</title>
-        </Head>
         <div className='lang-switch-btn'>
           <Link href='/cv'>
             <a>English</a>

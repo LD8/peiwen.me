@@ -22,7 +22,10 @@ const JournalEdit: NextPage<TSGetJournal> = ({ journal }) => {
   useGuard()
   return (
     <>
-      <HeadInfo title='Edit a journal' />
+      <HeadInfo
+        title={`Editing - ${journal?.title || 'a journal'}`}
+        noRoboIndex
+      />
       <JournalEditor journal={journal} />
     </>
   )

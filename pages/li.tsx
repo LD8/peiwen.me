@@ -16,7 +16,7 @@ const Li: NextPage = () => {
   const isLi = useIsLi()
   return (
     <>
-      <HeadInfo title="Peiwen Li's Personal page" />
+      <HeadInfo title="Peiwen Li's Personal page" noRoboIndex />
       {isLi ? <ContentIsLi /> : <ContentIsNotLi />}
     </>
   )
