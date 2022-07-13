@@ -5,7 +5,7 @@ const EP_LOCAL = 'http://localhost:3000'
 const EP_PROD = 'https://www.peiwen.me'
 export const isDev = process.env.NODE_ENV === 'development'
 export const isProd = process.env.NODE_ENV === 'production'
-export const EP = isDev ? EP_LOCAL : EP_LOCAL
+export const EP = isDev ? EP_LOCAL : EP_PROD
 
 export default async function snatch<T extends Record<string, unknown> = any>(
   path: RequestInfo | URL,
