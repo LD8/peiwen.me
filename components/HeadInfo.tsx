@@ -23,7 +23,6 @@ const HeadInfo: FCwc<IHeadInfoProps> = ({
   children,
 }) => {
   const router = useRouter()
-  console.log(`https://peiwen.me${path || router.pathname}`)
   return (
     <Head>
       {noRoboIndex && <meta name='robots' content='noindex' />}
