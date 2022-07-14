@@ -88,8 +88,7 @@ const Journals: NextPage<TSGetJournals> = ({ journals: initJournals }) => {
 
       <MemoJournalSection
         // journals={filteredJournals}
-        // FIXME
-        journals={Array(102).fill(initJournals?.[0])}
+        journals={Array(100).fill(initJournals?.[0])}
         afterDel={afterDel}
       />
     </div>
@@ -135,19 +134,12 @@ const JournalSection: React.FC<IPJournalSection> = ({
 }) => {
   const [journalPerPage, setJournalPerPage] = useState(6)
   const [paginatedArray, setPaginatedArray] = useState<IJournal[][]>()
-  // const { curPage, setCurPage } = useJournalContextModel((m) => [m.curPage])
-  // const [urlState, setUrlState] = useUrlState(
-  //   { page: 1 },
-  //   { parseOptions: { parseNumbers: true } },
-  // )
 
   const router = useRouter()
   const [curPage, setCurPage] = useState(1)
   useEffect(() => {
     setCurPage(() =>
-      !!Number(router.query.page)
-        ? (router.query.page as unknown as number)
-        : 1,
+      !!Number(router.query.page) ? Number(router.query.page) : 1,
     )
   }, [router.query.page])
 
@@ -199,15 +191,11 @@ const JournalSection: React.FC<IPJournalSection> = ({
                 ))}
             </motion.ul>
           </AnimatePresence>
-          <div className='pagination'>
+          <ul className='pagination'>
             {paginatedArray && paginatedArray.length > 1 && (
-              <Pagination
-                pageCount={paginatedArray.length}
-                curPage={curPage}
-                setCurPage={setCurrentPage}
-              />
+              <Pagination pageCount={paginatedArray.length} curPage={curPage} />
             )}
-          </div>
+          </ul>
         </>
       ) : (
         <h2 style={{ textAlign: 'center' }}>Nothing found...</h2>

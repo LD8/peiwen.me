@@ -3,7 +3,14 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import styled, { css } from 'styled-components'
-import { cBg, cssActive, cssBSLarge, cssBSSmall, cssHovered } from './StyledButton'
+import {
+  cBg,
+  cssActive,
+  cssBSLarge,
+  cssBSSmall,
+  cssHovered,
+} from './StyledButton'
+import StyledLink from './StyledLink'
 
 const navMap = [
   // { name: 'Home', pathname: '/' },
@@ -109,25 +116,7 @@ const SNavOl = styled.ol<{ isLanding: boolean }>`
   }
 `
 
-const SNavLink = styled.a<{ isLanding: boolean; isActive: boolean }>`
-  display: block;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  border-radius: 60px;
-  color: var(--color-secondary);
-  background-color: ${cBg};
-  transition: all 0.2s ease-in-out;
-  font-family: Montserrat;
-
-  :hover {
-    text-decoration: none;
-    ${cssHovered}
-  }
-  :active {
-    ${cssActive}
-  }
-
+const SNavLink = styled(StyledLink)<{ isLanding: boolean }>`
   ${({ isLanding }) =>
     isLanding
       ? css`
@@ -150,7 +139,6 @@ const SNavLink = styled.a<{ isLanding: boolean; isActive: boolean }>`
           margin: 20px;
           ${cssBSSmall}
         `};
-
   /* NOTE: ↓ this has to be after this ↑ */
   ${({ isActive }) => isActive && cssHovered}
 `
