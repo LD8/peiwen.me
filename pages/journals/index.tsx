@@ -87,8 +87,8 @@ const Journals: NextPage<TSGetJournals> = ({ journals: initJournals }) => {
       </StyledHeader>
 
       <MemoJournalSection
-        // journals={filteredJournals}
-        journals={Array(100).fill(initJournals?.[0])}
+        journals={filteredJournals}
+        // journals={Array(100).fill(initJournals?.[0])}
         afterDel={afterDel}
       />
     </div>
