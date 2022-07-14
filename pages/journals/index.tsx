@@ -87,8 +87,8 @@ const Journals: NextPage<TSGetJournals> = ({ journals: initJournals }) => {
       </StyledHeader>
 
       <MemoJournalSection
-        journals={filteredJournals}
-        // journals={Array(100).fill(initJournals?.[0])}
+        // journals={filteredJournals}
+        journals={Array(100).fill(initJournals?.[0])}
         afterDel={afterDel}
       />
     </div>
@@ -191,11 +191,11 @@ const JournalSection: React.FC<IPJournalSection> = ({
                 ))}
             </motion.ul>
           </AnimatePresence>
-          <ul className='pagination'>
+          <ol className='pagination'>
             {paginatedArray && paginatedArray.length > 1 && (
               <Pagination pageCount={paginatedArray.length} curPage={curPage} />
             )}
-          </ul>
+          </ol>
         </>
       ) : (
         <h2 style={{ textAlign: 'center' }}>Nothing found...</h2>

@@ -45,50 +45,52 @@ const Pagination: React.FC<IPPagination> = ({
         </Link>
       ) : null,
     )
+    const back = (
+      <Link key='back' href={genHref(curPage - 1)} passHref>
+        <StyledLink isActive={false}>«</StyledLink>
+      </Link>
+    )
     const holder = `${hideRange[0]}~${hideRange[1]}`
     const input = (
-      <>
-        <Link key='back' href={genHref(curPage - 1)} passHref>
-          <StyledLink isActive={false}>«</StyledLink>
-        </Link>
-        <StyledInputDiv key={hideRange[0]} isActive={curInHideRange}>
-          <Input
-            placeholder={holder}
-            value={inputV}
-            onFocus={() => setInputV('')}
-            onBlur={() =>
-              curInHideRange ? setInputV(String(curPage)) : setInputV('')
-            }
-            onKeyDown={(e) => {
-              if (['Enter', 'NumpadEnter'].includes(e.code)) {
-                const v = Number((e.target as any).value)
-                if (isNaN(v)) {
-                  setInputV('')
-                  return toast('Must be a number duhhh', { icon: '🫠' })
-                }
-                if (v >= hideRange[0] && v <= hideRange[1]) {
-                  // e.g. ____6~9____
-                  // only when input falls into hideRange would its state be changed
-                  turnPage(v)
-                } else if (v <= pageCount && v > 0) {
-                  // e.g. 1 2 3 4 5    10 11
-                  setInputV('')
-                  turnPage(v)
-                } else {
-                  setInputV('')
-                  toast('Out of range', { icon: '🧐' })
-                }
+      <StyledInputDiv key={hideRange[0]} isActive={curInHideRange}>
+        <Input
+          placeholder={holder}
+          value={inputV}
+          onFocus={() => setInputV('')}
+          onBlur={() =>
+            curInHideRange ? setInputV(String(curPage)) : setInputV('')
+          }
+          onKeyDown={(e) => {
+            if (['Enter', 'NumpadEnter'].includes(e.code)) {
+              const v = Number((e.target as any).value)
+              if (isNaN(v)) {
+                setInputV('')
+                return toast('Must be a number duhhh', { icon: '🫠' })
               }
-            }}
-            onChange={(e) => setInputV(e.target.value)}
-          />
-        </StyledInputDiv>
-        <Link key='forward' href={genHref(curPage + 1)} passHref>
-          <StyledLink isActive={false}>»</StyledLink>
-        </Link>
-      </>
+              if (v >= hideRange[0] && v <= hideRange[1]) {
+                // e.g. ____6~9____
+                // only when input falls into hideRange would its state be changed
+                turnPage(v)
+              } else if (v <= pageCount && v > 0) {
+                // e.g. 1 2 3 4 5    10 11
+                setInputV('')
+                turnPage(v)
+              } else {
+                setInputV('')
+                toast('Out of range', { icon: '🧐' })
+              }
+            }
+          }}
+          onChange={(e) => setInputV(e.target.value)}
+        />
+      </StyledInputDiv>
     )
-    pagination.splice(hideRange[0] - 1, 0, input)
+    const forward = (
+      <Link key='forward' href={genHref(curPage + 1)} passHref>
+        <StyledLink isActive={false}>»</StyledLink>
+      </Link>
+    )
+    pagination.splice(hideRange[0] - 1, 0, back, input, forward)
   } else {
     pagination = pagination.map((_, i) => (
       <Link key={i} href={genHref(i + 1)} passHref>
@@ -97,7 +99,15 @@ const Pagination: React.FC<IPPagination> = ({
     ))
   }
 
-  return <>{pagination}</>
+  return (
+    <>
+      {pagination
+        .filter((link) => !!link)
+        .map((link, i) => (
+          <li key={i}>{link}</li>
+        ))}
+    </>
+  )
 }
 
 export default Pagination
