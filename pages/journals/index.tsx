@@ -135,14 +135,6 @@ const JournalSection: React.FC<IPJournalSection> = ({
   const [journalPerPage, setJournalPerPage] = useState(6)
   const [paginatedArray, setPaginatedArray] = useState<IJournal[][]>()
 
-  const router = useRouter()
-  const [curPage, setCurPage] = useState(1)
-  useEffect(() => {
-    setCurPage(() =>
-      !!Number(router.query.page) ? Number(router.query.page) : 1,
-    )
-  }, [router.query.page])
-
   const refSec = useResizeObserver(({ contentRect: { width, height } }) => {
     // NOTE: recalc journal per page on section resize
     if (width > 900 && height > 600) {
@@ -158,15 +150,20 @@ const JournalSection: React.FC<IPJournalSection> = ({
       setPaginatedArray(chunkArray(filteredJournals, journalPerPage))
   }, [filteredJournals, journalPerPage])
 
+  const router = useRouter()
   const [right, setRight] = useState(true)
-  const setCurrentPage = useCallback(
-    (num: number) => {
-      queueMicrotask(() => setRight(num > curPage))
-      setTimeout(() => setCurPage(num))
-    },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [curPage],
-  )
+  const [curPage, setCurPage] = useState(1)
+  useEffect(() => {
+    const queryPage = Number(router.query.page)
+    if (!!queryPage) {
+      // is a valid number
+      queueMicrotask(() => setRight(queryPage > curPage))
+      setTimeout(() => setCurPage(queryPage))
+    } else {
+      setCurPage(1)
+    }
+  }, [router.query.page])
+
   return (
     <StyledJournalSection id='section-journal' ref={refSec}>
       {filteredJournals?.length ? (
