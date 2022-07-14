@@ -64,8 +64,10 @@ export default WorkListView
 const StyledBadgeLi = styled.li<{ clicked: boolean }>`
   cursor: pointer;
   ${cssTagItem}
+  transition: all 400ms ease-in-out 250ms;
 
   :hover {
+  transition: all 200ms ease-in-out;
     ${cssHovered}
   }
   :active {
