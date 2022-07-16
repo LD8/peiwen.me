@@ -109,7 +109,7 @@ const ContentIsLi: React.FC = () => {
       <h1
         onClick={() => {
           oli()
-          router.push('/journals')
+          router.back()
         }}
       >
         DeActivate God Mode

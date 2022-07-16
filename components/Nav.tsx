@@ -75,7 +75,11 @@ const Nav: React.FC<{ fixed?: boolean }> = ({ fixed = false }) => {
           return (
             <li key={name}>
               <Link href={isNavPage ? '/' : pathname} passHref>
-                <SNavLink isLanding={isLanding} isActive={isActive}>
+                <SNavLink
+                  isLanding={isLanding}
+                  isActive={isActive}
+                  onClick={() => isDetailPage && router.back()}
+                >
                   {isDetailPage ? 'back' : name}
                 </SNavLink>
               </Link>
