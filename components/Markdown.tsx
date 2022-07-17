@@ -1,8 +1,10 @@
 import ReactMarkdown from 'react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { prism } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+// @ts-ignore
+import rehypeRaw from 'rehype-raw'
+import remarkGfm from 'remark-gfm'
 import styled from 'styled-components'
-import ExternalLink from './ExternalLink'
 import { cssHovered } from './StyledButton'
 
 const lineNumberStyle: React.CSSProperties = {
@@ -21,7 +23,10 @@ const customStyle: React.CSSProperties = {
 const Markdown: React.FC<{ data: string }> = ({ data }) => {
   return (
     <StyledMarkdown
+      rehypePlugins={[rehypeRaw]}
+      remarkPlugins={[remarkGfm]}
       children={data}
+      linkTarget='_blank'
       components={{
         code({ node, inline, className, children, ...props }) {
           const match = /language-(\w+)/.exec(className || '')
@@ -31,14 +36,13 @@ const Markdown: React.FC<{ data: string }> = ({ data }) => {
                 style={prism as any}
                 language={match[1]}
                 showLineNumbers
-                wrapLines
-                wrapLongLines
+                // wrapLines
+                // wrapLongLines
                 PreTag='div'
                 lineNumberStyle={lineNumberStyle}
                 customStyle={customStyle}
                 {...props}
               >
-                {/* {String(children).replace(/(\n$)|(\s+)/, '')} */}
                 {String(children)}
               </SyntaxHighlighter>
             </SDivPreCode>
@@ -48,16 +52,28 @@ const Markdown: React.FC<{ data: string }> = ({ data }) => {
             </code>
           )
         },
-        a({ children, href, node }) {
-          // console.log({ node })
-          return <ExternalLink href={href}>{children}</ExternalLink>
+        table({ children, ...props }) {
+          return <StyledTable {...props}>{children}</StyledTable>
         },
+        // a({ children, href, node }) {
+        //   return <ExternalLink href={href}>{children}</ExternalLink>
+        // },
       }}
     />
   )
 }
 
 export default Markdown
+
+const StyledTable = styled.table`
+  width: 100%;
+  border: 1px solid silver;
+  border-radius: 5px;
+
+  > thead {
+    border-bottom: 1px solid silver;
+  }
+`
 
 const StyledMarkdown = styled(ReactMarkdown)`
   line-height: 1.5rem;
