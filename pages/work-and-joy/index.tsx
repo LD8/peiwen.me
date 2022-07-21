@@ -78,6 +78,7 @@ const StyledContainer = styled.div`
 const SwitchButton = styled(StyledButton)`
   margin: -3vh auto 3vh auto;
   height: 22px;
+  width: 230px;
   display: flex;
   justify-content: center;
   align-items: center;

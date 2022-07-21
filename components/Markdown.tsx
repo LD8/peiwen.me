@@ -2,6 +2,8 @@ import ReactMarkdown from 'react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { prism } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 // @ts-ignore
+// import MarkdownNavbar from 'markdown-navbar'
+// import 'markdown-navbar/dist/navbar.css';
 import rehypeRaw from 'rehype-raw'
 import remarkGfm from 'remark-gfm'
 import styled from 'styled-components'
@@ -22,48 +24,66 @@ const customStyle: React.CSSProperties = {
 
 const Markdown: React.FC<{ data: string }> = ({ data }) => {
   return (
-    <StyledMarkdown
-      rehypePlugins={[rehypeRaw]}
-      remarkPlugins={[remarkGfm]}
-      children={data}
-      linkTarget='_blank'
-      components={{
-        code({ node, inline, className, children, ...props }) {
-          const match = /language-(\w+)/.exec(className || '')
-          return !inline && match ? (
-            <SDivPreCode>
-              <SyntaxHighlighter
-                style={prism as any}
-                language={match[1]}
-                showLineNumbers
-                // wrapLines
-                // wrapLongLines
-                PreTag='div'
-                lineNumberStyle={lineNumberStyle}
-                customStyle={customStyle}
-                {...props}
-              >
-                {String(children)}
-              </SyntaxHighlighter>
-            </SDivPreCode>
-          ) : (
-            <code className={className} {...props}>
-              {children}
-            </code>
-          )
-        },
-        table({ children, ...props }) {
-          return <StyledTable {...props}>{children}</StyledTable>
-        },
-        // a({ children, href, node }) {
-        //   return <ExternalLink href={href}>{children}</ExternalLink>
-        // },
-      }}
-    />
+    <div id='journal-body' style={{ position: 'relative' }}>
+      {/* <StyledJournalNavigatior>
+        <MarkdownNavbar
+          className='article-menu'
+          source={data}
+          headingTopOffset={80}
+          // onNavItemClick={(event, element, hashValue) => {
+          //   console.log({ event, element, hashValue })
+          // }}
+        />
+      </StyledJournalNavigatior> */}
+      <StyledMarkdown
+        rehypePlugins={[rehypeRaw]}
+        remarkPlugins={[remarkGfm]}
+        children={data}
+        linkTarget='_blank'
+        components={{
+          code({ node, inline, className, children, ...props }) {
+            const match = /language-(\w+)/.exec(className || '')
+            return !inline && match ? (
+              <SDivPreCode>
+                <SyntaxHighlighter
+                  style={prism as any}
+                  language={match[1]}
+                  showLineNumbers
+                  // wrapLines
+                  // wrapLongLines
+                  PreTag='div'
+                  lineNumberStyle={lineNumberStyle}
+                  customStyle={customStyle}
+                  {...props}
+                >
+                  {String(children)}
+                </SyntaxHighlighter>
+              </SDivPreCode>
+            ) : (
+              <code className={className} {...props}>
+                {children}
+              </code>
+            )
+          },
+          table({ children, ...props }) {
+            return <StyledTable {...props}>{children}</StyledTable>
+          },
+          // a({ children, href, node }) {
+          //   return <ExternalLink href={href}>{children}</ExternalLink>
+          // },
+        }}
+      />
+    </div>
   )
 }
 
 export default Markdown
+
+// const StyledJournalNavigatior = styled.aside`
+//   position: fixed;
+//   width: 300px;
+//   left: 0;
+// `
 
 const StyledTable = styled.table`
   width: 100%;

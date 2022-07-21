@@ -115,25 +115,26 @@ const SNavOl = styled.ol<{ isLanding: boolean }>`
 `
 
 const SNavLink = styled(StyledLink)<{ isLanding: boolean }>`
+  border-radius: 0 60px;
   ${({ isLanding }) =>
     isLanding
       ? css`
-          width: 230px;
-          height: 80px;
+          width: 200px;
+          height: 60px;
           margin: calc(1.5vmin + 20px);
           ${cssBSLarge}
           @media screen and (max-width: 820px) {
             width: 180px;
-            height: 60px;
+            height: 50px;
           }
           @media screen and (orientation: landscape) and (max-width: 896px) {
             width: 150px;
-            height: 60px;
+            height: 40px;
           }
         `
       : css`
-          width: 90px;
-          height: 35px;
+          width: 100px;
+          height: 28px;
           margin: 20px;
           ${cssBSSmall}
         `};

@@ -89,11 +89,12 @@ export const cssActive = css`
 const StyledButton = styled.button<{ isActive?: boolean; large?: boolean }>`
   cursor: pointer;
   display: block;
-  width: 220px;
-  height: 30px;
+  width: 100px;
+  height: 28px;
   font-family: Montserrat;
   border: none;
-  border-radius: 60px;
+  /* border-radius: 60px; */
+  border-radius:0 60px;
   transition: all 0.2s ease-in-out;
   color: var(--color-secondary);
   background-color: ${cBg};
