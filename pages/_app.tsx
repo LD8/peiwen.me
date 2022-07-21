@@ -13,7 +13,7 @@ import '../styles/globals.css'
 const noLayoutPagePaths = ['/cv', '/cv-zh', '/experimental-photography']
 
 function MyApp({ Component, pageProps, router: { pathname } }: AppProps) {
-  const scrollingDown = useScrollingDown()
+  // const scrollingDown = useScrollingDown()
   const router = useRouter()
 
   useEffect(() => {
@@ -29,13 +29,13 @@ function MyApp({ Component, pageProps, router: { pathname } }: AppProps) {
   if (noLayoutPagePaths.filter((path) => pathname.includes(path)).length)
     return <Component {...pageProps} />
 
-  const isLanding = pathname === '/'
-  const showFixedNav = !isLanding && !scrollingDown
+  // const isLanding = pathname === '/'
+  // const showFixedNav = !isLanding && !scrollingDown
 
   return (
     <BodyContent>
       <Nav />
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {showFixedNav && (
           <motion.div
             className='container-motion-div-for-nav-fixed'
@@ -48,7 +48,7 @@ function MyApp({ Component, pageProps, router: { pathname } }: AppProps) {
             <Nav fixed />
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
 
       <AnimatePresence
         // initial={false}
