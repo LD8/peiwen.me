@@ -11,7 +11,7 @@ export default {
     ...shared,
     jsx_details: (
       <>
-        <h4>Project Coordinator and Interior Designer</h4>
+        <h4>Interior Designer | Project Coordinator</h4>
         <p>
           Started off as a project coordinator, soon worked my way up, designing
           the whole project, delivering numerous projects (more than 5000 sqm in
