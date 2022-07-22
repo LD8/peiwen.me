@@ -46,7 +46,7 @@ const CV: NextPage = () => {
           <div className='title-right'>
             <div className='general-info'>
               <h1>Li · Peiwen</h1>
-              <h2>Front-end Software Developer</h2>
+              <h2>Front-end Developer and Designer</h2>
               {CV_STATEMENT.EN}
             </div>
           </div>
@@ -104,7 +104,7 @@ const CV: NextPage = () => {
               <ul>
                 <li>Fluent in English (IELTS 8/9), native Mandarin speaker</li>
                 <li>
-                  Swim, read, blog, travel and take photos in my free time
+                  Swim, read, play piano, travel and take photos in my free time
                 </li>
               </ul>
             </div>
@@ -208,25 +208,33 @@ export const SPaper = styled.main<{ chinese?: boolean }>`
 
     h4,
     .company-name {
-      background-color: rgb(242, 242, 242);
+      background-color: var(--bgc-code);
       margin-bottom: 5px;
     }
 
     h4 {
       font-weight: 600;
       padding-left: 5px;
-      border-radius: 0 5px 5px 0;
+      /* border-radius: 0 5px 5px 0; */
     }
 
     .company-name {
       padding-right: 5px;
-      border-radius: 5px 0 0 5px;
+      /* border-radius: 5px 0 0 5px; */
+    }
+
+    .sub-h4 {
+      background-color: transparent;
+      margin-top: 8px;
+      /* text-decoration: underline;
+      text-underline-offset: 4px; */
+      color: var(--color-tertiary);
     }
 
     @media only screen and (max-width: 800px) {
-      h4 {
+      /* h4 {
         border-radius: 5px;
-      }
+      } */
       .company-name {
         padding: 0;
         background-color: transparent;

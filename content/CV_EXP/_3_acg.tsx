@@ -11,18 +11,16 @@ export default {
     ...shared,
     jsx_details: (
       <>
-        <h4>Art and Design Instructor</h4>
+        <h4>Art and Design Instructor (afterhours Web Developer)</h4>
         <p>
-          32 amongst total 34 of my students have successfully secured offers
-          from prestigious art institutions across UK, France, US, Canada,
-          Australia.{' '}
-          <i>
-            While helping my students embark on their journey,{' '}
-            <b>
-              for consistently growing interests, I had been studying
-              programming at the same time, in fact since 2015
-            </b>
-          </i>
+          32 amongst total 34 of my students successfully secured offers from
+          prestigious art institutions across UK, France, US, Canada, Australia.
+          While helping my students embark on their journey,{' '}
+          <b>
+            for consistently growing interests, I had been studying programming
+            at the same time, in fact since 2015. I started to build websites
+            with Python frameworks.
+          </b>
         </p>
         {/* <p>
           In these rewarding years as a teacher, 32 amongst 34 of my students

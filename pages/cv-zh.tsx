@@ -38,7 +38,7 @@ const CVZH: NextPage = () => {
                 <span
                   style={{ fontWeight: '400', color: 'grey', fontSize: '22px' }}
                 >
-                  前端开发
+                  前端开发&设计师
                 </span>
               </h1>
               {CV_STATEMENT.ZH}
@@ -97,7 +97,7 @@ const CVZH: NextPage = () => {
             <div className='details'>
               <ul>
                 <li>英语流利（雅思成绩8.0），法语初级</li>
-                <li>业余时间喜欢游泳、看书、旅行和摄影</li>
+                <li>业余时间喜欢游泳、看书、弹钢琴、旅行和摄影</li>
               </ul>
             </div>
           </div>

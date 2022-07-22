@@ -15,7 +15,13 @@ export default {
         <p>
           Started off as a project coordinator, soon worked my way up, designing
           the whole project, delivering numerous projects (more than 5000 sqm in
-          total), all of which were on schedule
+          total).
+        </p>
+        <p>
+          <b>
+            The universal design patterns and principles I learned back then are still
+            applicable to the UI/UX design now.
+          </b>
         </p>
         {/* <p>
           From a project coordinator to a designer who leads a small team, my
