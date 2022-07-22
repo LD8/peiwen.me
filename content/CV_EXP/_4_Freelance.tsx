@@ -22,7 +22,7 @@ export default {
       <>
         <h4>Web Developer | UI & UX Designer</h4>
         <ul>
-          <li>Design interactive user-centered interfaces for clients</li>
+          <li>Design interactive user-centred interfaces for clients</li>
           <li>Develop web apps independently with React, Django, PostgreSQL</li>
           <li>Iteratively improve UX of an app based on analysed feedbacks</li>
           <li>Portfolio: {link_portfolio}</li>

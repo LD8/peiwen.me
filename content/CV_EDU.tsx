@@ -23,9 +23,9 @@ const CV_EDU = [
     ),
     jsx_details_ZH: (
       <>
-        <h4>前端开发资格证，UI设计</h4>
+        <h4>前端编程资格证，交互设计</h4>
         <p>FreeCodeCamp, Interaction Design Foundation</p>
-        <h6>网络资源</h6>
+        <h6>远程授课，网络资源</h6>
       </>
     ),
   },
@@ -41,7 +41,7 @@ const CV_EDU = [
     ),
     jsx_details_ZH: (
       <>
-        <h4>MA. 硕士 艺术与科学</h4>
+        <h4>硕士 艺术与科学</h4>
         <p>中央圣马丁，伦敦艺术大学学院</p>
         <h6>英国伦敦</h6>
       </>
@@ -59,8 +59,8 @@ const CV_EDU = [
     ),
     jsx_details_ZH: (
       <>
-        <h4>Pre MA. 硕士预科</h4>
-        <p>剑桥艺术与表演学校</p>
+        <h4>硕士预科</h4>
+        <p>剑桥视觉艺术与表演艺术学校</p>
         <h6>英国剑桥</h6>
       </>
     ),
@@ -99,7 +99,7 @@ const CV_EDU = [
     ),
     jsx_details_ZH: (
       <>
-        <h4>BSc. 学士 建筑设施智能技术</h4>
+        <h4>本科 建筑设施智能技术</h4>
         <p>同济大学同科学院</p>
         <h6>上海</h6>
       </>

@@ -13,6 +13,11 @@ export default {
       <>
         <h4>Project Coordinator and Interior Designer</h4>
         <p>
+          Started off as a project coordinator, soon worked my way up, designing
+          the whole project, delivering numerous projects (more than 5000 sqm in
+          total), all of which were on schedule
+        </p>
+        {/* <p>
           From a project coordinator to a designer who leads a small team, my
           skills and duties had grown from drawing draft plans to:
         </p>
@@ -23,8 +28,8 @@ export default {
         </ul>
         <p>
           Delivered numerous projects (more than 5000 sqm in total), all of
-          which were on schedule. I could not do it without a team effort
-        </p>
+          which were on schedule.
+        </p> */}
       </>
     ),
   },
@@ -33,18 +38,19 @@ export default {
     ...shared,
     jsx_details: (
       <>
-        <h4>室内设计师 | 项目管理和协调</h4>
-        <p>从项目协调员成长为设计师，职责也在不断变化，包括</p>
+        <h4>室内设计师 | 项目管理</h4>
+        <p>
+          从项目协调成长为设计师，<b>设计的通用性使我受益至今</b>
+          ；工作期间共计完成 5000 余平米的办公室设计和施工工程，均顺利如期完成
+        </p>
+        {/* <p>从项目协调员成长为设计师，职责也在不断变化，包括</p>
         <ul>
           <li>绘制项目草图和施工图</li>
           <li>制作招投标文件，设计汇报演示文稿PPT</li>
           <li>向客户传达设计核心理念，后续与客户沟通设计进展</li>
           <li>与现场工程师协调，确保设计与质量的一致性</li>
           <li>与现场项目监理协调，确保项目如期完工</li>
-        </ul>
-        <p>
-          期间共计完成 5000 余平米的工程，均顺利如期完成；在这两年中，历练了对社会职场的理解，对工程项目的管理形成了一定的理解，同时意识到学海无涯，随即出国深造
-        </p>
+        </ul> */}
       </>
     ),
   },
