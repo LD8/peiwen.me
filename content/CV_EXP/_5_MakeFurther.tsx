@@ -9,6 +9,10 @@ const shared = {
   ),
 } as const
 
+const link_yapi = (
+  <ExternalLink href='https://github.com/ymfe/yapi'>YApi</ExternalLink>
+)
+
 export default {
   EN: {
     company_name: 'MakeFurther IT',
@@ -26,6 +30,10 @@ export default {
             Built innovative web systems in an agile team with TypeScript,
             React, Ant Design, LESS, UmiJS, Apache ECharts; deployed with Docker
           </li>
+          <li>
+            Designed 20+ API contracts using {link_yapi} and MockJS for fast-paced
+            sprints
+          </li>
           <li>Led weekly UI inspection meetings to revise/improve UI/UX</li>
           <li>
             Maintained an existing investment platform built with Vue, added 3
@@ -35,10 +43,10 @@ export default {
         <h4 className='sub-h4'>Key Achievements</h4>
         <ul>
           <li>
-            A brand new project - <em>Tactical Trading System</em> -
-            reached its alpha phase after one month of design and six months of
-            development for a dev team of 5. It has now become one of the
-            feature products of the company.
+            A brand new project - <em>Tactical Trading System</em> - reached its
+            alpha phase after one month of design and six months of development
+            for a dev team of 5. It has now become one of the feature products
+            of the company.
           </li>
           <li>
             Designed a flashy SPA for displaying and monitoring daily investment
@@ -63,7 +71,8 @@ export default {
             熟练运用 React 和 TypeScript，配合 Ant Design、LESS、ECharts、UmiJS
             等库和框架，高效完成敏捷开发任务；使用 Docker 发布
           </li>
-          <li>每周例行 UI 走查，确保团队高效实现设计，并收集反馈优化 UI/UX</li>
+          <li>使用 {link_yapi} 和 MockJS 来定义接口，提高开发效率</li>
+          <li>开展每周 UI 走查，确保团队高效实现设计，并收集反馈优化 UI/UX</li>
           <li>使用 Vue 框架维护现有的投资系统后台，增加新的页面表格和功能</li>
         </ul>
         <h4 className='sub-h4'>主要成就</h4>

@@ -10,7 +10,7 @@ const CV_EDU = [
         </ExternalLink>
         <br />
         <ExternalLink href='http://www.freecodecamp.com'>
-          freecodecamp.com
+          freeCodeCamp.com
         </ExternalLink>
       </>
     ),

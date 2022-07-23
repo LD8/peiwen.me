@@ -13,7 +13,7 @@ content:
   - Secondly, to do competitive research. Because this was a new thing with few competitors on the market, I had to treat our project manager and CEO as the primary source of the research. I had to dig deeper, to fully understand the logic behind in order to create a user story, a relatively good user experience.
 techs:
   - TypeScript, UmiJS, React
-  - Apache Echarts, CytoscapeJS
+  - Apache ECharts, CytoscapeJS
   - LESS
   - Webpack
   - Gulp - dual theme

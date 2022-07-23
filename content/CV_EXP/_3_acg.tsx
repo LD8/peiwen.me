@@ -11,7 +11,7 @@ export default {
     ...shared,
     jsx_details: (
       <>
-        <h4>Art and Design Instructor (afterhours Web Developer)</h4>
+        <h4>Art and Design Instructor (after-hours Web Developer)</h4>
         <p>
           32 amongst total 34 of my students successfully secured offers from
           prestigious art institutions across UK, France, US, Canada, Australia.

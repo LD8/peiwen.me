@@ -52,18 +52,18 @@ const PeiwenMe: NextPage = () => {
           <p>
             He feels lucky to have found his passion in programming in his late
             20s, for it involves not only the science side of the brain but also
-            the art side, especailly for a frontend engineer.
+            the art side, especially for a frontend engineer.
           </p>
           <p>
             Having a master degree in Art and Science, Peiwen is confident in
             designing and building
             <em>
-              <b> multi-disciplinary </b>
+              <b> multidisciplinary </b>
             </em>
             projects. Now he works as a front-end engineer at eBay Shanghai.
           </p>
           <p>
-            "Living and studying in the UK, traveling around Europe was the most
+            "Living and studying in the UK, travelling around Europe was the most
             rewarding experience in my early adult life." He states with a
             vigorous smile. It broadened his horizon and made him a worldly
             citizen.

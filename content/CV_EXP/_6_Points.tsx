@@ -21,8 +21,9 @@ export default {
             dark themes
           </li>
           <li>
-            Analysed user's needs and collaborated with PM and the UI team to
-            improve the design, elevating the starting point of the UX
+            Collaborated with PM and the UI team to analyse user's needs,
+            producing high fidelity wireframes, striving to elevate the starting
+            point of the UX
           </li>
           <li>Assessed UI designs for technical feasibility</li>
         </ul>
@@ -30,9 +31,10 @@ export default {
         <ul>
           <li>
             Completed a frontend framework to facilitate B2B
-            <em> Private Data Computing and Safely Sharing </em> with
-            authentication (user-role based) system; designed a modularised
-            functional page plugin system.
+            <em> Private Data Computing and Safely Sharing </em> with an
+            extendable authentication (user-role based) system and a
+            machine-learning-job management system
+            {/* ; designed a modularised functional page plugin system. */}
           </li>
         </ul>
       </>
@@ -59,7 +61,10 @@ export default {
         </ul>
         <h4 className='sub-h4'>主要成就</h4>
         <ul>
-          <li>在半年内研发出了一个全新的、可扩展的 B2B "隐私计算平台"框架</li>
+          <li>
+            在半年内研发出了一个全新的的 B2B "隐私计算平台"
+            框架，具有角色鉴权系统和机器学习任务管理系统，兼具优异的可扩展性
+          </li>
         </ul>
       </>
     ),

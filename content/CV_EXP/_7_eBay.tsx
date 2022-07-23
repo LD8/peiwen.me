@@ -21,28 +21,29 @@ export default {
             health
           </li>
           <li>
-            Upgraded projects to the latest React tech stack, TypeScript;
-            improved their maintainability
+            Upgraded projects to the latest React technology stack with improved
+            performance and maintainability
           </li>
           <li>
             Added new features to projects based on feedbacks from the clients
-            (TDOs), constantly improving the usability of the apps
+            (Technology Duty Officers), constantly improving the usability of
+            the apps
+          </li>
+          <li>
+            Fine-tuned the ways in which relevant data was visualised in graphs
           </li>
         </ul>
         <h4 className='sub-h4'>Key Achievements</h4>
         <ul>
           <li>
-            Modernised a <em>Root Cause Analysis</em> System with reusable
-            TypeScripted declarative React components in proper compositional
+            Modernised <em>Root Cause Analysis</em> System with reusable
+            declarative TypeScripted React components in optimised compositional
             structures
           </li>
           <li>
             After a couple of months I took over the RCA project, the clients
             claimed that the usability of the app had been drastically improved,
-            and the appearance was much more professional
-          </li>
-          <li>
-            Finetuned the ways in which relevant data was visualised in graphs
+            and the appearance was much more polished
           </li>
         </ul>
       </>
@@ -55,23 +56,26 @@ export default {
         <h4>前端工程师 | 交互设计</h4>
         <h4 className='sub-h4'>主要职责</h4>
         <ul>
-          <li>在敏捷开发环境中进行 SRE 团队的产品迭代</li>
+          <li>
+            在敏捷开发环境中进行 Site Reliability Engineering 团队的产品迭代
+          </li>
           <li>
             使用 React, TypeScript, Ant Design, ECharts, LESS 为 SRE
-            团队开发网页应用，以便监控服务池状态或及时找到原因进行补救
+            团队开发网页应用，以便监控 pool 状态或及时找到原因进行补救
           </li>
           <li>
             用最新的 React 技术栈和 TypeScript
-            升级现有产品的过时技术，提高可维护度
+            升级现有产品的过时技术，提高产品性能和可维护度
           </li>
           <li>根据调研和收集来的用户(TDO)反馈，持续迭代和提升产品的易用性</li>
+          <li>提高图表的显示效率，使重要的信息更容易被用户捕获</li>
         </ul>
         <h4 className='sub-h4'>主要成就</h4>
         <ul>
           <li>
             在接手一个叫"归因分析"的项目几个月后，用户普遍反应产品更好用更“专业”
             了；随后，又用 TypeScript
-            重写了整个项目，提升了可维护度，新功能也更容易以模块化的形式新增和迭代
+            重写了整个项目，提升了产品性能和可维护度，新功能也更容易以模块化的形式新增和迭代了
           </li>
         </ul>
       </>
@@ -97,15 +101,15 @@ export default {
 //           </li>
 //           <li>
 //             <b>Challenges</b> are mainly derived from the question of how to
-//             finetune the ways in which relevant data is visualised
+//             fine-tune the ways in which relevant data is visualised
 //           </li>
 //         </ul>
 //         <p>
-//           Taking over a complicated pre-exisiting project is never easy.
+//           Taking over a complicated pre-existing project is never easy.
 //           However, after a couple of months, having rewritten the entire system,
 //           our clients claimed that the appearance as well as the usability of
 //           the app had been drastically improved, more <em>'professional'</em> so
-//           to speak. Taking users' needs into account, the project is constently
+//           to speak. Taking users' needs into account, the project is constantly
 //           evolving.
 //         </p>
 //       </>

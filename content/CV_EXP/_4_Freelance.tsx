@@ -27,7 +27,7 @@ export default {
             Built approved UI with HTML, CSS, SASS, Bootstrap, JavaScript, React
           </li>
           <li>Built back-end with Python, Django framework and PostgreSQL</li>
-          <li>Improve the UX of an app iteratively based on analysed feedbacks</li>
+          <li>Improved the UX of an app iteratively based on analysed feedbacks</li>
           <li>Portfolio: {link_work}</li>
         </ul>
       </>
