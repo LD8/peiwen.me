@@ -9,7 +9,7 @@ const PROF = {
   HTML: 90,
   CSS: 92,
   Javascript: 95,
-  NodeJS: 80,
+  NodeJS: 85,
   Python: 60,
   empty: 0,
   Photoshop: 75,
@@ -40,17 +40,14 @@ const PeiwenMe: NextPage = () => {
         <div className='intro'>
           <h1>Li · Peiwen</h1>
           <h3>Full-stack Software Engineer</h3>
-          <p>
-            Passionate in developing software that brings joy and peace to the
-            world
-          </p>
+          <p>Passionate in developing software that brings joy to the world</p>
         </div>
 
         <Skills data={PROF} />
 
         <div className='desc'>
           <p>
-            He feels lucky to have found his passion in programming in his late
+            I am lucky to have found my passion in programming in my late
             20s, for it involves not only the science side of the brain but also
             the art side, especially for a frontend engineer.
           </p>
@@ -63,8 +60,8 @@ const PeiwenMe: NextPage = () => {
             projects. Now he works as a front-end engineer at eBay Shanghai.
           </p>
           <p>
-            "Living and studying in the UK, travelling around Europe was the most
-            rewarding experience in my early adult life." He states with a
+            "Living and studying in the UK, travelling around Europe was the
+            most rewarding experience in my early adult life." He states with a
             vigorous smile. It broadened his horizon and made him a worldly
             citizen.
           </p>
@@ -170,7 +167,7 @@ const Skills: React.FC<{ data: Record<string, number> }> = ({ data }) => {
 }
 
 const SUlSkills = styled(motion.ul)`
-  font-size: 12px;
+  font-size: var(--fontS);
   margin: 0 0 10px 0;
 
   @media screen and (max-width: 600px) {

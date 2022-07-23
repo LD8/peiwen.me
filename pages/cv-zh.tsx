@@ -12,8 +12,8 @@ const CVZH: NextPage = () => {
     <SPaper id='SPaper' chinese>
       <HeadInfo
         title='李沛文的简历'
-        description='将用户体验作为核心，对细节一丝不苟；在英国的深造学习，让我对艺术与科学作为一个整体具有一定深度的理解，
-        对设计和编写高交互性、跨学科的项目更有信心'
+        description='以用户体验为中心，对细节一丝不苟；从事前端开发 3 年多，参与设计和编写多款
+        B2B、B2C 中后台项目'
       />
       <div className='content'>
         <div className='lang-switch-btn'>

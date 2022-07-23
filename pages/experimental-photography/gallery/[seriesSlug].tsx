@@ -114,14 +114,14 @@ const StyledMain = styled.div`
           margin-bottom: 2px;
         }
         .medium {
-          font-size: 14px;
+          font-size: var(--fontM);
         }
         .separator {
           padding: 0 10px;
-          font-size: 18px;
+          font-size: var(--fontL);
         }
         .location {
-          font-size: 14px;
+          font-size: var(--fontM);
         }
       }
     }

@@ -4,8 +4,8 @@ const CV_STATEMENT = {
       Meticulous, user-centred, self-taught software engineer with 3+ years of
       proven experience to design and build premium B2B, B2C web apps; {' '}4-year
       experience in art and design industry informs my practice in UI/UX design;
-      moreover, the complementary masters in Art & Science makes me at ease
-      working in multidisciplinary environments; one last thing, coding makes
+      moreover, the complementary masters degree in Art & Science makes me at ease
+      working in interdisciplinary environments; and one last thing, coding makes
       me happy
     </p>
   ),

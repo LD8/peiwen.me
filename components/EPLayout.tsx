@@ -131,7 +131,7 @@ const StyledFooter = styled.footer`
   background-color: #1b1b1b;
 
   .back-to-peiwen {
-    font-size: 14px;
+    font-size: var(--fontM);
     a {
       display: flex;
       align-items: center;

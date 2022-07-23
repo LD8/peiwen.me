@@ -30,10 +30,10 @@ export default {
         <h4 className='sub-h4'>Key Achievements</h4>
         <ul>
           <li>
-            Completed a frontend framework to facilitate B2B
+            Completed a frontend architecture to facilitate B2B
             <em> Private Data Computing and Safely Sharing </em> with an
             extendable authentication (user-role based) system and a
-            machine-learning-job management system
+            machine-learning job management system
             {/* ; designed a modularised functional page plugin system. */}
           </li>
         </ul>
@@ -63,7 +63,7 @@ export default {
         <ul>
           <li>
             在半年内研发出了一个全新的的 B2B "隐私计算平台"
-            框架，具有角色鉴权系统和机器学习任务管理系统，兼具优异的可扩展性
+            框架，具有灵活的角色鉴权系统和机器学习任务管理系统，兼具优异的可扩展性
           </li>
         </ul>
       </>

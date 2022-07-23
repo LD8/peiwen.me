@@ -15,12 +15,10 @@ export default {
         <p>
           Started off as a project coordinator, soon worked my way up, designing
           the whole project, delivering numerous projects (more than 5000 sqm in
-          total).
-        </p>
-        <p>
+          total).{' '}
           <b>
-            The universal design patterns and principles I learned back then are still
-            applicable to the UI/UX design now.
+            The universal design patterns and principles I learned back then are
+            still applicable to the UI/UX design now.
           </b>
         </p>
         {/* <p>

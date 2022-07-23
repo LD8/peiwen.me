@@ -3,7 +3,7 @@
 @import './flavored.css';
 
 :root {
-  /* colors */
+  /* colours */
   --color-dark: rgb(80, 80, 80);
   --color-secondary: rgb(120, 120, 120);
   --color-tertiary: rgb(160, 160, 160);
@@ -20,7 +20,7 @@
   --avocado: #49720c;
   --avocado-light: #7abc4d;
 
-  /* bg colors/images */
+  /* bg colours/images */
   --bgc-general: rgb(200, 200, 200);
   --bgc-code: #efeeea;
   --bgc-code-alt: #f8fcff66;
@@ -33,16 +33,17 @@
   /* fonts */
   --font-fancy: 'Montserrat';
   --fontXL: 30px;
-  --fontL: 25px;
-  --fontM: 16px;
-  --fontS: 13px;
-  --fontXS: 11px;
+  --fontL: 22px;
+  --fontM: 14px;
+  --fontS: 12px;
+  --fontXS: 10px;
 
   /* var for cv page */
   --whole-width: 842px;
   --aside-width: 170px;
   --main-width: 510px;
   --paper-padding: 80px;
+  --section-width: calc(var(--aside-width) + var(--main-width));
 }
 
 @media only screen and (max-width: 800px) {
@@ -73,7 +74,21 @@ body {
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background-color: rgb(200, 200, 200);
 }
+
 @media print {
+  :root {
+    --fontXL: 26px;
+    --fontL: 20px;
+    --fontM: 12px;
+    --fontS: 10px;
+    --fontXS: 9px;
+
+    /* var for cv page */
+    --whole-width: 100%;
+    --aside-width: 150px;
+    --paper-padding: 10px;
+    --main-width: calc(var(--whole-width) - var(--aside-width));
+  }
   body {
     background-color: transparent;
   }

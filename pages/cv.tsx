@@ -18,10 +18,10 @@ export const ContactInfo: React.FC<{ lang?: 'EN' | 'ZH' }> = ({
       https://github.com/ld8
     </ExternalLink> */}
     <div>
-      <em style={{ fontSize: '12px' }}>(+86) 150 005 288 42</em>
+      <em style={{ fontSize: 'var(--fontS)' }}>(+86) 150 005 288 42</em>
     </div>
     <div>
-      <em style={{ fontSize: '12px' }}>
+      <em style={{ fontSize: 'var(--fontS)' }}>
         {lang === 'EN' ? 'Shanghai, China' : '上海市 徐汇区'}
       </em>
     </div>
@@ -33,7 +33,8 @@ const CV: NextPage = () => {
     <SPaper id='SPaper'>
       <HeadInfo
         title="Peiwen Li's CV"
-        description='User-centered, scrupulous; develop software that brings joy and peace to the world'
+        description='Meticulous, user-centred, self-taught software engineer with 3+ years of
+        proven experience to design and build premium B2B, B2C web apps'
       />
       <div className='content'>
         <div className='lang-switch-btn'>
@@ -229,6 +230,10 @@ export const SPaper = styled.main<{ chinese?: boolean }>`
       /* text-decoration: underline;
       text-underline-offset: 4px; */
       color: var(--color-tertiary);
+      @media print {
+        margin-top: 4px;
+        margin-bottom: 0px;
+      }
     }
 
     @media only screen and (max-width: 800px) {
@@ -245,6 +250,9 @@ export const SPaper = styled.main<{ chinese?: boolean }>`
     .title {
       margin-bottom: 30px;
       display: flex;
+      @media print {
+        margin-bottom: 20px;
+      }
 
       .title-left {
         width: var(--aside-width);
@@ -349,11 +357,14 @@ export const SPaper = styled.main<{ chinese?: boolean }>`
     .experience,
     .education,
     .other {
-      width: calc(var(--whole-width) - var(--paper-padding) * 2 - 2);
+      width: var(--section-width);
       margin-bottom: 20px;
       /* margin-left: auto; */
       display: flex;
       flex-direction: column;
+      @media print {
+        margin-bottom: 10px;
+      }
 
       a {
         text-decoration: none;
@@ -370,7 +381,6 @@ export const SPaper = styled.main<{ chinese?: boolean }>`
         margin-left: auto;
 
         h3 {
-          width: var(--main-width);
           margin-bottom: var(--fontS);
           padding-bottom: 5px;
 
@@ -385,6 +395,9 @@ export const SPaper = styled.main<{ chinese?: boolean }>`
       .sub-container {
         display: flex;
         margin-bottom: 20px;
+        @media print {
+          margin-bottom: 10px;
+        }
 
         .aside {
           width: var(--aside-width);
@@ -460,8 +473,10 @@ export const SPaper = styled.main<{ chinese?: boolean }>`
   @media print {
     margin: 0;
     .content {
-      width: 842px;
-      padding: 0;
+      /* width: 842px; */
+      /* width: 100%; */
+      /* max-width: 100%; */
+      /* padding: 20px; */
       border: none;
       box-shadow: none;
       /* .experience{

@@ -92,7 +92,7 @@ const CV_EDU = [
     ),
     jsx_details_EN: (
       <>
-        <h4>Diploma - Intelligent building and Technology</h4>
+        <h4>Diploma - Intelligent Building Facility Technology</h4>
         <p>Tongji University</p>
         <h6>Shanghai, China</h6>
       </>

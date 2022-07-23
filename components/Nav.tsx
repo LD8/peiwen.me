@@ -136,6 +136,7 @@ const SNavLink = styled(StyledLink)<{ isLanding: boolean }>`
           width: 100px;
           height: 28px;
           margin: 20px;
+          font-size: var(--fontS);
           ${cssBSSmall}
         `};
   /* NOTE: ↓ this has to be after this ↑ */
