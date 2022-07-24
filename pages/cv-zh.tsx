@@ -1,45 +1,47 @@
 import { NextPage } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
-import ExternalLink from '../components/ExternalLink'
 import HeadInfo from '../components/HeadInfo'
 import CV_EDU from '../content/CV_EDU'
 import CV_EXP from '../content/CV_EXP'
 import CV_SKILLS from '../content/CV_SKILLS'
-import cvPortrait from '../public/cv-portrait-sm.jpg'
-import { SPaper } from './cv'
+import CV_STATEMENT from '../content/CV_STATEMENT'
+import { ContactInfo, SPaper } from './cv'
 
 const CVZH: NextPage = () => {
   return (
     <SPaper id='SPaper' chinese>
       <HeadInfo
         title='李沛文的简历'
-        description='将用户体验作为核心，对细节一丝不苟，开发为世界带来喜悦与平和的软件'
+        description='以用户体验为中心，对细节一丝不苟；从事前端开发 3 年多，参与设计和编写多款
+        B2B、B2C 中后台项目'
       />
       <div className='content'>
         <div className='lang-switch-btn'>
           <Link href='/cv'>English</Link>
         </div>
         <section className='title'>
-          <div className='portrait-container'>
-            <Image src={cvPortrait} alt="Peiwen Li's portrait" />
+          <div className='title-left'>
+            <ContactInfo lang='ZH' />
           </div>
-          <div className='info'>
+          <div className='title-right'>
             <div className='general-info'>
-              <h1>李沛文</h1>
-              <h2>全栈开发</h2>
-              <p>
-                将用户体验作为核心，对细节一丝不苟，开发为世界带来喜悦与平和的软件
-              </p>
-            </div>
-            <div className='contact-info'>
-              <ExternalLink href='http://peiwen.me'>peiwen.me</ExternalLink>
-              <ExternalLink href='mailto: don_lee@me.com'>
-                don_lee@me.com
-              </ExternalLink>
-              <ExternalLink href='https://github.com/ld8'>
-                github.com/ld8
-              </ExternalLink>
+              <h1
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginBottom: '15px',
+                  letterSpacing: '8px',
+                }}
+              >
+                <span>李沛文</span>
+                <span style={{ margin: '0 10px', color: 'grey' }}>·</span>
+                <span
+                  style={{ fontWeight: '400', color: 'grey', fontSize: '22px' }}
+                >
+                  前端开发&设计师
+                </span>
+              </h1>
+              {CV_STATEMENT.ZH}
             </div>
           </div>
         </section>
@@ -93,9 +95,9 @@ const CVZH: NextPage = () => {
           <div className='sub-container'>
             <div className='aside' />
             <div className='details'>
-              <ul style={{ marginLeft: '15px' }}>
+              <ul>
                 <li>英语流利（雅思成绩8.0），法语初级</li>
-                <li>业余时间喜欢看书、写博客、游泳、摄影和旅行</li>
+                <li>业余时间喜欢游泳、看书、弹钢琴、旅行和摄影</li>
               </ul>
             </div>
           </div>

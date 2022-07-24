@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { NextPage } from 'next'
 import Image from 'next/image'
 import styled from 'styled-components'
+import Details from '../components/Details'
 import HeadInfo from '../components/HeadInfo'
 import portrait300 from '../public/portrait-300.png'
 
@@ -9,7 +10,7 @@ const PROF = {
   HTML: 90,
   CSS: 92,
   Javascript: 95,
-  NodeJS: 80,
+  NodeJS: 85,
   Python: 60,
   empty: 0,
   Photoshop: 75,
@@ -39,35 +40,50 @@ const PeiwenMe: NextPage = () => {
       <section className='info'>
         <div className='intro'>
           <h1>Li · Peiwen</h1>
-          <h3>Full-stack Software Engineer</h3>
+          <h3>Front-end Developer and Designer</h3>
           <p>
-            Passionate in developing software that brings joy and peace to the
-            world
+            Striving to develop software that brings peace and harmony to the
+            world <em>and coding makes me happy!</em>
           </p>
         </div>
 
         <Skills data={PROF} />
 
         <div className='desc'>
-          <p>
-            He feels lucky to have found his passion in programming in his late
-            20s, for it involves not only the science side of the brain but also
-            the art side, especailly for a frontend engineer.
-          </p>
-          <p>
-            Having a master degree in Art and Science, Peiwen is confident in
-            designing and building
-            <em>
-              <b> multi-disciplinary </b>
-            </em>
-            projects. Now he works as a front-end engineer at eBay Shanghai.
-          </p>
-          <p>
-            "Living and studying in the UK, traveling around Europe was the most
-            rewarding experience in my early adult life." He states with a
-            vigorous smile. It broadened his horizon and made him a worldly
-            citizen.
-          </p>
+          <Details summary='Why front-end?' open>
+            <p>
+              A frontend engineer doesn't just produce code, they provide
+              efficient, user-centred and well-designed solutions to specific
+              problems which are often about user experience. And I like solving
+              puzzles. My education and experiences in art, design and science
+              surely help with problem solving creatively in multidisciplinary
+              projects and, as an outcome, increasing the overall quality of the
+              products.
+            </p>
+          </Details>
+          <Details summary='Why developer AND designer?'>
+            <p>
+              If art and science is a system for us to understand the
+              universe... I <em>REEEEEEALLY</em> would like to understand it by
+              participating on both sides of that system. Being a designer helps
+              to be a better developer and vice versa. Therefore, why not to
+              become both?
+            </p>
+          </Details>
+          <Details summary='What else about me?'>
+            <p>
+              I've got lucky. Not only did I find my passion in programming in
+              my mid 20s, but also did I get the chance to pursue it. The doubts
+              of failing it have never crossed my mind because of all the
+              support along the way from my family and friends.
+            </p>
+            <p>
+              Living and studying in the UK, travelling around Europe was the
+              most rewarding experience in my early adult life. It broadened my
+              horizon and made me a global citizen.
+            </p>
+            <p>Now I work as a front-end engineer at eBay Shanghai.</p>
+          </Details>
         </div>
       </section>
     </SRow>
@@ -151,7 +167,7 @@ const Skills: React.FC<{ data: Record<string, number> }> = ({ data }) => {
           hidden: { opacity: 0, width: 0 },
           show: {
             opacity: 1,
-            width: `calc(${proficiency}% - ${namewidth} - ${descwidth})`,
+            width: `calc(${proficiency}% - ${nameWidth} - ${descWidth})`,
             transition: { duration: 0.8 },
           },
         }
@@ -170,22 +186,22 @@ const Skills: React.FC<{ data: Record<string, number> }> = ({ data }) => {
 }
 
 const SUlSkills = styled(motion.ul)`
-  font-size: 12px;
+  font-size: var(--fontS);
   margin: 0 0 10px 0;
 
   @media screen and (max-width: 600px) {
     /* adjustment -> to center in small screen */
-    padding-left: 30px;
+    padding-left: 28px;
   }
 `
 
-const namewidth = '70px'
-const descwidth = '32px'
+const nameWidth = '70px'
+const descWidth = '32px'
 const SLiSkill = styled(motion.li)<{ width?: number }>`
   padding: 5px 0;
   > span.prof-name {
     display: inline-block;
-    width: ${namewidth};
+    width: ${nameWidth};
   }
   > span.prof-bar {
     display: inline-block;
@@ -193,13 +209,13 @@ const SLiSkill = styled(motion.li)<{ width?: number }>`
     margin-bottom: 2px;
     border-radius: 5px;
     /* width: ${({ width }) =>
-      `calc(${width}% - ${namewidth} - ${descwidth})`}; */
+      `calc(${width}% - ${nameWidth} - ${descWidth})`}; */
     background: #cecbc1;
-    background: linear-gradient(90deg, var(--color-light) 0%, var(--airy) 100%);
+    background: linear-gradient(90deg, rgb(210, 210, 210) 0%, var(--airy) 100%);
   }
   > span.prof-desc {
     display: inline-block;
-    width: ${descwidth};
+    width: ${descWidth};
     text-align: right;
   }
 `

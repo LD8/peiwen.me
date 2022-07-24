@@ -21,8 +21,7 @@ export const seDark = darken(base, 0.5)
  * CSS of ** Large ** Box-shadow ** 凸
  */
 export const cssBSLarge = css`
-  font-size: 1rem;
-  letter-spacing: 0.06rem;
+  background-color: ${fLight};
   box-shadow:
 /* tl shadow enhance */ -3px -3px 10px 5px ${seLight},
     /* tl shadow */ -10px -10px 40px 5px ${sLight},
@@ -38,8 +37,7 @@ export const cssBSLarge = css`
  * CSS of ** Small ** Box-shadow ** 凸
  */
 export const cssBSSmall = css`
-  font-size: 0.75rem;
-  letter-spacing: 0.04rem;
+  background-color: ${fLight};
   box-shadow:
  /* tl shadow enhance */ -2px -2px 5px 2px ${seLight},
     /* tl shadow */ -5px -5px 15px 5px ${sLight},
@@ -56,7 +54,7 @@ export const cssBSSmall = css`
  */
 export const cssHovered = css`
   color: var(--color-dark);
-  background-color: ${fLight};
+  background-color: ${sLight};
   box-shadow:
 /* void tl shadow enhance */ 0 0 0 0 ${cBase},
     /* void tl shadow */ 0 0 0 0 ${cBase},
@@ -94,7 +92,7 @@ const StyledButton = styled.button<{ isActive?: boolean; large?: boolean }>`
   font-family: Montserrat;
   border: none;
   /* border-radius: 60px; */
-  border-radius:0 60px;
+  border-radius: 0 60px;
   transition: all 0.2s ease-in-out;
   color: var(--color-secondary);
   background-color: ${cBg};

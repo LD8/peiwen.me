@@ -5,13 +5,13 @@ badges:
   - dataVisual
   - analytics
 content:
-  - Taking over a complex pre-existing project is never easy. I rewrite the entire system in TS, upgrade libraries to date, refactor the imperative code to declarative with improved effciency and maintainability, reconfigure and breakdown the compositions of many components to increase reusability. But these were not the main challenges.
-  - The main challenges were - 1. to maintain two sets of packaging logic, one for integration with eBay's mega infrastructure Cloud Console, and another for independent deployment; 2. to visualise data in a way that helps TDOs to identify the root cause more efficiently
+  - Taking over a complex pre-existing project is never easy. I rewrite the entire system in TS, upgrade libraries to date, refactor the imperative code to declarative with improved efficiency and maintainability, reconfigure and breakdown the compositions of many components to increase reusability. But these were not the main challenges.
+  - The main challenges were - 1. to maintain two sets of packaging logic, one for integration with eBay's mega infrastructure Cloud Console, and another for independent deployment; 2. to visualise data in a way that helps Technology Duty Officers to identify the root cause more efficiently
   - After several months of rewrite, user research and webpack rules configuration and optimisation, our clients claimed that the appearance as well as the usability of the app had been drastically improved, more 'professional' so to speak.
-  - Taking users' needs into account, the project is constently evolving.
+  - Taking users' needs into account, the project is constantly evolving.
 techs:
   - TypeScript, Create-react-app (muse-plugin)
-  - Apache Echarts, CytoscapeJS
+  - Apache ECharts, CytoscapeJS
   - LESS
   - Webpack
 links: {}

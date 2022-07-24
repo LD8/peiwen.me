@@ -1,5 +1,4 @@
 import { NextPage } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import styled from 'styled-components'
 import ExternalLink from '../components/ExternalLink'
@@ -7,40 +6,49 @@ import HeadInfo from '../components/HeadInfo'
 import CV_EDU from '../content/CV_EDU'
 import CV_EXP from '../content/CV_EXP'
 import CV_SKILLS from '../content/CV_SKILLS'
-import cvPortrait from '../public/cv-portrait-sm.jpg'
+import CV_STATEMENT from '../content/CV_STATEMENT'
+
+export const ContactInfo: React.FC<{ lang?: 'EN' | 'ZH' }> = ({
+  lang = 'EN',
+}) => (
+  <div className='contact-info'>
+    <ExternalLink href='mailto: don_lee@me.com'>don_lee@me.com</ExternalLink>
+    <ExternalLink href='https://peiwen.me'>https://peiwen.me</ExternalLink>
+    {/* <ExternalLink href='https://github.com/ld8'>
+      https://github.com/ld8
+    </ExternalLink> */}
+    <div>
+      <em style={{ fontSize: 'var(--fontS)' }}>(+86) 150 005 288 42</em>
+    </div>
+    <div>
+      <em style={{ fontSize: 'var(--fontS)' }}>
+        {lang === 'EN' ? 'Shanghai, China' : '上海市 徐汇区'}
+      </em>
+    </div>
+  </div>
+)
 
 const CV: NextPage = () => {
   return (
     <SPaper id='SPaper'>
       <HeadInfo
         title="Peiwen Li's CV"
-        description='User-centered, scrupulous; develop software that brings joy and peace to the world'
+        description='Meticulous, user-centred, self-taught software engineer with 3+ years of
+        proven experience to design and build premium B2B, B2C web apps'
       />
       <div className='content'>
         <div className='lang-switch-btn'>
           <Link href='/cv-zh'>中文</Link>
         </div>
         <section className='title'>
-          <div className='portrait-container'>
-            <Image src={cvPortrait} alt="Peiwen Li's portrait" />
+          <div className='title-left'>
+            <ContactInfo />
           </div>
-          <div className='info'>
+          <div className='title-right'>
             <div className='general-info'>
               <h1>Li · Peiwen</h1>
-              <h2>Full-stack Software Developer</h2>
-              <p>
-                User-centered, scrupulous; develop software that brings joy and
-                peace to the world
-              </p>
-            </div>
-            <div className='contact-info'>
-              <ExternalLink href='http://peiwen.me'>peiwen.me</ExternalLink>
-              <ExternalLink href='mailto: don_lee@me.com'>
-                don_lee@me.com
-              </ExternalLink>
-              <ExternalLink href='https://github.com/ld8'>
-                github.com/ld8
-              </ExternalLink>
+              <h2>Front-end Developer and Designer</h2>
+              {CV_STATEMENT.EN}
             </div>
           </div>
         </section>
@@ -94,11 +102,10 @@ const CV: NextPage = () => {
           <div className='sub-container'>
             <div className='aside' />
             <div className='details'>
-              <ul style={{ marginLeft: '15px' }}>
-                <li>Fluent in English (IELTS 8.0), native Mandarin speaker</li>
+              <ul>
+                <li>Fluent in English (IELTS 8/9), native Mandarin speaker</li>
                 <li>
-                  Read, blog, swim, music, photography and travel in my free
-                  time
+                  Swim, read, play piano, travel and take photos in my free time
                 </li>
               </ul>
             </div>
@@ -120,6 +127,7 @@ export const SPaper = styled.main<{ chinese?: boolean }>`
   }
 
   .content {
+    text-align: justify;
     /* init: override default set in global.css */
     p {
       margin: 0;
@@ -187,7 +195,7 @@ export const SPaper = styled.main<{ chinese?: boolean }>`
     /* ------------------------- general ------- */
 
     ul {
-      list-style: square;
+      list-style: unset;
       margin-left: 20px;
     }
 
@@ -196,30 +204,42 @@ export const SPaper = styled.main<{ chinese?: boolean }>`
     }
 
     i {
-      color: #979797;
+      color: var(--color-secondary);
     }
 
     h4,
     .company-name {
-      background-color: rgb(242, 242, 242);
+      background-color: var(--bgc-code);
       margin-bottom: 5px;
     }
 
     h4 {
       font-weight: 600;
       padding-left: 5px;
-      border-radius: 0 5px 5px 0;
+      /* border-radius: 0 5px 5px 0; */
     }
 
     .company-name {
       padding-right: 5px;
-      border-radius: 5px 0 0 5px;
+      /* border-radius: 5px 0 0 5px; */
+    }
+
+    .sub-h4 {
+      background-color: transparent;
+      margin-top: 8px;
+      /* text-decoration: underline;
+      text-underline-offset: 4px; */
+      color: var(--color-tertiary);
+      @media print {
+        margin-top: 4px;
+        margin-bottom: 0px;
+      }
     }
 
     @media only screen and (max-width: 800px) {
-      h4 {
+      /* h4 {
         border-radius: 5px;
-      }
+      } */
       .company-name {
         padding: 0;
         background-color: transparent;
@@ -230,23 +250,40 @@ export const SPaper = styled.main<{ chinese?: boolean }>`
     .title {
       margin-bottom: 30px;
       display: flex;
+      @media print {
+        margin-bottom: 20px;
+      }
 
-      .portrait-container {
+      .title-left {
         width: var(--aside-width);
         padding-right: 20px;
+        text-align: right;
 
-        img {
-          border-radius: 3px;
+        .contact-info {
+          height: 100%;
+          padding-right: 20px;
+          border-right: 2px solid rgb(240, 240, 240);
+
+          a {
+            color: var(--airy-vivid);
+            text-decoration: none;
+            display: block;
+            font-size: var(--fontS);
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
         }
       }
 
-      .info {
+      .title-right {
         display: flex;
         width: var(--main-width);
 
         .general-info {
-          width: 460px;
-          padding-right: 20px;
+          /* width: 460px; */
+          /* padding-right: 20px; */
 
           h1 {
             text-transform: uppercase;
@@ -268,65 +305,47 @@ export const SPaper = styled.main<{ chinese?: boolean }>`
             font-size: var(--fontM);
           }
         }
-
-        .contact-info {
-          width: 130px;
-          height: 90px;
-          padding-left: 20px;
-          border-left: 2px solid rgb(240, 240, 240);
-
-          a {
-            color: var(--airy-vivid);
-            text-decoration: none;
-            display: block;
-            font-size: var(--fontS);
-
-            &:hover {
-              text-decoration: underline;
-            }
-          }
-        }
       }
     }
 
     @media only screen and (max-width: 800px) {
       .title {
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
 
-        .portrait-container {
+        .title-left {
           padding: 0;
           display: flex;
           justify-content: center;
-        }
-
-        .info {
-          margin-top: 25px;
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-
-          .general-info {
-            width: 100%;
-            padding: 0;
-          }
 
           .contact-info {
             width: 100%;
             height: auto;
+            text-align: center;
             margin-top: 10px;
             padding: 0;
             border-style: none;
             a {
               display: inline-block;
             }
-            a:nth-child(2),
-            a:nth-child(3) {
-              &::before {
-                content: '/';
-                padding: 0 5px;
-                color: grey;
-              }
+            > a::before {
+              content: '·';
+              padding: 0 8px 0 5px;
+              color: grey;
+            }
+            a:first-child::before {
+              content: '';
+            }
+          }
+        }
+
+        .title-right {
+          margin-top: 25px;
+          text-align: center;
+
+          .general-info {
+            h1 {
+              justify-content: center;
             }
           }
         }
@@ -338,11 +357,14 @@ export const SPaper = styled.main<{ chinese?: boolean }>`
     .experience,
     .education,
     .other {
-      width: calc(var(--whole-width) - var(--paper-padding) * 2 - 2);
+      width: var(--section-width);
       margin-bottom: 20px;
       /* margin-left: auto; */
       display: flex;
       flex-direction: column;
+      @media print {
+        margin-bottom: 10px;
+      }
 
       a {
         text-decoration: none;
@@ -359,7 +381,6 @@ export const SPaper = styled.main<{ chinese?: boolean }>`
         margin-left: auto;
 
         h3 {
-          width: var(--main-width);
           margin-bottom: var(--fontS);
           padding-bottom: 5px;
 
@@ -374,6 +395,9 @@ export const SPaper = styled.main<{ chinese?: boolean }>`
       .sub-container {
         display: flex;
         margin-bottom: 20px;
+        @media print {
+          margin-bottom: 10px;
+        }
 
         .aside {
           width: var(--aside-width);
@@ -449,8 +473,10 @@ export const SPaper = styled.main<{ chinese?: boolean }>`
   @media print {
     margin: 0;
     .content {
-      width: 842px;
-      padding: 0;
+      /* width: 842px; */
+      /* width: 100%; */
+      /* max-width: 100%; */
+      /* padding: 20px; */
       border: none;
       box-shadow: none;
       /* .experience{

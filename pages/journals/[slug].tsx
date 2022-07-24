@@ -121,7 +121,7 @@ const StyledArticle = styled.article`
   width: 100%;
   .date {
     letter-spacing: 0.1em;
-    font-size: 14px;
+    font-size: var(--fontM);
     > span {
       justify-content: flex-end;
     }

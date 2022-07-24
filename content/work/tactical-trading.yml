@@ -1,6 +1,6 @@
 ---
-title: Quantitative Trading System
-summary: A new interpretation of Quantitative Trading System where user is at the centre of design
+title: Tactical Trading System
+summary: A new interpretation of Tactical Trading System where user is at the centre of design
 badges:
   - B2B
   - dataVisual
@@ -12,7 +12,7 @@ techs:
   - TypeScript, UmiJS, React
   - LESS
   - Webpack
-  - Apache Echarts
+  - Apache ECharts
 links: {}
 startedAt: 2020-5
 endedAt: 2021-5

@@ -1,37 +1,47 @@
+import styled from 'styled-components'
+
+const techFE = `JavaScript, TypeScript, React, Vue, HTML, CSS, SASS, LESS, Styled Component, Webpack, Grunt, Ant Design, UmiJS, NextJS`
+const techBE = `NodeJS, Express, Koa, Python, Django, PostgreSQL, MongoDB, AWS`
+const techDV = `CytoscapeJS, Apache ECharts, Plotly, Matplotlib`
+const software = `Photoshop, AdobeXD, AutoCAD, SketchUp`
+
+const StyledLi = styled.li`
+  margin-bottom: 10px;
+  @media print {
+    margin-bottom: 0;
+  }
+`
+
 const CV_SKILLS = {
   ul_EN: (
     <ul>
+      <StyledLi>
+        <b>F/E</b>: {techFE} <i>& other JS libraries and frameworks</i>
+      </StyledLi>
+      <StyledLi>
+        <b>B/E</b>: {techBE}
+      </StyledLi>
+      <StyledLi>
+        <b>DataVisualisation</b>: {techDV}
+      </StyledLi>
       <li>
-        let <b>frontEnd</b> = <em>TypeScript + ReactJS</em>{' '}
-        <i>// with other related JS libraries</i>
-      </li>
-      <li>
-        let <b>backEnd</b> = <em>NodeJS</em> as BFF{' '}
-        <i>// with occasional Python frameworks</i>
-      </li>
-      <li>
-        let <b>diff</b> = 'a master degree in Art and Science'{' '}
-        <i>
-          // with great confidence and scrutiny to design and build{' '}
-          <u>multi-disciplinary</u> projects
-        </i>
-      </li>
-      <li>
-        <b>let</b> it grow naturally and be free like water
+        <b>Software</b>: {software}
       </li>
     </ul>
   ),
   ul_ZH: (
     <ul>
       <li>
-        前端：JavaScript, TypeScript, React, Redux, MobX, Next, Vue, Nuxt,
-        UmiJS, Webpack, HTML5, CSS3, SASS, LESS, Bootstrap, Ant Desgin
+        <b>前端:</b> {techFE} <i>及很多其他未列出的 JS 库和框架</i>
       </li>
-      <li>后端：NodeJS, Python, Django, Flask, Postgres</li>
-      <li>数据可视化：CytoscapeJS, Apache ECharts, Plotly, Matplotlib</li>
       <li>
-        UI/UX：经过在英国的硕士学习, 对艺术与科学交叉学科项目具有一定深度的理解,
-        对设计和编写高交互性、跨学科的项目很有信心
+        <b>后端:</b> {techBE}
+      </li>
+      <li>
+        <b>数据可视化:</b> {techDV}
+      </li>
+      <li>
+        <b>软件</b>: {software}
       </li>
     </ul>
   ),

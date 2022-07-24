@@ -6,8 +6,8 @@ badges:
   - blog
 content:
   - The aesthetic changes over the years. The tech evolves. The project perhaps should be called 'Peiwen.me' for better identification since the domain name was changed, for the fact that I am now clearer than ever of who I am.
-  - This website (Peiwen.me) employs MongoDB instead of PostgreSQL to store my journals/blogs (just would like to try something new). And I choose Framer-motion over React-spring, for its minimalistic API and less resource consumption for the similar effects that React-spring offers. I also built a hidden log in mechanism and a journal creater/editor just for my personal use.
-  - Donlee.online was first released in 2020. The website powered by Django RESTful api serialised feed of data for the frontend handeld by Create-react-app. I implemented PostgreSQL for content management and it worked seamlessly with Django's default backend management system GUI. It was hosted on AWS Lightsail VPS. This was a great starting point.
+  - This website (Peiwen.me) employs MongoDB instead of PostgreSQL to store my journals/blogs (just would like to try something new). And I choose Framer-motion over React-spring, for its minimalistic API and less resource consumption for the similar effects that React-spring offers. I also built a hidden log in mechanism and a journal creator/editor just for my personal use.
+  - Donlee.online was first released in 2020. The website powered by Django RESTful api serialised feed of data for the frontend handled by Create-react-app. I implemented PostgreSQL for content management and it worked seamlessly with Django's default backend management system GUI. It was hosted on AWS Lightsail VPS. This was a great starting point.
   - Second release was in 2021. It was rewritten with NextJS so that the whole website was generated statically. Django RESTful API was great, however, I wanted to explore the full potential of frontend SPA as well as my newly learned skills.
 techs:
   - TypeScript, JavaScript(no more), NextJS, React-markdown, Framer-motion, Styled-components, React-spring(no more)

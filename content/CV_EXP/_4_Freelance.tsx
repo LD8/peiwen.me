@@ -1,11 +1,11 @@
 import ExternalLink from '../../components/ExternalLink'
 
-const link_portfolio = (
+const link_work = (
   <ExternalLink
     href='https://peiwen.me/work-and-joy'
     style={{ paddingLeft: '6px' }}
   >
-    peiwen.me/work
+    https://peiwen.me/work-and-joy
   </ExternalLink>
 )
 
@@ -20,12 +20,15 @@ export default {
     ...shared,
     jsx_details: (
       <>
-        <h4>Web Developer | UI & UX Designer</h4>
+        <h4>Full-stack Developer | UI & UX Designer</h4>
         <ul>
-          <li>Design interactive user-centered interfaces for clients</li>
-          <li>Develop web apps independently with React, Django, PostgreSQL</li>
-          <li>Iteratively improve UX of an app based on analysed feedbacks</li>
-          <li>Portfolio: {link_portfolio}</li>
+          <li>Designed wireframes and interactive prototypes with AdobeXD</li>
+          <li>
+            Built approved UI with HTML, CSS, SASS, Bootstrap, JavaScript, React
+          </li>
+          <li>Built back-end with Python, Django framework and PostgreSQL</li>
+          <li>Improved the UX of an app iteratively based on analysed feedbacks</li>
+          <li>Portfolio: {link_work}</li>
         </ul>
       </>
     ),
@@ -35,14 +38,15 @@ export default {
     ...shared,
     jsx_details: (
       <>
-        <h4>用户体验全栈编程</h4>
+        <h4>全栈开发 | 交互设计师</h4>
         <ul>
-          <li>以用户为中心设计网站交互界面，根据客户反馈逐步优化性能和体验</li>
+          <li>以用户为中心，使用 AdobeXD 绘制可交互的网站原型</li>
           <li>
-            应用 React，Django Web 框架，PostgreSQL 等搭建后端 API
-            和数据库，独立编写前后端代码
+            独立进行前端开发：使用 HTML, CSS, SASS, Bootstrap, JavaScript, React
           </li>
-          <li>作品展示: {link_portfolio}</li>
+          <li>独立进行后端开发：使用 Python Django 和 PostgreSQL 搭建后端服务</li>
+          <li>分析用户反馈进行迭代，优化性能和体验</li>
+          <li>作品展示: {link_work}</li>
         </ul>
       </>
     ),

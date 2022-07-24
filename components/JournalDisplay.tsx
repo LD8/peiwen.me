@@ -147,21 +147,15 @@ const StyledCountsDiv = styled.div`
   gap: 14px;
   display: flex;
   flex-direction: column;
-  font-size: 22px;
+  font-size: var(--fontL);
   color: var(--color-secondary);
   margin: 20px;
-
-  /* @media screen and (max-width: 1200px) {
-    right: calc((((100vw - 800px) / 2) - 40px) / 2);
-    font-size: 16px;
-  } */
 
   @media screen and (max-width: 1200px) {
     position: static;
     width: 100%;
     flex-direction: row;
     justify-content: flex-end;
-    font-size: 20px;
     color: var(--color-dark);
     gap: 25px;
   }
@@ -309,7 +303,7 @@ const StyledStatus = styled.div`
   align-items: center;
   border: 0.5px solid white;
   /* background-color: rgb(235, 235, 235, 0.4); */
-  font-size: 11px;
+  font-size: var(--fontXS);
   border-radius: 5px;
   > div {
     text-transform: capitalize;

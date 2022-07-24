@@ -3,7 +3,7 @@
 @import './flavored.css';
 
 :root {
-  /* colors */
+  /* colours */
   --color-dark: rgb(80, 80, 80);
   --color-secondary: rgb(120, 120, 120);
   --color-tertiary: rgb(160, 160, 160);
@@ -20,29 +20,28 @@
   --avocado: #49720c;
   --avocado-light: #7abc4d;
 
-  /* bg colors/images */
-  --bgc-general: rgb(200, 200, 200);
-  --bgc-code: #efeeea;
-  --bgc-code-alt: #f8fcff66;
-  --bgi-light-gradient: linear-gradient(
-    145deg,
-    rgb(235, 235, 235),
-    /* rgb(189, 187, 182)  */ rgb(206, 203, 198)
-  );
+  /* bg colours/images */
+  --bgc-general: var(--color-lighter);
+  --bgc-code: rgb(239, 238, 234);
+  --bgc-code-alt: rgba(248, 252, 255, 0.4);
+
+  --bg: linear-gradient(var(--bgc-general) 0%, rgb(206, 206, 206) 100%) 0% 100% / 100% 15vh no-repeat;
+  /* --bg: linear-gradient(rgb(220, 220, 220) 0%, var(--bgc-general) 100%) 0% 0% / 100% 150px no-repeat; */
 
   /* fonts */
   --font-fancy: 'Montserrat';
   --fontXL: 30px;
-  --fontL: 25px;
-  --fontM: 16px;
-  --fontS: 13px;
-  --fontXS: 11px;
+  --fontL: 22px;
+  --fontM: 14px;
+  --fontS: 12px;
+  --fontXS: 10px;
 
   /* var for cv page */
   --whole-width: 842px;
   --aside-width: 170px;
   --main-width: 510px;
   --paper-padding: 80px;
+  --section-width: calc(var(--aside-width) + var(--main-width));
 }
 
 @media only screen and (max-width: 800px) {
@@ -71,9 +70,23 @@ body {
   caret-color: var(--avocado);
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: rgb(200, 200, 200);
+  background-color: var(--bgc-general);
 }
+
 @media print {
+  :root {
+    --fontXL: 26px;
+    --fontL: 20px;
+    --fontM: 12px;
+    --fontS: 10px;
+    --fontXS: 9px;
+
+    /* var for cv page */
+    --whole-width: 100%;
+    --aside-width: 150px;
+    --paper-padding: 10px;
+    --main-width: calc(var(--whole-width) - var(--aside-width));
+  }
   body {
     background-color: transparent;
   }
