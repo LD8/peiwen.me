@@ -98,7 +98,8 @@ const BodyContent = styled.div`
   overflow: hidden;
   z-index: 0;
   min-height: 100vh;
-  background-image: var(--bgi-light-gradient);
+  /* background-image: var(--bgi-light-gradient); */
+  background: var(--bg);
   display: flex;
   flex-flow: column;
 

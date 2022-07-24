@@ -21,14 +21,12 @@
   --avocado-light: #7abc4d;
 
   /* bg colours/images */
-  --bgc-general: rgb(200, 200, 200);
-  --bgc-code: #efeeea;
-  --bgc-code-alt: #f8fcff66;
-  --bgi-light-gradient: linear-gradient(
-    145deg,
-    rgb(235, 235, 235),
-    /* rgb(189, 187, 182)  */ rgb(206, 203, 198)
-  );
+  --bgc-general: var(--color-lighter);
+  --bgc-code: rgb(239, 238, 234);
+  --bgc-code-alt: rgba(248, 252, 255, 0.4);
+
+  --bg: linear-gradient(var(--bgc-general) 0%, rgb(206, 206, 206) 100%) 0% 100% / 100% 15vh no-repeat;
+  /* --bg: linear-gradient(rgb(220, 220, 220) 0%, var(--bgc-general) 100%) 0% 0% / 100% 150px no-repeat; */
 
   /* fonts */
   --font-fancy: 'Montserrat';
@@ -72,7 +70,7 @@ body {
   caret-color: var(--avocado);
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: rgb(200, 200, 200);
+  background-color: var(--bgc-general);
 }
 
 @media print {
