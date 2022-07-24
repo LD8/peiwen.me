@@ -13,9 +13,9 @@ export default {
       <>
         <h4>Volunteer Interpreter</h4>
         <p>
-          Translating over 100 copies of Chinese minority music manuscripts is a
-          privilege, for having participated in the dissemination of Chinese
-          minority culture on an international stage
+          Translated over 100 copies of Chinese minority music manuscripts. It
+          was a privilege to have participated in the dissemination of Chinese
+          minority culture on the international stage
         </p>
         {/* <p>
           Interpreting Chinese minority manuscripts (mainly scores). Only after
