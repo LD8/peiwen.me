@@ -23,16 +23,16 @@ export default {
         <h4 className='sub-h4'>Key Responsibilities</h4>
         <ul>
           <li>
-            Carried out competitive research; collaborated with PMs to create
-            interactive prototypes with AdobeXD
+            Carried out competitive research; collaborated with project managers
+            to create interactive prototypes with AdobeXD
           </li>
           <li>
             Built innovative web systems in an agile team with TypeScript,
             React, Ant Design, LESS, UmiJS, Apache ECharts; deployed with Docker
           </li>
           <li>
-            Designed 20+ API contracts using {link_yapi} and MockJS for fast-paced
-            sprints
+            Designed 20+ API contracts using {link_yapi} and MockJS for
+            fast-paced sprints
           </li>
           <li>Led weekly UI inspection meetings to revise/improve UI/UX</li>
           <li>

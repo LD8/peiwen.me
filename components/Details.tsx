@@ -1,7 +1,5 @@
-import React from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { FCwc } from '../types'
-import { cssActive, cssHovered } from './StyledButton'
 
 type IDetailsProps = {
   summary?: string

@@ -16,7 +16,7 @@ type IHeadInfoProps = {
  */
 const HeadInfo: FCwc<IHeadInfoProps> = ({
   title = 'Li · Peiwen',
-  description = "Peiwen Li's website, featuring his work and journals. Let there be more software that brings joy and peace to the world",
+  description = "Peiwen Li's website, featuring his work and journals. Let there be more software that brings peace and harmony to the world",
   noRoboIndex = false,
   // only needed in dynamic routes
   path,

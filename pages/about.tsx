@@ -23,7 +23,8 @@ const PeiwenMe: NextPage = () => {
     <SRow>
       <HeadInfo
         title='About Peiwen Li'
-        description='A full-stack software developer who is passionate in developing software that brings joy and peace to the world'
+        description='A front-end developer and designer who is striving to develop software that brings peace and harmony to the
+        world'
       />
       {/* <LeafSwirl
         style={{ top: '0vh', left: '0', fontSize: '70vh' }}
